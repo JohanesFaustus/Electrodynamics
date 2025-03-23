@@ -244,7 +244,7 @@ that is, the image and object  are equidistant from the surface.
 The definition for transversal and lateral magnification is the same as the case for lenses. 
 
 \subsubsection*{Derivation.}
-I shall not derive the equation for planar mirrors, as it was trivial. now, consider a concave spherical mirror. From the triangle $SAP$, we observe 
+I shall not derive the equation for planar mirrors, as it was trivial. Now, consider a concave spherical mirror. From the triangle $SAP$, we observe 
 \begin{equation*}
     \frac{SC}{SA}=\frac{CP}{PA}
 \end{equation*}
@@ -268,4 +268,75 @@ Notice that $f_o=f_i$, so for convinience's sake we write
     \frac{1}{f}=-\frac{R}{2}
 \end{equation*}
 
+\subsection*{Prism}
+One of the most important function of the prism is to measure the index of refraction. For a refraction Prism, the refraction index of prism is given by 
+\begin{equation*}
+    n=\frac{\sin [(\delta_m+\alpha)/2]}{\sin (\alpha/2)}
+\end{equation*}
+where $\delta_m$ is the minimum angular deviation and $\alpha$ is the apex angle. Minimum angular deviation occur when 
+\begin{equation*}
+    \delta=\delta_m\begin{cases}
+        \theta_{i1}&=\theta_{t2}\\
+        \theta_{t1}&=\theta_{i2}
+    \end{cases}
+\end{equation*}
+or in other words, when the ray traverses the prism symmetrically or parallel to its base. Accidentally, angular deviation for arbitrary ray is given by 
+\begin{equation*}
+    \delta=\theta_{i1}+\arcsin\left[ \sin (\alpha)\left(n^2-\sin^2\theta_{i1}\right)^{1/2}-\sin\theta_{i1}\cos\alpha\right]
+\end{equation*}
+
+\subsubsection*{Derivation.} Consider ray entering prism at angle $\theta_{i1}$. From the geometry of prism, the total deviation is the sum of deviation due to the first interface and the second interface
+\begin{equation*}
+    \delta=(\theta_{i1}-\theta_{t1})+ (\theta_{t2}-\theta_{i2})
+\end{equation*}
+Also notice that $\alpha=\theta_{t1}+\theta_{i2}$, then we write
+\begin{equation*}
+    \delta=\theta_{i1}+\theta_{t2}-\alpha
+\end{equation*}
+Appliying Snell's law to both interface, we have 
+\begin{align*}
+    n_a\sin \alpha_{i1}&=n\sin \theta_{t1}\\
+    n\sin\theta_{i2}&=n_a\sin \theta_{t2}
+\end{align*}
+where the refraction index of air $n_a=1$. From the Snell's equations at the second interface, it follows
+\begin{align*}
+    \theta_{t2}&=\arcsin\left[n\sin \theta_{i2}\right]=\arcsin\left[n\sin (\alpha-\theta_{t1})\right]\\
+    &=\arcsin\left[n(\sin \alpha\cos\theta_{t1}-\sin\theta_{t1}\cos \alpha)\right]\\
+    \theta_{t2}&=\arcsin\left[\sin \alpha(n^2-\sin^2\theta_{i1})^{1/2}-\sin\theta_{i1}\cos \alpha\right]
+\end{align*}
+Recall the relation $\sin (x-y)=\sin x\cos y-\sin y\cos x$. On subsituting to the expression for angular deviation
+\begin{equation*}
+    \delta=\theta_{i1}+\arcsin\left[\sin \alpha(n^2-\sin^2\theta_{i1})^{1/2}-\sin\theta_{i1}\cos \alpha\right]-\alpha
+\end{equation*}
+
+To obtain the minimum deviation, we set the derivative of $\delta$ with respect to incidence $\theta_{i1}$ to zero 
+\begin{equation*}
+    \frac{d}{d\theta_{i1}}(\theta_{i1}+\theta_{t2}-\alpha)=1+\frac{d\theta_{t2}}{d\theta_{i1}}=0\implies d\theta_{t2}=-d\theta_{i1}
+\end{equation*}
+with the apex angle taken as constant. With that being said, we also have 
+\begin{equation*}
+    d\alpha=0\implies d\theta_{t1}=-d\theta_{i2}
+\end{equation*}
+Taking the derivative of both Snell's equation
+\begin{align*}
+    n_a\cos \theta_{i1}\;d\theta_{i1}&=n\cos \theta_{t1}\;d\theta_{t1}\\
+    n\cos\theta_{i2}\;d\theta_{i2}&=n_a\cos \theta_{t2}\;d\theta_{t2}
+\end{align*}
+Dividing the first equation with the second, using the angular differential relation, and finally inserting the value $n_a=1$
+\begin{align*}
+    -\frac{\cos \theta_{i1}\;d\theta_{i1}}{\cos \theta_{t2}\;d\theta_{i1}} &=-\frac{n \cos \theta_{t1}\;d\theta_{t1}}{n  \cos\theta_{i2}\;d\theta_{t1}}\\
+    \frac{1-\sin^\theta_{i1}}{1-\sin^2\theta_{t2}}&=\frac{n^2-\sin^2\theta_{i1}}{n^2-\sin^2\theta_{t2}}
+\end{align*}
+This equation can only be true when $\theta_{i1}=\theta_{t_2}$. By the Snell's equations, this implies $\theta_{t1}=\theta_{i2}$. Both of these requirements, then, are the condition for minimum deviation.
+
+Writing the Snell's equations at first interface in terms of refraction index
+\begin{equation*}
+    n=\frac{\sin \theta_{t2}}{\sin \theta_{i2}}
+\end{equation*}
+Now we write the equations for angular deviation and apex angle in terms of $\theta_{t2}$ and $\theta_{i2}$ respectively 
+\begin{align*}
+    \delta=\theta_{i1}+\theta_{t2}-\alpha\implies \theta_{t2}=\frac{\delta_m+\alpha}{2}\\
+    \alpha=\theta_{t1}+\theta_{i2}\implies \theta_{i2}=\frac{\alpha}{2}
+\end{align*}
+On subsituting these, we obtain the expression for index of refraction. 
 \end{document}
