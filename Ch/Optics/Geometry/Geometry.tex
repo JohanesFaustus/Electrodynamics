@@ -1,0 +1,215 @@
+\documentclass[../../../main.tex]{subfiles}
+\begin{document}
+\subsection*{Spherical Surfaces}
+I will discuss light behavior at spherical surfaces. Consider wave from the point source $S$ impinging on a spherical interface of radius $R$ centered at $C$. For the ray in question
+\begin{equation*}
+    OPL=n_1\ell_o+n_2\ell_i
+\end{equation*}
+Using the low of cosine in triangles $SAC$ and $ACP$
+\begin{equation*}
+    \ell_o=[R^2+(s_o+R)^2-2R(s_o+R)\cos \phi]^{1/2}\\
+\end{equation*}
+\begin{align*}
+    \ell_i&=[R^2+(s_i+R)^2-2R(s_i-R)\cos (\pi-\phi)]^{1/2}\\
+    &=[R^2+(s_i+R)^2+2R(s_i-R)\cos \phi]^{1/2}
+\end{align*}
+
+\begin{figure}[b]
+    \centering
+    \normfigL{../Rss/Optics/Geometry/Spherical}
+    \caption*{Figure: Refraction at spherical surface.}
+\end{figure}
+
+Recall that the Fermat’s Principle state that the optical path is stationary with respect to its position variable, which is $\phi$ in this case. Then setting the derivative of $OPL$ to zero 
+\begin{multline*}
+    \frac{d}{d\phi}OPL=n_1\frac{R(s_o+R)\sin \phi}{[R^2+(s_o+R)^2-2R(s_o+R)\cos \phi]^{1/2}}\\
+    - n_2\frac{R(s_i-R)\sin \phi}{[R^2+(s_i+R)^2+2R(s_i-R)\cos \phi]^{1/2}}=0
+\end{multline*}
+Or simply
+\begin{align*}
+    n_1\frac{R(s_o+R)\sin \phi}{\ell_o}&=n_2\frac{R(s_i-R)\sin \phi}{\ell_i}\\
+    \frac{n_1Rs_o}{\ell_o}+\frac{n_1R^2}{\ell_o}&=\frac{n_2Rs_i}{\ell_i}-\frac{n_2R^2}{\ell_i}\\
+    \frac{n_1}{\ell_o}+\frac{n_2}{\ell_i}&=\frac{1}{R}\frac{n_2s_i}{\ell_i}-\frac{n_1s_o}{\ell_o}
+\end{align*}
+If we assume small $\phi$, the value of $\ell_o$ and $\ell_i$ approach $s_o$ and $s_i$ respectively. Then, we write
+\begin{equation*}
+    \frac{n_1}{s_o}+\frac{n_2}{s_i}=\frac{n_2-n_1}{R}
+\end{equation*}
+
+The object focus is defined as the object distance when the image is at infinity
+\begin{equation*}
+    f_o=\lim_{s_i\rightarrow\infty}\left(\frac{n_1}{s_o}+\frac{n_2}{s_i}=\frac{n_2-n_1}{R}\right)=\frac{n_1}{n_2-n_1}R
+\end{equation*}
+
+The image focus is defined as the image distance when the object is at infinity
+\begin{equation*}
+    f_o=\lim_{s_o\rightarrow\infty}\left(\frac{n_1}{s_o}+\frac{n_2}{s_i}=\frac{n_2-n_1}{R}\right)=\frac{n_2}{n_2-n_1}R
+\end{equation*}
+
+All quantities used here are defined to be positive.
+\begin{longtable}{c | c | c}
+    \caption*{Table: Sign convention for lenses with respect to light}\\
+    \hline
+    Quantities & Positive & Negative\\ 
+    \hline\hline
+    $s_o,\;f_o$& front of $V $ & behind of $V $ \\ 
+    $x_0$& front of $F_o $ & behind of $F_o $\\
+    $s_i,\;f_i$& behind of $V $ & front of $V $\\
+    $x_f$& behind of $F_i $ & front of $F_ii $\\
+    $R$& $C$ is behind of $V $ & $C$ is front of $V $\\
+    $y_o,\;y_i$& above optical axis &below optical axis\\
+    \hline
+\end{longtable}
+
+\subsection*{Thin Lenses}
+\begin{figure}
+    \centering
+    \normfigL{../Rss/Optics/Geometry/ThinLens}
+    \caption*{Figure: Light entering thin lens.}
+\end{figure}
+The equation for lenses equation, also called the lens-maker equation, is written as 
+\begin{equation*}
+    \frac{1}{s_0}+\frac{1}{s_i}=(n_l-1)\left(\frac{1}{R_1}\frac{1}{R_2}\right)
+\end{equation*}
+or simply
+\begin{equation*}
+    \frac{1}{s_0}+\frac{1}{s_i}=\frac{1}{f}
+\end{equation*}
+where
+\begin{equation*}
+    \frac{1}{s_0}+\frac{1}{s_i}=(n_l-1)\left(\frac{1}{R_1}\frac{1}{R_2}\right)
+\end{equation*}
+
+The newtonian form of lenses equation is 
+\begin{equation*}
+    x_ox_i=f^2
+\end{equation*}
+
+To determine the transversal magnification of lenses, we use 
+\begin{equation*}
+    M_T\equiv \frac{y_i}{y_o}=-\frac{s_i}{s_o}=-\frac{x_i}{f}=-\frac{f}{x_o}
+\end{equation*}
+As for the longitudinal magnification
+\begin{equation*}
+    M_L\equiv \frac{dx_i}{dx_o}=-\frac{f^2}{x_o^2}=-M_T^2
+\end{equation*}
+
+\subsubsection*{Image formed by lenses.} Summarized as follows. One for convex lenses.
+\begin{longtable}{c | c | c | c | c}
+    \caption*{Table: Images formed by convex lenses}\\
+    \hline
+    Object & \multicolumn{4}{c}{Image}\\
+    \hline
+    Location & Type & Location & Orientation & Size\\
+    \hline\hline
+    $s_o>2f$ &Real &$f<s_i<2f$ &Inverted &Minified \\
+    $s_0=2f$ &Real &$s_i=2f$ &Inverted &Same \\
+    $f<s_o<2f$ &Real &$s_i>2f$ &Inverted &Magnified \\
+    $s_o=f$ & &$\pm \infty$ &Inverted & \\
+    $s_0<f$ &Virtual &$|s_i|>s_o$ &Erect &Magnified \\
+    \hline
+\end{longtable}
+
+And other for concave lenses.
+\begin{longtable}{c | c | c | c | c}
+    \caption*{Table: Images formed by concave lenses}\\
+    \hline
+    Object & \multicolumn{4}{c}{Image}\\
+    \hline
+    Location & Type & Location & Orientation & Size\\
+    \hline\hline
+    Anywhere &Virtual &$\begin{matrix}|s_i|<f \\|s_i|<s_o\end{matrix}$ &Erect &Minified \\
+    \hline
+\end{longtable}
+
+
+\subsubsection*{Derivation.} Thin lenses can be considered as two spherical surface, one is convex while other is convex. Now suppose we have lens of index $n_l$ surrounded by medium of index $n_m$. The position of object $s_{o1}$ and image $s_{i1}$ for the first surface is given by 
+\begin{equation*}
+    \frac{n_m}{s_{o1}}+\frac{n_l}{s_{i1}}=\frac{n_l-n_m}{R_1}
+\end{equation*}
+while for the second surface 
+\begin{equation*}
+    \frac{n_l}{s_{o2}}+\frac{n_m}{s_{i2}}=\frac{n_m-n_l}{R_2}
+\end{equation*}
+From figure, we also have 
+\begin{equation*}
+    |s_{o2}|=|s_{i1}|+d
+\end{equation*}
+Then by the definition, $s_{o2}$ is positive and $s_{i1}$is negative
+\begin{equation*}
+    s_{o2} =-s_{i1}+d
+\end{equation*}
+On using this, the equation for second surface reads as 
+\begin{equation*}
+    \frac{n_l}{-s_{i1}+d}+\frac{n_m}{s_{i2}}=\frac{n_m-n_l}{R_2}
+\end{equation*}
+Now we add the equation for both surface 
+\begin{align*}
+    \frac{n_m}{s_{01}}+\frac{n_m}{s_{i2}}&=(n_l-n_m)\left(\frac{1}{R_2}-\frac{1}{R_2}\right)-\frac{n_l}{s_{i1}-d}\frac{n_l}{s_{i1}}\\
+    \frac{n_m}{s_{01}}+\frac{n_m}{s_{i2}}&=(n_l-n_m)\left(\frac{1}{R_2}-\frac{1}{R_2}\right)+\frac{n_l d}{s_{i1(s_{i1}-d)}}
+\end{align*}
+For the case of thin lens, we then make the assumtion of small lens and that the surrounding medium is air 
+\begin{equation*}
+    \frac{n_m}{s_{01}}+\frac{n_m}{s_{i2}}=(n_l-n_m)\left(\frac{1}{R_2}-\frac{1}{R_2}\right)
+\end{equation*}
+
+\begin{figure}
+    \centering
+    \normfig{../Rss/Optics/Geometry/Types.png}
+    \caption*{Figure: Crossection of various thin lenses.}
+\end{figure}
+
+To obtain the Newton's expression for lenses, consider an image in front of convex lens. Using the definition of lateral magnification 
+\begin{equation*}
+    \frac{y_o}{|y_i|}=\frac{f}{s_i-f}=\frac{f}{x_i}
+\end{equation*}
+This applies since the triangles $AOF_i$ and $P_2P_1F_i$ are similiar. Appliying the same logic to triagle $S_1S_2O$ and $P_2P_1O$
+\begin{equation*}
+    \frac{y_o}{|y_i|}=\frac{s_o}{s_i}
+\end{equation*}
+On equating them we obtain
+\begin{align*}
+    \frac{f}{s_o-f}&=\frac{s_o}{f}\\
+    \frac{s_i}{f}-1=\frac{s_i}{s_o}\\
+    \frac{1}{f}=\frac{1}{s_o}+\frac{1}{s_i}
+\end{align*}
+the lens maker equation. To obtain Newton's expression, we consider the triangles $BOF_o$ and $S_2S_1F_o$
+\begin{equation*}
+    \frac{y_o}{|y_i|}==\frac{s_o-f}{f}=\frac{x_o}{f}
+\end{equation*}
+then equating with the expression from $AOF_i$ and $P_2P_1F_i$.
+\begin{align*}
+    \frac{x_o}{f}&=\frac{f}{x_i}\\
+    x_ox_i&=f^2\quad\blacksquare
+\end{align*}
+
+\begin{figure}
+    \centering
+    \normfigL{../Rss/Optics/Geometry/RayProp}
+    \caption*{Figure: Light refracted by thin lenses.}
+\end{figure}
+
+According to the figure, the image is inverted, thus the value of $y_o$ is negative. Hence, on using the value from triangle $P_2P_1O$ to the definition of lateral magnification
+\begin{equation*}
+    M_T=-\frac{s_i}{s_o}
+\end{equation*}
+on using the value of triangle $P_2P_1F_i$
+\begin{equation*}
+    M_T=-\frac{x_i}{x_f}
+\end{equation*}
+and on using the value of triangle $BOF_o$
+\begin{equation*}
+    M_T=-\frac{f}{x_o}
+\end{equation*}
+
+To obtain the expression for lateral magnification, we write the Newtonian form as $x_i=f^2/x_o$ and using the definition of lateral magnification
+\begin{equation*}
+    m_L\equiv\frac{dx_i}{dx_o}=-\frac{f^2}{x_o^2}=-M_T^2
+\end{equation*}
+
+\subsubsection*{Types of thin lenses.} See figure.
+
+\subsubsection*{Light behavior.} Also see figure.
+
+
+\end{document}

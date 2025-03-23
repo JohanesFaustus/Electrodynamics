@@ -301,3 +301,5 @@ TSWLatexianTemp*
 #*Notes.bib
 .vscode/ltex.disabledRules.en-US.txt
 .vscode/ltex.hiddenFalsePositives.en-US.txt
+Ch/**/*.pdf
+Cover/**/*.pdf

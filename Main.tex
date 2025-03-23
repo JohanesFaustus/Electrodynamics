@@ -1,6 +1,6 @@
 \documentclass[10pt]{report}
 \usepackage[paperheight=25.5 cm, paperwidth=14.25cm, left=1.75cm, right=1.75cm, top=1.5cm, bottom=1.5cm]{geometry}
-\usepackage{amsmath, esdiff, esint, indentfirst, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, svg, csquotes }
+\usepackage{amsmath, esdiff, esint, indentfirst, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, svg, csquotes, longtable }
 
 \usepackage{titlesec}
 \titleformat{\chapter}[hang]{\thispagestyle{empty}\centering \Huge \bfseries}{}{}{}[\clearpage]
@@ -91,5 +91,8 @@
 \chapter*{Optics}
 \subsection*{Introduction}
 \subfile{./Ch/Optics/Intro/intro.tex}\clearpage
+
+\subsection*{Optical Geometry}
+\subfile{./Ch/Optics/Geometry/Geometry.tex}\clearpage
 \printbibliography
 \end{document}
