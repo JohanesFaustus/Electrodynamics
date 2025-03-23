@@ -46,21 +46,6 @@ The image focus is defined as the image distance when the object is at infinity
     f_o=\lim_{s_o\rightarrow\infty}\left(\frac{n_1}{s_o}+\frac{n_2}{s_i}=\frac{n_2-n_1}{R}\right)=\frac{n_2}{n_2-n_1}R
 \end{equation*}
 
-All quantities used here are defined to be positive.
-\begin{longtable}{c | c | c}
-    \caption*{Table: Sign convention for lenses with respect to light}\\
-    \hline
-    Quantities & Positive & Negative\\ 
-    \hline\hline
-    $s_o,\;f_o$& front of $V $ & behind of $V $ \\ 
-    $x_0$& front of $F_o $ & behind of $F_o $\\
-    $s_i,\;f_i$& behind of $V $ & front of $V $\\
-    $x_f$& behind of $F_i $ & front of $F_ii $\\
-    $R$& $C$ is behind of $V $ & $C$ is front of $V $\\
-    $y_o,\;y_i$& above optical axis &below optical axis\\
-    \hline
-\end{longtable}
-
 \subsection*{Thin Lenses}
 \begin{figure}
     \centering
@@ -77,7 +62,7 @@ or simply
 \end{equation*}
 where
 \begin{equation*}
-    \frac{1}{s_0}+\frac{1}{s_i}=(n_l-1)\left(\frac{1}{R_1}\frac{1}{R_2}\right)
+    \frac{1}{f}=(n_l-1)\left(\frac{1}{R_1}\frac{1}{R_2}\right)
 \end{equation*}
 
 The newtonian form of lenses equation is 
@@ -93,6 +78,21 @@ As for the longitudinal magnification
 \begin{equation*}
     M_L\equiv \frac{dx_i}{dx_o}=-\frac{f^2}{x_o^2}=-M_T^2
 \end{equation*}
+
+\subsubsection*{Sign convention.} All quantities used before are defined to be positive.
+\begin{longtable}{c | c | c}
+    \caption*{Table: Sign convention for lenses with respect to light}\\
+    \hline
+    Quantities & Positive & Negative\\ 
+    \hline\hline
+    $s_o,\;f_o$& front of $V $ & behind of $V $ \\ 
+    $x_0$& front of $F_o $ & behind of $F_o $\\
+    $s_i,\;f_i$& behind of $V $ & front of $V $\\
+    $x_f$& behind of $F_i $ & front of $F_ii $\\
+    $R$& $C$ is behind of $V $ & $C$ is front of $V $\\
+    $y_o,\;y_i$& above optical axis &below optical axis\\
+    \hline
+\end{longtable}
 
 \subsubsection*{Image formed by lenses.} Summarized as follows. One for convex lenses.
 \begin{longtable}{c | c | c | c | c}
@@ -185,7 +185,7 @@ then equating with the expression from $AOF_i$ and $P_2P_1F_i$.
 
 \begin{figure}
     \centering
-    \normfigL{../Rss/Optics/Geometry/RayProp}
+    \normfigXL{../Rss/Optics/Geometry/RayProp}
     \caption*{Figure: Light refracted by thin lenses.}
 \end{figure}
 
@@ -211,5 +211,61 @@ To obtain the expression for lateral magnification, we write the Newtonian form 
 
 \subsubsection*{Light behavior.} Also see figure.
 
+\subsection*{Mirror}
+
+\subsubsection*{Sign convention.} Listed as follows.
+\begin{longtable}{c | c | c}
+    \caption*{Table: Sign convention for lenses with respect to light}\\
+    \hline
+    Quantities & Positive & Negative\\ 
+    \hline\hline
+    $s_o$& front of $V $ & behind of $V $ \\ 
+    $s_i$& front of $V $ & behind of $V $\\
+    $f$& concave & convex \\
+    $R$& $C$ is behind of $V $ & $C$ is front of $V $\\
+    $y_o,\;y_i$& above optical axis &below optical axis\\
+    \hline
+\end{longtable}
+
+\subsubsection*{Planar mirrors.} The equation for planar mirrors is simply
+\begin{equation*}
+    |s_o|=|s_i|
+\end{equation*}
+that is, the image and object  are equidistant from the surface.
+
+\subsubsection*{Spherical mirrors.} The equation that governed spherical mirrors is the same with the one for lenses, albeit with different sign convention
+ \begin{equation*}
+    \frac{1}{s_o}+\frac{1}{s_i}=\frac{1}{f}
+ \end{equation*}
+ where
+ \begin{equation*}
+     \frac{1}{f}=-\frac{R}{2}
+ \end{equation*}
+The definition for transversal and lateral magnification is the same as the case for lenses. 
+
+\subsubsection*{Derivation.}
+I shall not derive the equation for planar mirrors, as it was trivial. now, consider a concave spherical mirror. From the triangle $SAP$, we observe 
+\begin{equation*}
+    \frac{SC}{SA}=\frac{CP}{PA}
+\end{equation*}
+Furthermore
+\begin{align*}
+    SC&=s_o-|R|=s_o+R\\
+    CP&=|R|-s_i=-(s_i-R)
+\end{align*}
+In the paraaxial region appoximation, $SA\approx s_o$ and $PA\approx s_i$
+\begin{align*}
+    \frac{s_o+R}{s_o}&=-\frac{s_i+R}{s_i}\\
+    \frac{R}{s_o}+\frac{R}{s_i}&=-2\\
+    \frac{1}{s_o}+\frac{1}{s_i}&=-\frac{2}{R}
+\end{align*}
+We define object focus and image focus respectively as 
+\begin{equation*}
+    \lim_{s_i\rightarrow\infty}s_o=f_o\quad\lim_{s_o\rightarrow\infty}s_i=f_i
+\end{equation*}
+Notice that $f_o=f_i$, so for convinience's sake we write 
+\begin{equation*}
+    \frac{1}{f}=-\frac{R}{2}
+\end{equation*}
 
 \end{document}
