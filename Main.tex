@@ -1,6 +1,6 @@
 \documentclass[10pt]{report}
 \usepackage[paperheight=25.5 cm, paperwidth=14.25cm, left=1.75cm, right=1.75cm, top=1.5cm, bottom=1.5cm]{geometry}
-\usepackage{amsmath, esdiff, esint, indentfirst, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, svg, csquotes, longtable }
+\usepackage{amsmath, esdiff, esint, indentfirst, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, svg, csquotes, longtable, booktabs }
 
 \usepackage{titlesec}
 \titleformat{\chapter}[hang]{\thispagestyle{empty}\centering \Huge \bfseries}{}{}{}[\clearpage]
@@ -13,6 +13,7 @@
 \def\rcurs{{\mbox{$\resizebox{.08in}{.08in}{\includegraphics{{/RFonts/BoldR.pdf}}}$}}}
 \def\brcurs{{\mbox{$\resizebox{.08in}{.08in}{\includegraphics{{/RFonts/BoldR.pdf}}}$}}}
 \def\hrcurs{{\mbox{$ \hat \brcurs$}}}
+
 \newcommand{\normfig}[1]{\includegraphics[width=0.5\textwidth]{#1}}
 \newcommand{\normfigL}[1]{\includegraphics[width=0.8\textwidth]{#1}}
 \newcommand{\normfigXL}[1]{\includegraphics[width=\textwidth]{#1}}
@@ -90,10 +91,10 @@
 \subfile{./Ch/Wave/Dispersion/Disp.tex}\clearpage
 
 \chapter*{Optics}
-\subsection*{Introduction}
+\section*{Introduction}
 \subfile{./Ch/Optics/Intro/intro.tex}\clearpage
 
-\subsection*{Optical Geometry}
+\section*{Optical Geometry}
 \subfile{./Ch/Optics/Geometry/Geometry.tex}\clearpage
 \printbibliography
 \end{document}

@@ -54,7 +54,7 @@ The image focus is defined as the image distance when the object is at infinity
 \end{figure}
 The equation for lenses equation, also called the lens-maker equation, is written as 
 \begin{equation*}
-    \frac{1}{s_0}+\frac{1}{s_i}=(n_l-1)\left(\frac{1}{R_1}\frac{1}{R_2}\right)
+    \frac{1}{s_0}+\frac{1}{s_i}=(n_l-1)\left(\frac{1}{R_1}-\frac{1}{R_2}\right)
 \end{equation*}
 or simply
 \begin{equation*}
@@ -80,47 +80,56 @@ As for the longitudinal magnification
 \end{equation*}
 
 \subsubsection*{Sign convention.} All quantities used before are defined to be positive.
-\begin{longtable}{c | c | c}
-    \caption*{Table: Sign convention for lenses with respect to light}\\
-    \hline
-    Quantities & Positive & Negative\\ 
-    \hline\hline
-    $s_o,\;f_o$& front of $V $ & behind of $V $ \\ 
-    $x_0$& front of $F_o $ & behind of $F_o $\\
-    $s_i,\;f_i$& behind of $V $ & front of $V $\\
-    $x_f$& behind of $F_i $ & front of $F_ii $\\
-    $R$& $C$ is behind of $V $ & $C$ is front of $V $\\
-    $y_o,\;y_i$& above optical axis &below optical axis\\
-    \hline
-\end{longtable}
 
-\subsubsection*{Image formed by lenses.} Summarized as follows. One for convex lenses.
-\begin{longtable}{c | c | c | c | c}
-    \caption*{Table: Images formed by convex lenses}\\
-    \hline
-    Object & \multicolumn{4}{c}{Image}\\
-    \hline
-    Location & Type & Location & Orientation & Size\\
-    \hline\hline
-    $s_o>2f$ &Real &$f<s_i<2f$ &Inverted &Minified \\
-    $s_0=2f$ &Real &$s_i=2f$ &Inverted &Same \\
-    $f<s_o<2f$ &Real &$s_i>2f$ &Inverted &Magnified \\
-    $s_o=f$ & &$\pm \infty$ &Inverted & \\
-    $s_0<f$ &Virtual &$|s_i|>s_o$ &Erect &Magnified \\
-    \hline
-\end{longtable}
+\begin{table}
+    \centering
+    \caption*{Table: Sign convention for lenses with respect to light}
+    \begin{tabular}{c c c}
+        \toprule
+        Quantities & Positive & Negative\\ 
+        \midrule
+        $s_o,\;f_o$& front of $V $ & behind of $V $ \\ 
+        $x_0$& front of $F_o $ & behind of $F_o $\\
+        $s_i,\;f_i$& behind of $V $ & front of $V $\\
+        $x_f$& behind of $F_i $ & front of $F_ii $\\
+        $R$& $C$ is behind of $V $ & $C$ is front of $V $\\
+        $y_o,\;y_i$& above optical axis &below optical axis\\
+        \bottomrule        
+    \end{tabular}
+\end{table}
 
-And other for concave lenses.
-\begin{longtable}{c | c | c | c | c}
-    \caption*{Table: Images formed by concave lenses}\\
-    \hline
-    Object & \multicolumn{4}{c}{Image}\\
-    \hline
-    Location & Type & Location & Orientation & Size\\
-    \hline\hline
-    Anywhere &Virtual &$\begin{matrix}|s_i|<f \\|s_i|<s_o\end{matrix}$ &Erect &Minified \\
-    \hline
-\end{longtable}
+\subsubsection*{Image formed by lenses.} Summarized by tables.
+\begin{table}
+    \centering
+    \caption*{Table: Images formed by convex lenses}
+    \begin{tabular}{ccccc}
+        \toprule
+        Object & \multicolumn{4}{c}{Image}\\
+        \midrule
+        Location & Type & Location & Orientation & Size\\
+        \midrule
+        $s_o>2f$ &Real &$f<s_i<2f$ &Inverted &Minified \\
+        $s_0=2f$ &Real &$s_i=2f$ &Inverted &Same \\
+        $f<s_o<2f$ &Real &$s_i>2f$ &Inverted &Magnified \\
+        $s_o=f$ & &$\pm \infty$ & & \\
+        $s_0<f$ &Virtual &$|s_i|>s_o$ &Erect &Magnified \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption*{Table: Images formed by concave lenses}
+    \begin{tabular}{ccccc}
+        \toprule
+        Object & \multicolumn{4}{c}{Image}\\
+        \midrule
+        Location & Type & Location & Orientation & Size\\
+        \midrule
+        Anywhere &Virtual &$\begin{matrix}|s_i|<f \\|s_i|<s_o\end{matrix}$ &Erect &Minified \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 
 \subsubsection*{Derivation.} Thin lenses can be considered as two spherical surface, one is convex while other is convex. Now suppose we have lens of index $n_l$ surrounded by medium of index $n_m$. The position of object $s_{o1}$ and image $s_{i1}$ for the first surface is given by 
@@ -213,19 +222,22 @@ To obtain the expression for lateral magnification, we write the Newtonian form 
 
 \subsection*{Mirror}
 
-\subsubsection*{Sign convention.} Listed as follows.
-\begin{longtable}{c | c | c}
-    \caption*{Table: Sign convention for lenses with respect to light}\\
-    \hline
-    Quantities & Positive & Negative\\ 
-    \hline\hline
-    $s_o$& front of $V $ & behind of $V $ \\ 
+\subsubsection*{Sign convention.} See table.
+\begin{table}
+    \centering
+    \caption*{Table: Sign convention for lenses with respect to light}
+    \begin{tabular}{ccc }
+        \toprule
+        Quantities & Positive & Negative\\ 
+        \midrule
+        $s_o$& front of $V $ & behind of $V $ \\ 
     $s_i$& front of $V $ & behind of $V $\\
     $f$& concave & convex \\
     $R$& $C$ is behind of $V $ & $C$ is front of $V $\\
     $y_o,\;y_i$& above optical axis &below optical axis\\
-    \hline
-\end{longtable}
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \subsubsection*{Planar mirrors.} The equation for planar mirrors is simply
 \begin{equation*}
@@ -268,6 +280,39 @@ Notice that $f_o=f_i$, so for convinience's sake we write
     \frac{1}{f}=-\frac{R}{2}
 \end{equation*}
 
+\subsubsection*{Image.} Simply the opposite of lenses 
+\begin{table}
+    \centering
+    \caption*{Table: Images formed by concave lenses}
+    \begin{tabular}{ccccc}
+        \toprule
+        Object & \multicolumn{4}{c}{Image}\\
+        \midrule
+        Location & Type & Location & Orientation & Size\\
+        \midrule
+        $s_o>2f$ &Real &$f<s_i<2f$ &Inverted &Minified \\
+        $s_0=2f$ &Real &$s_i=2f$ &Inverted &Same \\
+        $f<s_o<2f$ &Real &$s_i>2f$ &Inverted &Magnified \\
+        $s_o=f$ & &$\pm \infty$ & & \\
+        $s_0<f$ &Virtual &$|s_i|>s_o$ &Erect &Magnified \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption*{Table: Images formed by convex lenses}
+    \begin{tabular}{ccccc}
+        \toprule
+        Object & \multicolumn{4}{c}{Image}\\
+        \midrule
+        Location & Type & Location & Orientation & Size\\
+        \midrule
+        Anywhere &Virtual &$\begin{matrix}|s_i|<f \\|s_i|<s_o\end{matrix}$ &Erect &Minified \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 \subsection*{Prism}
 One of the most important function of the prism is to measure the index of refraction. For a refraction Prism, the refraction index of prism is given by 
 \begin{equation*}
@@ -284,6 +329,12 @@ or in other words, when the ray traverses the prism symmetrically or parallel to
 \begin{equation*}
     \delta=\theta_{i1}+\arcsin\left[ \sin (\alpha)\left(n^2-\sin^2\theta_{i1}\right)^{1/2}-\sin\theta_{i1}\cos\alpha\right]
 \end{equation*}
+
+\begin{figure}
+    \centering
+    \normfigXL{../Rss/Optics/Geometry/PrismGeometry}
+    \caption*{Figure: Prism geometry.}
+\end{figure}
 
 \subsubsection*{Derivation.} Consider ray entering prism at angle $\theta_{i1}$. From the geometry of prism, the total deviation is the sum of deviation due to the first interface and the second interface
 \begin{equation*}
