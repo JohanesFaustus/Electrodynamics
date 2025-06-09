@@ -1,0 +1,29 @@
+\documentclass[../../../main.tex]{subfiles}
+\begin{document}
+\subsection*{Charge Conservation}
+The continuity equation for charge is 
+\begin{equation*}
+    \frac{\partial \rho}{\partial \nabla \cdot \mathbf{J}}
+\end{equation*}
+This simply say that the charge in some region changes, then exactly that amount of charge must have passed in or out through the surface.
+
+\subsubsection*{Derivation.}
+The charge inside volume is 
+\begin{equation*}
+    Q=\int_\mathcal{V}\rho\; d\tau
+\end{equation*}
+whereas local conservation of charge
+\begin{equation*}
+    \frac{dQ}{dt}=-\oint_\mathcal{V}\mathbf{J}\cdot\;d\tau
+\end{equation*}
+Using the previous equation and divergence theorem
+\begin{equation*}
+   \int_\mathcal{V}\frac{\partial \rho}{\partial t}\d\tau -\int_\mathcal{V}\nabla\cdot \mathbf{J}\;d\tau 
+\end{equation*}
+Thus 
+\begin{equation*}
+    \frac{\partial\rho}{\partial t}=-\nabla\cdot\mathbf{J}
+\end{equation*}
+
+
+\end{document}
