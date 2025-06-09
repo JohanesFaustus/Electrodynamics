@@ -3,7 +3,7 @@
 \subsection*{Charge Conservation}
 The continuity equation for charge is 
 \begin{equation*}
-    \frac{\partial \rho}{\partial \nabla \cdot \mathbf{J}}
+    \frac{\partial \rho}{\partial t} =\nabla \cdot \mathbf{J}
 \end{equation*}
 This simply say that the charge in some region changes, then exactly that amount of charge must have passed in or out through the surface.
 
@@ -18,12 +18,88 @@ whereas local conservation of charge
 \end{equation*}
 Using the previous equation and divergence theorem
 \begin{equation*}
-   \int_\mathcal{V}\frac{\partial \rho}{\partial t}\d\tau -\int_\mathcal{V}\nabla\cdot \mathbf{J}\;d\tau 
+   \int_\mathcal{V}\frac{\partial \rho}{\partial t}d\tau -\int_\mathcal{V}\nabla\cdot \mathbf{J}\;d\tau 
 \end{equation*}
 Thus 
 \begin{equation*}
     \frac{\partial\rho}{\partial t}=-\nabla\cdot\mathbf{J}
 \end{equation*}
 
+\subsection*{Energy Conservation}
+The energy conservation is stated by the Poynting theorem 
+\begin{equation*}
+    \frac{dW}{dt}=-\frac{d}{dt}\int_\mathcal{V}u\;d\tau -\oint_\mathcal{S}\mathbf{S}\cdot d\mathbf{a}
+\end{equation*}
+This theorem says that the work done on the charges by the electromagnetic force is equal to the decrease in energy remaining in the ﬁelds, less the energy that ﬂowed out through the surface.
+From this, Poynting vector 
+\begin{equation*}
+    \mathbf{S}\equiv\frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}
+\end{equation*}
+is defined as the energy per unit time, per unit area, transported by the ﬁelds. 
+Energy flux density in other words.
 
+The local continuity equation for energy reads 
+\begin{equation*}
+    \frac{\partial u}{\partial t}=-\nabla\cdot\mathbf{S}
+\end{equation*}
+Here, $u$ plays the role of $\rho$ and $\mathbf{S}$ plays $\mathbf{J}$.
+Like the case of charge, this equation state that if energy density decreases at a point, it must be due to energy flowing out of that region.
+\subsubsection*{Derivation.}
+Recall the Lorentz force law 
+\begin{equation*}
+    \mathbf{F}\cdot d\mathbf{l}=q(\mathbf{E}+\mathbf{v}\times \mathbf{B})\cdot\mathbf{v}\;dt=q\mathbf{E}\cdot v;dt
+\end{equation*}
+With $q=\rho\;d\tau$ and $\rho\mathbf{v}=\mathbf{J}$
+\begin{equation*}
+    \frac{dW}{dt}=\int \mathbf{E}\cdot\mathbf{J}\;d\tau
+\end{equation*}
+Using the curl of magnetic field for the current density 
+\begin{align*}
+    \nabla\times\mathbf{B}&=\mu_0\mathbf{J}+\mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}\\
+    J&=\frac{1}{\mu_0}\nabla\times \mathbf{B}-\epsilon_0\frac{\partial \mathbf{E}}{\partial t}
+\end{align*}
+we write the integrand as 
+\begin{equation*}
+    \mathbf{E}\cdot\mathbf{J}=\frac{1}{\mu_0}\mathbf{E}\cdot\nabla\times\mathbf{B}-\epsilon_0\mathbf{E}\cdot\frac{\partial \mathbf{E}}{\partial t}
+\end{equation*}
+From the identity 
+\begin{equation*}
+    \nabla\cdot(\A\times\B)=\B(\nabla\times\A)-\A\cdot(\nabla\times\B)
+\end{equation*}
+we write 
+\begin{equation*}
+    \mathbf{E}\cdot(\nabla\times\mathbf{B})=\mathbf{B}\cdot(\nabla\times\mathbf{E})-\nabla\cdot(\mathbf{E}\times\mathbf{B})
+\end{equation*}
+to write the first term of the $\mathbf{E}\cdot\mathbf{J}$ as 
+\begin{equation*}
+    \mathbf{E}\cdot\nabla\times\mathbf{B}=-\mathbf{B}\frac{\partial \mathbf{B}}{\partial t}-\nabla\cdot(\mathbf{E}\times \mathbf{B})
+\end{equation*}
+where we have used the curl of $\mathbf{E}$. 
+Noting that 
+\begin{equation*}
+    \A\cdot\frac{\partial\A}{\partial t}=\frac{1}{2}\frac{\partial A^2}{\partial t}
+\end{equation*}
+we then write
+\begin{align*}
+    \mathbf{E}\cdot\mathbf{J}&=\frac{1}{2\mu_0}\frac{\partial \mathbf{B^2}}{\partial t} -\frac{1}{\mu_0}\nabla\cdot\mathbf{E}\cdot\mathbf{B} -\frac{1}{2}\epsilon_0\frac{\partial \mathbf{E}^2}{\partial t}\\
+    \mathbf{E}\cdot\mathbf{J}&=-\frac{1}{2}\frac{\partial}{\partial t}\left(\epsilon_0E^2+\frac{1}{\mu_0}B^2\right)-\frac{1}{\mu_0}\nabla\cdot\mathbf{E}\times\mathbf{B}
+\end{align*} 
+
+Thus, power now may be expressed as 
+\begin{equation*}
+   \frac{dW}{dt}=-\int\frac{1}{2}\frac{\partial}{\partial t}\left(\epsilon_0E^2+\frac{1}{\mu_0}B^2\right)\;d\tau -\int\frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}\cdot d\mathbf{a}
+\end{equation*}
+On using the defined energy density and Poynting vector
+\begin{equation*}
+    \frac{dW}{dt}=-\int\frac{1}{2}\frac{\partial u}{\partial t}\;d\tau -\oint\frac{1}{\mu_0}\mathbf{S}\cdot d\mathbf{a} 
+\end{equation*}
+
+If there is no work done on charges, for example an empty with no charges whatsoever, we have 
+\begin{equation*}
+    \int \frac{\partial u}{\partial t}\;d\tau=-\oint \mathbf{S}\cdot d\mathbf{a}= -\int(\nabla\cdot\mathbf{S})\;d\tau
+\end{equation*}
+which yield the continuity equation for energy 
+\begin{equation*}
+    \frac{\partial u}{\partial t}=-\nabla\cdot\mathbf{S}
+\end{equation*}
 \end{document}
