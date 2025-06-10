@@ -1,0 +1,45 @@
+\documentclass[../../../main.tex]{subfiles}
+\begin{document}
+\subsection*{Wave Equation}
+The wave equation for electromagnetic waves are 
+\begin{equation*}
+    \nabla^2\mathbf{E}=\mu_0\epsilon_0\frac{\partial^2\mathbf{E}}{\partial t^2},\quad\text{and}\quad \nabla^2\mathbf{B}=\mu_0\epsilon_0\frac{\partial^2\mathbf{B}}{\partial t^2},
+\end{equation*}
+Comparing to the classical wave equation, we have the speed at which the waves travel
+\begin{equation*}
+    v=\frac{1}{\sqrt{\mu_0\epsilon_0}}
+\end{equation*}
+
+\subsubsection*{Derivation.}
+The Maxwell equations in empty space transform
+\begin{gather*}
+    \nabla\cdot\mathbf{E}=0\\
+    \nabla\cdot\mathbf{B}=0\\
+    \nabla\times\mathbf{E}=-\frac{\partial \mathbf{E}}{\partial t}\\
+    \nabla\times\mathbf{B}=\mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}
+\end{gather*}
+Applying curl into the curl of $\mathbf{E}$
+\begin{equation*}
+    \nabla\times\nabla\times\mathbf{E}=\nabla(\nabla\cdot\mathbf{E})-\nabla^2\mathbf{E}=-\nabla^2\mathbf{E}
+\end{equation*}
+We then equate it with 
+\begin{equation*}
+    \nabla\times\nabla\times\mathbf{E}=\nabla\times\left(-\frac{\partial \mathbf{B}}{\partial t}\right)=-\frac{\partial}{\partial t}\nabla\times\mathbf{B}=-\mu_0\epsilon_0\frac{\partial^2\mathbf{B}}{\partial t^2}
+\end{equation*}
+to obtain the wave equation for electric wave 
+\begin{equation*}
+    \nabla^2\mathbf{E}=\mu_0\epsilon_0\frac{\partial^2\mathbf{E}}{\partial t^2}    
+\end{equation*}
+For the case of magnetic wave, we apply the curl into the curl of $\mathbf{B}$
+\begin{equation*}
+    \nabla\times\nabla\times\mathbf{B}=\nabla(\nabla\cdot\mathbf{B})-\nabla^2\mathbf{B}=-\nabla^2\mathbf{B}
+\end{equation*}
+and equate it with
+\begin{equation*}
+    \nabla\times\nabla\times\mathbf{B}=\nabla\times\left(\mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}\right)=\mu_0\epsilon_0\frac{\partial}{\partial t}\nabla\times\mathbf{E}=-\mu_0\epsilon_0\frac{\partial^2\mathbf{B}}{\partial t^2}
+\end{equation*}
+to obtain
+\begin{equation*}
+    \nabla^2\mathbf{B}=\mu_0\epsilon_0\frac{\partial^2\mathbf{B}}{\partial t^2}    
+\end{equation*}
+\end{document}
