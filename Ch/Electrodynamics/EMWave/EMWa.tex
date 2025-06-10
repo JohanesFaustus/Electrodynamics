@@ -42,4 +42,55 @@ to obtain
 \begin{equation*}
     \nabla^2\mathbf{B}=\mu_0\epsilon_0\frac{\partial^2\mathbf{B}}{\partial t^2}    
 \end{equation*}
+
+\subsection*{Monochromatic Plane Waves}
+The field of monochromatic plane waves are expressed as 
+\begin{gather*}
+    \mathbf{E}(z,t)=\mathbf{E}_0e^{i(kz-\omega t)}\\
+    \mathbf{B}(z,t)=\mathbf{B}_0e^{i(kz-\omega t)}
+\end{gather*}
+This wave will propagate on the $z$ axis, but we can generalize it using wave vector $\mathbf{k}$ which points to direction of propagation and has the magnitude of wave number $k$
+\begin{equation*}
+    \mathbf{E}(\mathbf{r},t)=E_0e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)}\;\mathbf{\hat{n}},\quad\text{and}\quad
+    \mathbf{B}(\mathbf{r},t)=B_0e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)}\;\mathbf{\hat{n}}
+\end{equation*}
+where $\mathbf{\hat{n}}$ is the polarization vector and that $\mathbf{\hat{n}}\cdot\mathbf{\hat{k}}=0$ since electromagnetic waves are transversal.
+
+Maxwell equation also acts as constrain that yield the relation 
+\begin{equation*}
+    \mathbf{B}=\frac{1}{c}\;\mathbf{\hat{z}}\times\mathbf{E}_0
+\end{equation*}
+or the general form 
+\begin{equation*}
+    \mathbf{B}(\mathbf{r},t)=\frac{1}{c}\;\mathbf{\hat{k}}\times\mathbf{E}(\mathbf{r},t)
+\end{equation*}
+
+\subsubsection*{Derivation.}
+Evaluate the curl of electric field for this case 
+\begin{align*}
+    \nabla\times\mathbf{E}&=
+    \begin{vmatrix}
+         \mathbf{\hat{x}}& \mathbf{\hat{y}}& \mathbf{\hat{z}}\\
+        \dfrac{\partial }{\partial x}&\dfrac{\partial}{\partial y}&\dfrac{\partial }{\partial z}\\
+        E_x&E_y&0
+    \end{vmatrix}=-\frac{\partial E_y}{\partial z}\;\mathbf{\hat{x}}+\frac{\partial E_x}{\partial z}\;\mathbf{\hat{y}}\\
+    \nabla\times\mathbf{E}&=-E_{0y}ike^{i(kz-\omega t)}\mathbf{\hat{x}}-E_{0x}ike^{i(kz-\omega t)}\mathbf{\hat{y}}
+\end{align*}
+and the changes in magnetic field
+\begin{equation*}
+    -\frac{\partial \mathbf{B}}{\partial t}=-B_{0x}i\omega e^{i(kz-\omega t)}\mathbf{\hat{x}}-B_{0y}i\omega e^{i(kz-\omega t)}\mathbf{\hat{y}}
+\end{equation*}
+According to Maxwell equation, we can equate both to obtain 
+\begin{equation*}
+    -E_{0y}k=B_{0x}\omega,\quad\text{and}\quad E_{0x}k=B_{0y}\omega
+\end{equation*}
+or 
+\begin{equation*}
+    \mathbf{B}_0=\frac{k}{\omega}\;\mathbf{\hat{z}}\times\mathbf{E}_0
+\end{equation*}
+since
+\begin{align*}
+    B_{0x}\mathbf{\hat{x}}+  B_{0y}\mathbf{\hat{y}}&= \frac{1}{c}\;\mathbf{\hat{z}}\times(E_{0x}\mathbf{\hat{x}}+  E_{0y}\mathbf{\hat{y}})\\
+    B_{0x}\mathbf{\hat{x}}+  B_{0y}\mathbf{\hat{y}}&= \frac{1}{c}(E_{0x}\mathbf{\hat{y}}-  E_{0y}\mathbf{\hat{x}})
+\end{align*}
 \end{document}
