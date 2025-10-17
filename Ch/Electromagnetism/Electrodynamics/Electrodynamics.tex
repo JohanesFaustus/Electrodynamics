@@ -5,7 +5,7 @@ To make a current ﬂow, you have to push on the charges. For most substances, t
 \begin{equation*}
     \mathbf{J} = \sigma \mathbf{f}
 \end{equation*}
-The proportionality factor $\sigma$ (not to be confused with surface charge) is an empirical constant that varies from one material to another; it's called the conductivity of the medium.  Notice that even insulators conduct slightly, though the conductivity of a metal is astronomically greater; in fact, for most purposes metals can be regarded as perfect conductors, with $\sigma = \infty$, while for insulators 
+The proportionality factor $\sigma$ (not to be confused with surface charge) is an empirical constant that varies from one material to another; it's called the conductivity of the medium.  Notice that even insulators conduct slightly, though the conductivity of a metal is astronomically greater; in fact, for most purposes metals can be regarded as perfect conductors, with $\sigma = \infty$, while for insulators
 we can pretend $\sigma = 0$.
 
 In principle, the force that drives the charges to produce the current could be anything. For our purposes, though, it's usually an electromagnetic force that does the job. In this
@@ -26,8 +26,8 @@ I know: you're confused because I said $\mathbf{E} = 0$ inside a conductor. But 
 with boundary conditions
 \begin{equation*}
     \begin{cases}
-        V(0)&=0\\
-        V(z)&=V_0
+        V(0) & =0   \\
+        V(z) & =V_0
     \end{cases}
 \end{equation*}
 Laplace's equation in one dimensional has the solution
@@ -44,7 +44,7 @@ The uniqueness theorem guarantees that this is the solution. The corresponding �
 \end{equation*}
 which is indeed uniform. $\blacksquare$
 
-The more familiar version of Ohm's law is 
+The more familiar version of Ohm's law is
 \begin{equation*}
     V=IR
 \end{equation*}
@@ -72,7 +72,7 @@ Within an ideal source of emf, the net force on the charges is zero, so $\mathbf
 where we extend the integral to the entire loop because $\mathbf{f}_s = 0 $ outside the source.
 
 \subsection{Motional emf}
-The ﬂux rule for motional emf is 
+The ﬂux rule for motional emf is
 \begin{equation*}
     \upvarepsilon=-\frac{d\Phi}{dt}
 \end{equation*}
@@ -90,7 +90,7 @@ Therefore
 \begin{equation*}
     d\Phi=\oint\mathbf{B}\cdot  (\mathbf{v} \times d\mathbf{l}) dt
 \end{equation*}
-Since $\mathbf{v}=\mathbf{w}-\mathbf{u}$ and $\mathbf{u}$ is parallel to d\textbf{l}, we can just as well write this as 
+Since $\mathbf{v}=\mathbf{w}-\mathbf{u}$ and $\mathbf{u}$ is parallel to d\textbf{l}, we can just as well write this as
 \begin{equation*}
     \frac{d\Phi}{dt}=\oint\mathbf{B}\cdot  (\mathbf{w} \times d\mathbf{l})
 \end{equation*}
@@ -126,14 +126,14 @@ then \textbf{E} is related to the change in \textbf{B} by the equation
 \begin{equation*}
     \oint \mathbf{E}\cdot d\mathbf{l}=-\int \frac{\partial \mathbf{B}}{\partial t}\cdot d\mathbf{a}
 \end{equation*}
-This is Faraday's law, in integral form. We can convert it to differential form by 
+This is Faraday's law, in integral form. We can convert it to differential form by
 applying Stokes' theorem:
 \begin{equation*}
     \nabla\times \mathbf{E}=-\frac{\partial \mathbf{B}}{\partial t}
 \end{equation*}
 
-For the first experiments, he pulled a loop of wire to the right through a magnetic ﬁeld. A current ﬂowed in the loop. This is, of course, is a straightforward case of motional emf $\upvarepsilon=-d\Phi/dt$. It’s  Lorentz force law at work; the emf is magnetic. For the second experiments, He moved the magnet to the left, holding the loop still. Again, a current ﬂowed in the loop. This is what causes Faraday to think that changing magnetic ﬁeld induces an electric ﬁeld. The third, With both the loop and the magnet at rest, he changed the strength of the ﬁeld (he used an electromagnet, and varied the current 
-in the coil). Once again, current ﬂowed in the loop. Because the magnetic field changes, it induces electric field, giving rise to an emf $-d\Phi/dt$. 
+For the first experiments, he pulled a loop of wire to the right through a magnetic ﬁeld. A current ﬂowed in the loop. This is, of course, is a straightforward case of motional emf $\upvarepsilon=-d\Phi/dt$. It’s  Lorentz force law at work; the emf is magnetic. For the second experiments, He moved the magnet to the left, holding the loop still. Again, a current ﬂowed in the loop. This is what causes Faraday to think that changing magnetic ﬁeld induces an electric ﬁeld. The third, With both the loop and the magnet at rest, he changed the strength of the ﬁeld (he used an electromagnet, and varied the current
+in the coil). Once again, current ﬂowed in the loop. Because the magnetic field changes, it induces electric field, giving rise to an emf $-d\Phi/dt$.
 
 Viewed in this light, it is quite astonishing that all three processes yield the same formula for the emf. In fact, it was precisely this “coincidence” that led Einstein to the special theory of relativity—he sought a deeper understanding of what is, in classical electrodynamics, a peculiar accident. But that’s a story for another time.
 \begin{figure*}[b]
@@ -146,7 +146,7 @@ Viewed in this light, it is quite astonishing that all three processes yield the
 \begin{equation*}
     \textbf{Nature abhors a change in ﬂux.}
 \end{equation*}
-The induced current will ﬂow in such a direction that the ﬂux it produces tends to cancel the change. 
+The induced current will ﬂow in such a direction that the ﬂux it produces tends to cancel the change.
 
 \subsection{Inductance}
 Suppose you have two loops of wire, at rest. If you run a steady current $I_1$ around loop 1, it produces a magnetic ﬁeld $\mathbf{B}_1$. Some ﬁeld lines pass through loop 2; let  $\Phi_2$ be the ﬂux of $B_1$ through 2. You might have a tough time actually calculating $\mathbf{B}_1$, but a glance at the Biot-Savart law
@@ -157,16 +157,16 @@ reveals one signiﬁcant fact about this ﬁeld: It is proportional to the curre
 \begin{equation*}
     \Phi_2=\int \mathbf{B}_1\cdot d\mathbf{a}
 \end{equation*}
-Thus 
+Thus
 \begin{equation*}
     \Phi_2 = M_{21} I_1
 \end{equation*}
 where $M_21$ is the constant of proportionality; it is known as the mutual inductance of the two loops. Expressing the ﬂux in terms of the vector potential, and invoking Stokes’ theorem
 \begin{align*}
-    \Phi_2 &=\int \nabla\times\mathbf{A}_1\cdot d\mathbf{a}_2\\
-    &=\oint \mathbf{A}_1\cdot d\mathbf{l}_2\\
-    &=\oint \frac{\mu_0I_1}{4\pi}\oint\frac{d\mathbf{l}_1}{\rcurs}\cdot d\mathbf{l}_2\\
-    \Phi_2 &=\frac{\mu_0}{4\pi} \oint\oint\frac{d\mathbf{l}_1\cdot d\mathbf{l}_2}{\rcurs}I_1
+    \Phi_2 & =\int \nabla\times\mathbf{A}_1\cdot d\mathbf{a}_2                                \\
+           & =\oint \mathbf{A}_1\cdot d\mathbf{l}_2                                           \\
+           & =\oint \frac{\mu_0I_1}{4\pi}\oint\frac{d\mathbf{l}_1}{\rcurs}\cdot d\mathbf{l}_2 \\
+    \Phi_2 & =\frac{\mu_0}{4\pi} \oint\oint\frac{d\mathbf{l}_1\cdot d\mathbf{l}_2}{\rcurs}I_1
 \end{align*}
 Evidently
 \begin{equation*}
@@ -175,16 +175,16 @@ Evidently
 This is the Neumann formula; which is not very useful for practical calculations, but it does reveal two important things about mutual inductance:
 \begin{enumerate}
     \item $M_21$ is a purely geometrical quantity, having to do with the sizes, shapes,
-    and relative positions of the two loops.
+          and relative positions of the two loops.
     \item The integral  is unchanged if we switch the roles of loops 1 and 2; it follows that\begin{equation*}
-        M_{21} = M_{12}
-    \end{equation*} We may as well drop the subscripts and call them both M.
-\end{enumerate} 
+              M_{21} = M_{12}
+          \end{equation*} We may as well drop the subscripts and call them both M.
+\end{enumerate}
 Suppose, now, that you vary the current in loop 1. The ﬂux through loop 2 will vary accordingly, and Faraday’s law says this changing ﬂux will induce an emf in loop 2:
 \begin{equation*}
     \upvarepsilon=-\frac{\Phi_2}{dt}=-M\frac{dI_1}{dt}
 \end{equation*}
-Meaning, very time you change the current in loop 1, an induced current ﬂows in loop 2--even though there are no wires connecting them! 
+Meaning, very time you change the current in loop 1, an induced current ﬂows in loop 2--even though there are no wires connecting them!
 
 A changing current not only induces an emf in any nearby loops, it also induces an emf in the source loop itself. Once again, the ﬁeld (and therefore also the ﬂux) is proportional to the current:
 \begin{equation*}
@@ -222,17 +222,17 @@ per unit volume. Although some might prefer to say that the energy is stored in 
 \subsection{Maxwell's Equation}
 Maxwell's equations, or Maxwell-Heaviside equations, are as follows
 \begin{align*}
-    \nabla\cdot\mathbf{E}&=\frac{1}{\epsilon_0}\rho\\
-    \nabla\cdot\mathbf{B}&=0\\
-    \nabla\times\mathbf{E}&=-\frac{\partial \mathbf{B}}{\partial t}\\
-    \nabla\times\mathbf{B}&=\mu_0\mathbf{J}+\mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}
+    \nabla\cdot\mathbf{E}  & =\frac{1}{\epsilon_0}\rho                                              \\
+    \nabla\cdot\mathbf{B}  & =0                                                                     \\
+    \nabla\times\mathbf{E} & =-\frac{\partial \mathbf{B}}{\partial t}                               \\
+    \nabla\times\mathbf{B} & =\mu_0\mathbf{J}+\mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}
 \end{align*}
-or in integral form 
+or in integral form
 \begin{align*}
-    \oint \mathbf{E}\cdot d\mathbf{a}&=\frac{1}{\epsilon_0}Q_\text{enc}\\
-    \oint \mathbf{B}\cdot d\mathbf{a}&=0\\
-    \oint \mathbf{E}\cdot d\mathbf{l}&=-\int \frac{\partial \mathbf{B}}{\partial t}\cdot d\mathbf{a}\\
-    \oint \mathbf{B}\cdot d\mathbf{l}&=\mu_0\int\mathbf{J}\cdot d\mathbf{a}+ \mu_0\epsilon_0 \int\frac{\partial \mathbf{E}}{\partial t}\cdot d\mathbf{a}
+    \oint \mathbf{E}\cdot d\mathbf{a} & =\frac{1}{\epsilon_0}Q_\text{enc}                                                                                  \\
+    \oint \mathbf{B}\cdot d\mathbf{a} & =0                                                                                                                 \\
+    \oint \mathbf{E}\cdot d\mathbf{l} & =-\int \frac{\partial \mathbf{B}}{\partial t}\cdot d\mathbf{a}                                                     \\
+    \oint \mathbf{B}\cdot d\mathbf{l} & =\mu_0\int\mathbf{J}\cdot d\mathbf{a}+ \mu_0\epsilon_0 \int\frac{\partial \mathbf{E}}{\partial t}\cdot d\mathbf{a}
 \end{align*}
 
 \begin{figure*}[b]
@@ -258,4 +258,29 @@ If we were to combine $\epsilon_0 \partial \mathbf{E}/\partial t$ with \textbf{J
 
 Apart from curing the defect in Ampère’s law, Maxwell’s term has a certain aesthetic appeal: Just as a changing magnetic ﬁeld induces an electric ﬁeld (Faraday’s law), a changing electric ﬁeld induces a magnetic ﬁeld.
 
+\subsection{Maxwell’s Equations in Matter}
+In terms of free charges and currents, Maxwell’s equations read
+\begin{align*}
+    \nabla \cdot \mathbf{D}  & = \rho_f,                                                \\
+    \nabla \cdot \mathbf{B}  & = 0,                                                     \\
+    \nabla \times \mathbf{E} & = -\frac{\partial \mathbf{B}}{\partial t},               \\
+    \nabla \times \mathbf{H} & = \mathbf{J}_f + \frac{\partial \mathbf{D}}{\partial t}.
+\end{align*}
+and their integral form
+\begin{align*}
+    \oint_{\mathcal{S}} \mathbf{D} \cdot d\mathbf{A} & = Q_{f_\text{enc}}                                                                          \\
+    \oint_{\mathcal{S}} \mathbf{B} \cdot d\mathbf{A} & = 0,                                                                                        \\
+    \oint_{\mathcal{P}} \mathbf{E} \cdot d\mathbf{l} & = -\frac{d}{dt} \int_S \mathbf{B} \cdot d\mathbf{A},                                        \\
+    \oint_{\mathcal{P}} \mathbf{H} \cdot d\mathbf{l} & = \int_S \mathbf{J}_f \cdot d\mathbf{A} + \frac{d}{dt} \int_S \mathbf{D} \cdot d\mathbf{A}.
+\end{align*}
+where $\mathcal{S}$ denote integration over any closed surface $\mathcal{S}$ and $\mathcal{P }$ denote integration over any surface $\mathcal{S }$ bounded by the closed loop $\mathcal{P}$.
+
+\subsubsection{Boundary Conditions}
+In the case of linear media, the boundary conditions can be expressed in terms of $\mathbf{E}$ and $\mathbf{B}$ alone
+\begin{align}
+    \epsilon_1 E_1^{\perp} - \epsilon_2 E_2^{\perp}                                     & =  \sigma_f                             \\
+    \mathbf{E}_1^{\parallel} - \mathbf{E}_2^{\parallel}                                 & =  0                                    \\
+    B_1^{\perp} - B_2^{\perp}                                                           & =  0                                    \\
+    \frac{1}{\mu_1} \mathbf{B}_1^{\parallel} - \frac{1}{\mu_2} \mathbf{B}_2^{\parallel} & =  \mathbf{K}_f \times \hat{\mathbf{n}} \\
+\end{align}
 \end{document}
