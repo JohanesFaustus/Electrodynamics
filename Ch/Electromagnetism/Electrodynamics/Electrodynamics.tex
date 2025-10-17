@@ -1,6 +1,6 @@
 \documentclass[../../../main.tex]{subfiles}
 \begin{document}
-\subsection*{Ohm's Law}
+\subsection{Ohm's Law}
 To make a current ﬂow, you have to push on the charges. For most substances, the current density \textbf{J} is proportional to the force per unit charge, \textbf{f}:
 \begin{equation*}
     \mathbf{J} = \sigma \mathbf{f}
@@ -54,7 +54,7 @@ Notice that the proportionality between $V$ and $I$ is a direct consequence of $
 \end{equation*}
 This is the Joule heating law.
 
-\subsection*{Electromotive Force}
+\subsection{Electromotive Force}
 There are really two forces involved in driving current around a circuit: the source, $\mathbf{f}_s$, which is ordinarily conﬁned to one portion of the loop (a battery, say), and an electrostatic force, which serves to smooth out the ﬂow and communicate the inﬂuence of the source to distant parts of the circuit:
 \begin{equation*}
     \mathbf{f} = \mathbf{f}_s + \mathbf{E}
@@ -71,7 +71,7 @@ Within an ideal source of emf, the net force on the charges is zero, so $\mathbf
 \end{equation*}
 where we extend the integral to the entire loop because $\mathbf{f}_s = 0 $ outside the source.
 
-\subsection*{Motional emf}
+\subsection{Motional emf}
 The ﬂux rule for motional emf is 
 \begin{equation*}
     \upvarepsilon=-\frac{d\Phi}{dt}
@@ -117,7 +117,7 @@ and the integral of $\mathbf{f}_\text{mag}$ is the emf
     \caption*{Figure:  arbitrary loop of wire at time $t$, and also a short time $dt$ later}
 \end{figure*}
 
-\subsection*{Faraday's Law}
+\subsection{Faraday's Law}
 In 1831 Michael Faraday reported on a series of experiments, which resulted in an ingenious idea: A changing magnetic ﬁeld induces an electric ﬁeld. Indeed, if (as Faraday found empirically) the emf is again equal to the rate of change of the ﬂux,
 \begin{equation*}
     \upvarepsilon=\oint \mathbf{E}\cdot d\mathbf{l}=-\frac{d\Phi}{dt}
@@ -142,13 +142,13 @@ Viewed in this light, it is quite astonishing that all three processes yield the
     \caption*{Figure: Faraday's experiments}
 \end{figure*}
 
-\subsubsection*{Lenz's Law.} Keeping track of the signs in Faraday’s law can be a real headache. But there’s a handy rule, called Lenz’s law, whose sole purpose is to help you get the directions right
+\subsubsection{Lenz's Law.} Keeping track of the signs in Faraday’s law can be a real headache. But there’s a handy rule, called Lenz’s law, whose sole purpose is to help you get the directions right
 \begin{equation*}
     \textbf{Nature abhors a change in ﬂux.}
 \end{equation*}
 The induced current will ﬂow in such a direction that the ﬂux it produces tends to cancel the change. 
 
-\subsection*{Inductance}
+\subsection{Inductance}
 Suppose you have two loops of wire, at rest. If you run a steady current $I_1$ around loop 1, it produces a magnetic ﬁeld $\mathbf{B}_1$. Some ﬁeld lines pass through loop 2; let  $\Phi_2$ be the ﬂux of $B_1$ through 2. You might have a tough time actually calculating $\mathbf{B}_1$, but a glance at the Biot-Savart law
 \begin{equation*}
     \mathbf{B}_1=\frac{\mu_0I_1}{4\pi}\int \frac{d \mathbf{l}_1 \times\hrcurs}{\rcurs^2}
@@ -196,7 +196,7 @@ The constant of proportionality $L$ is called the self inductance. If the curren
 \end{equation*}
 Inductance is measured in henries (H); a Henry is a volt-second per ampere
 
-\subsection*{Energy in Magnetic Fields}
+\subsection{Energy in Magnetic Fields}
 The work done on a unit charge by you against the back emf, in one trip around the circuit is $-\upvarepsilon$. The amount of charge per unit time passing down the wire is $I $. So the total work done per unit time is
 \begin{equation*}
     \frac{dW}{dt}=-\upvarepsilon I=LI\frac{dI}{dt}
@@ -219,7 +219,7 @@ In view of this result, we say the energy is “stored in the magnetic ﬁeld,�
 \end{equation*}
 per unit volume. Although some might prefer to say that the energy is stored in the current distribution, in the amount $\frac{1}{2}\mathbf{A}\cdot\mathbf{J}$ per unit volume.
 
-\subsection*{Maxwell's Equation}
+\subsection{Maxwell's Equation}
 Maxwell's equations, or Maxwell-Heaviside equations, are as follows
 \begin{align*}
     \nabla\cdot\mathbf{E}&=\frac{1}{\epsilon_0}\rho\\
@@ -241,7 +241,7 @@ or in integral form
     \caption*{Figure: Weird Amperian loop}
 \end{figure*}
 
-\subsubsection*{How Maxwell Fixed Ampère’s Law.} Ampère’s law is bound to fail for non-steady currents. Suppose we’re in the process of charging up a capacitor. In integral form, Ampère’s law reads
+\subsubsection{How Maxwell Fixed Ampère’s Law.} Ampère’s law is bound to fail for non-steady currents. Suppose we’re in the process of charging up a capacitor. In integral form, Ampère’s law reads
 \begin{equation*}
     \oint \mathbf{B}\cdot d\mathbf{l}=\mu_0 I_\text{enc}
 \end{equation*}

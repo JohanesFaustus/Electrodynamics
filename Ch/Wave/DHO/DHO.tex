@@ -1,6 +1,6 @@
 \documentclass[../../../main.tex]{subfiles}
 \begin{document}
-\subsection*{Equation of Motion} 
+\subsection{Equation of Motion} 
 The damping force $F_d$ acting on system is proportional to its velocity $v$ so long as $v$ is not too large. In another word
 \begin{equation*}
     F_d=-bv
@@ -29,7 +29,7 @@ Using the quadratic equation, we find the value of $D$
 The solution is therefore depend on the value of the square root term; which can either be real, imaginary or simply zero. The value of the square root also determine the cases of damping that occur on the system. 
 
 
-\subsubsection*{Light damping.} This case occur if $\gamma^2/4<\omega_0^2$, which causes the square root term to be imaginary. Let us introduce yet another constant
+\subsubsection{Light damping.} This case occur if $\gamma^2/4<\omega_0^2$, which causes the square root term to be imaginary. Let us introduce yet another constant
 \begin{equation*}
     \omega^2=\omega_0^2-\gamma^2/4
 \end{equation*}
@@ -63,19 +63,19 @@ which is called the logarithmic decrement and is a measure of this decrease.
     \caption*{Figure: Graph of $x=A_0\exp(-\gamma^2t/4)\cos \omega t$}
 \end{figure*}
 
-\subsubsection*{Heavy damping.} Heavy damping occurs when the degree of damping is sufficiently large that the system returns sluggishly to its equilibrium position without making any oscillations at all. In another words, $\gamma^2/4 > \omega_0^2$ and the square root term is real. Thus, we can say that the equation is second order differential equation with two real auxilary equation roots. The solution is
+\subsubsection{Heavy damping.} Heavy damping occurs when the degree of damping is sufficiently large that the system returns sluggishly to its equilibrium position without making any oscillations at all. In another words, $\gamma^2/4 > \omega_0^2$ and the square root term is real. Thus, we can say that the equation is second order differential equation with two real auxilary equation roots. The solution is
 \begin{equation*}
     x=A\exp \biggl[\bigg(-\frac{\gamma}{2} + \big(\frac{\gamma^2}{4}-\omega_0^2\big)^{1/2}\bigg)t\biggr] +B \exp \biggl[\bigg(-\frac{\gamma}{2} - \big(\frac{\gamma^2}{4}-\omega_0^2\big)^{1/2}\bigg)t\biggr]
 \end{equation*}
 
-\subsubsection*{Critical damping.} Occurs when $\gamma^2/4 = \omega_0^2$, which makes the suqre roots zero. Thus the equation is second order differential equation with one real auxilary equation roots. The solution is
+\subsubsection{Critical damping.} Occurs when $\gamma^2/4 = \omega_0^2$, which makes the suqre roots zero. Thus the equation is second order differential equation with one real auxilary equation roots. The solution is
 \begin{equation*}
     x=(At+B)\exp\biggl(-\frac{\gamma t}{2}\biggr)
 \end{equation*}
 
 Here the mass, or whatever oscillating, returns to its equilibrium position in the shortest possible time without oscillating. 
 
-\subsubsection*{Putting all together.} In summary we find three types of damped motion:
+\subsubsection{Putting all together.} In summary we find three types of damped motion:
 \begin{enumerate}
     \item $\gamma^2/4<\omega_0^2$ Light damping, Imaginary square root, Damped oscillations;
     \item $\gamma^2/4>\omega_0^2$ Heavy damping, Real Square root, Exponential decay of displacement;
@@ -87,7 +87,7 @@ Here the mass, or whatever oscillating, returns to its equilibrium position in t
     \caption*{Figure: Motion of a damped oscillator for various cases}
 \end{figure*}
 
-\subsection*{RLC circuit.} In the case of an electrical oscillator it is the resistance in the circuit that impedes the flow of current. Kirchoff's law gives
+\subsection{RLC circuit.} In the case of an electrical oscillator it is the resistance in the circuit that impedes the flow of current. Kirchoff's law gives
 \begin{align*}
     L\ddot{q}+R\dot{q}+\frac{1}{C}q=0\\
     \ddot{q}+\frac{R}{L}\dot{q}+\frac{1}{LC}q=0\\
@@ -107,7 +107,7 @@ We find that the quality factor $Q$ of the circuit is given by
     Q=\frac{\omega_0}{\gamma}=  \frac{1}{R}\sqrt{\frac{L}{C}}
 \end{equation*}
 
-\subsection*{Energy of DHO}
+\subsection{Energy of DHO}
 In the case of very lightly damped oscillator $\gamma^2/4\ll \omega_0^2$ we have
 \begin{align*}
     x &= A_0\exp\biggl(-\frac{\gamma t}{2}\biggr)\cos\omega_0 t\\
@@ -130,7 +130,7 @@ The reciprocal of $\gamma$ is the time taken $\tau=1/\gamma$ for the energy of t
     E(t)=E_0\exp \biggl(-\frac{t}{\tau}\biggr)
 \end{equation*}
 
-\subsubsection*{Rate of dissipation.} The energy of an oscillator is dissipated because it does work against the damping force at the rate (damping force $\times$ velocity). We can see this by differentiating energy with respect to time
+\subsubsection{Rate of dissipation.} The energy of an oscillator is dissipated because it does work against the damping force at the rate (damping force $\times$ velocity). We can see this by differentiating energy with respect to time
 \begin{equation*}
     \frac{dE}{dt}=m\dot{x}\ddot{x}+kx\dot{x}=(m\ddot{x}+kx)\dot{x}
 \end{equation*}
@@ -139,7 +139,7 @@ since the damping force $F_d=m\ddot{x}+kx=-b\dot{x}$, we can write
     \frac{dE}{dt}=-b\dot{x}^2
 \end{equation*}
 
-\subsection*{Q factor}
+\subsection{Q factor}
 The quality factor Q of the oscillator describe how good an oscillator is, where we imply that the smaller the degree of damping the higher the quality of the oscillator. Oscillator with a high Q-value would make an appreciable number of oscillations before its energy is reduced substantially. The quality factor Q is defined as
 \begin{equation*}
     Q=\frac{\omega}{\gamma}\approx\frac{\omega_0}{\gamma}
@@ -178,4 +178,4 @@ and the angular frequency $\omega$
 \end{equation*}
 This confirm confirms our assumption that $\omega$ is equal to $\omega_0$ to a good approximation under most circumstances. Even when $Q$ is as low as 5, $\omega$ is different from $\omega_0$ by just $0.5\%$.
 
- \end{document}
+\end{document}

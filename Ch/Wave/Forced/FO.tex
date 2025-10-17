@@ -1,6 +1,6 @@
 \documentclass[../../../main.tex]{subfiles}
 \begin{document}
-\subsection*{Undamped forced oscillations.} We begin with a mass $m$ on a horizontal spring with a periodic driving force $F = F_0 \cos \omega t$ is applied to it. We obtain
+\subsection{Undamped forced oscillations.} We begin with a mass $m$ on a horizontal spring with a periodic driving force $F = F_0 \cos \omega t$ is applied to it. We obtain
 \begin{equation*}
     m\ddot{x}+kx=F_0 \cos \omega t
 \end{equation*}
@@ -44,7 +44,7 @@ To solve our original, we take the real part
 \end{equation*}
 The fractional term is the amplitude of our oscillator as function of $\omega$ or $A(\omega)$.
 
-\subsection*{Damped forced oscillations.} We add the damping term into our equation
+\subsection{Damped forced oscillations.} We add the damping term into our equation
 \begin{equation*}
     m\ddot{x}+b\dot{x}+kx=F_0 \cos \omega t
 \end{equation*}
@@ -98,7 +98,7 @@ As before, the fractional term is the amplitude of our oscillator. Here $\delta 
 \begin{equation*}
     x=\frac{F_0/m }{\big[(\omega_0^2- \omega^2)^2 +\omega^2\gamma^2\big]^{1/2} }\cos (\omega t-\delta )
 \end{equation*}
-\subsubsection*{Mechanical impedance.} I will now try to solve the damped forced oscillations' equation by introducing mechanical impedance
+\subsubsection{Mechanical impedance.} I will now try to solve the damped forced oscillations' equation by introducing mechanical impedance
 \begin{equation*}
     \mathbf{Z}_m= \Re \;b+\Im\; (m\omega- \frac{k}{\omega}) 
 \end{equation*}
@@ -123,7 +123,7 @@ by Euler's formula
     x=\frac{F_0 }{\omega Z_m}\sin \omega t-\delta
 \end{equation*}
 
-\subsubsection*{Maximum amplitude.} The amplitude
+\subsubsection{Maximum amplitude.} The amplitude
 \begin{equation*}
     A(\omega)=\frac{a\omega_0^2 }{\big[(\omega_0^2- \omega^2)^2 +\omega^2\gamma^2\big]^{1/2} }
 \end{equation*}
@@ -145,7 +145,7 @@ In the meantime we use the substitution $Q = \omega_0/\gamma$ in the equations f
     A_{\text{max}}&=\frac{aQ}{\big(1-1/4Q^2 \big)^{1/2}}
 \end{align*}
 
-\subsection*{Power Absorbed}
+\subsection{Power Absorbed}
 The rate of energy loss due to damping is equal to the damping force times the velocity of the mass. 
 Since the damping force and the velocity are time-dependent, we must define the instantaneous power absorbed in time $t$ by
 \begin{equation*}
@@ -165,7 +165,7 @@ substituting for $b, \omega_0^2,$ and $a$
     \bar{P} (\omega)=\frac{\omega^2F_0^2\gamma}{2m\big[(\omega_0^2-\omega^2)^2+\omega^2 \gamma^2\big]}
 \end{equation*}
 
-\subsubsection*{Another method.} I will now try tofind the rate of energy loss by using mechanical impedance. The solution of damped forced oscillation has the solution
+\subsubsection{Another method.} I will now try tofind the rate of energy loss by using mechanical impedance. The solution of damped forced oscillation has the solution
 \begin{equation*}
     x=\frac{F_0 }{\omega Z_m}\sin \omega t-\delta
 \end{equation*}
@@ -187,7 +187,7 @@ thus
 \end{equation*}
 
 
-\subsubsection*{Full width half height.} An important parameter of a power resonance curve is its full width at half height $\omega_\text{fwhh}$; which characterises the sharpness of the response of the oscillator to an applied force. When the driving frequency is close to the frequency $\omega_0$, we can replace
+\subsubsection{Full width half height.} An important parameter of a power resonance curve is its full width at half height $\omega_\text{fwhh}$; which characterises the sharpness of the response of the oscillator to an applied force. When the driving frequency is close to the frequency $\omega_0$, we can replace
 \begin{equation*}
     \omega^2-\omega_0^2=(\omega_0+\omega)\approx 2\omega_0 \Delta \omega
 \end{equation*}
@@ -212,7 +212,7 @@ or
     Q=\frac{\omega_0}{\omega_\text{fwhh}}=\frac{\text{resonance frequency}}{\text{full width at half height of power curve}}
 \end{equation*}
 
-\subsection*{Electrical Circuit}
+\subsection{Electrical Circuit}
 Applying Kirchoff's law to circuit driven by an alternative (AC) voltage $V (t) = V_0 \cos \omega t$ gives the equation
 \begin{equation*}
     \ddot{q}+\frac{R}{L}\dot{q}+\frac{1}{LC}q=\frac{V_0}{L} \cos \omega t

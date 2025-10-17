@@ -1,18 +1,18 @@
 \documentclass[../../../main.tex]{subfiles}
 
 \begin{document}
-\subsection*{Dielectrics}
+\subsection{Dielectrics}
 We have already talked about conductors; these are substances that contain an “unlimited” supply of charges that are free to move about through the material. In dielectrics, by contrast, all charges are attached to specific atoms or molecules—they’re on a tight leash, and all they can do is move a bit within the atom or molecule. 
 
 Such microscopic displacements are not as dramatic as the wholesale rearrangement of charge in a conductor, but their cumulative effects account for the characteristic behavior of dielectric materials. There are actually two principal mechanisms by which electric fields can distort the charge distribution of a dielectric atom or molecule: stretching and rotating. 
 
-\subsubsection*{Stretching.} When a neutral atom is placed in an electric field \textbf{E}, the nucleus is pushed in the direction of the field, and the electrons the opposite way; stretching the atom. If the field is large enough, it can pull the atom apart completely, “ionizing” it. With less extreme fields, however, an equilibrium is soon established. The atom now has a tiny dipole moment \textbf{p}, which points in the same direction as \textbf{E}:
+\subsubsection{Stretching.} When a neutral atom is placed in an electric field \textbf{E}, the nucleus is pushed in the direction of the field, and the electrons the opposite way; stretching the atom. If the field is large enough, it can pull the atom apart completely, “ionizing” it. With less extreme fields, however, an equilibrium is soon established. The atom now has a tiny dipole moment \textbf{p}, which points in the same direction as \textbf{E}:
 \begin{equation*}
     \mathbf{p} = \alpha \mathbf{E}
 \end{equation*}     
 the constant of proportionality $\alpha$ is called atomic polarizability. 
 
-\subsubsection*{Rotating.} When molecules with built-in, permanent dipole moments are placed in a uniform electric field, the force on the positive end $\mathbf{F}_+$ exactly cancels the force on the negative end $\mathbf{F}_-$. However, there will be a torque:
+\subsubsection{Rotating.} When molecules with built-in, permanent dipole moments are placed in a uniform electric field, the force on the positive end $\mathbf{F}_+$ exactly cancels the force on the negative end $\mathbf{F}_-$. However, there will be a torque:
 \begin{equation*}
     \mathbf{N}=\mathbf{p}\times\mathbf{E}
 \end{equation*}
@@ -32,14 +32,14 @@ and therefore
     \mathbf{F} = (\mathbf{p}\cdot\nabla) \mathbf{E}
 \end{equation*}
 
-\subsection*{Polarization}
+\subsection{Polarization}
 Notice that those two mechanisms produce the same basic result: a lot of little dipoles pointing along the direction of the field—the material becomes polarized. A convenient measure of this effect is
 \begin{equation*}
     \mathbf{P}\equiv\text{ dipole moment per unit volume}=\frac{\mathbf{p}}{V}
 \end{equation*}
 which is called the polarization. 
 
-\subsection*{Bound Charges}
+\subsection{Bound Charges}
 Suppose we have a piece of polarized material--that is, an object containing a lot of microscopic dipoles lined up. The potential for a single dipole \textbf{p}
 \begin{equation*}
     V_{\text{dip}}(\mathbf{r})=\frac{1}{4\pi \epsilon_0} \frac{\mathbf{p} \cdot \hrcurs}{\rcurs^2}
@@ -68,7 +68,7 @@ With these deﬁnitions
 
 What this means is that the potential (and hence also the ﬁeld) of a polarized object is the same as that produced by a volume charge density $ \rho_b$ plus a surface charge density $\sigma_b$. Instead of integrating the contributions of all the inﬁnitesimal dipoles, we could ﬁrst ﬁnd those bound charges, and then calculate the ﬁelds they produce, in the same way we calculate the ﬁeld of any other volume and surface charges (for example, using Gauss's law).
 
-\subsubsection*{Physical interpretation.} Suppose we have a long string of di-poles. Along the line, the head of one effectively cancels the tail of its neighbor, but at the ends there are two charges left over. We call the net charge at the ends a bound charge to remind ourselves that it cannot be removed. 
+\subsubsection{Physical interpretation.} Suppose we have a long string of di-poles. Along the line, the head of one effectively cancels the tail of its neighbor, but at the ends there are two charges left over. We call the net charge at the ends a bound charge to remind ourselves that it cannot be removed. 
 
 To calculate the actual amount of bound charge resulting from a given polarization, examine a “tube” of dielectric parallel to $\mathbf{P}$. The dipole moment is given by
 \begin{equation*}
@@ -101,7 +101,7 @@ Since this is true for any volume, we have
     \rho_b=-\nabla\cdot\mathbf{P}
 \end{equation*}
 
-\subsection*{Electric Displacement}
+\subsection{Electric Displacement}
 The effect of polarization is to produce accumulations of (bound) charge $\rho_b$ within the dielectric and $\sigma_b$ on the surface. The ﬁeld due to polarization of the medium is just the ﬁeld of this bound charge. We are now ready to put it all together: the ﬁeld attributable to bound charge plus the ﬁeld due to everything else (which, for want of a better term, we call free charge, $\rho$). Within the dielectric, the total charge density can be written:
 \begin{equation*}
     \rho=\rho_b+\rho_f
@@ -131,7 +131,7 @@ or, in integral form
 \end{equation*}
 where $_{f_{enc}}$ denotes the total free charge enclosed in the volume. This is a particularly useful way to express Gauss's law, in the context of dielectrics, because it makes reference only to free charges, and free charge is the stuff we control. Bound charge comes along for the ride: when we put the free charge in place, a certain polarization automatically ensues, and this polarization produces the bound charge.
 
-\subsubsection*{Deceptive parallel.} You may be tempted to conclude that \textbf{D} is “just like” \textbf{E}, but the conclusion is false; in particular, there is no “Coulomb’s law” for \textbf{D}:
+\subsubsection{Deceptive parallel.} You may be tempted to conclude that \textbf{D} is “just like” \textbf{E}, but the conclusion is false; in particular, there is no “Coulomb’s law” for \textbf{D}:
 \begin{equation*}
     \mathbf{D}(\mathbf{r})\neq\frac{1}{4\pi}\int\frac{\hrcurs}{\rcurs^2}\rho_f(\mathbf{r})\;d\tau'
 \end{equation*}
@@ -142,7 +142,7 @@ The parallel between \textbf{E} and \textbf{D} is more subtle than that. For the
 \end{equation*}
 and there is no reason, in general, to suppose that the curl of \textbf{P} vanishes.
 
-\subsection*{Linear Dielectrics}
+\subsection{Linear Dielectrics}
 I shall call materials that obey
 \begin{equation*}
     \mathbf{P}=\epsilon_0\chi_e\mathbf{E}
@@ -171,7 +171,7 @@ If you remove a factor of $\epsilon_0$, the remaining dimensionless quantity
 \end{equation*}
 is called the relative permittivity, or dielectric constant, of the material.
 
-\subsubsection*{Deceptive (?) parallel.} You might suppose that linear dielec-trics escape the defect in the parallel between \textbf{E} and \textbf{D}; since \textbf{P} and \textbf{D} are now proportional to \textbf{E}, does it not follow that their curls must vanish? Unfortunately, it does not, for the line integral of \textbf{P} around a closed path that straddles the boundary between one type of material and another need not be zero, even though the integral of \textbf{E} around the same loop must be.
+\subsubsection{Deceptive (?) parallel.} You might suppose that linear dielec-trics escape the defect in the parallel between \textbf{E} and \textbf{D}; since \textbf{P} and \textbf{D} are now proportional to \textbf{E}, does it not follow that their curls must vanish? Unfortunately, it does not, for the line integral of \textbf{P} around a closed path that straddles the boundary between one type of material and another need not be zero, even though the integral of \textbf{E} around the same loop must be.
 
 Of course, if the space is entirely ﬁlled with a homogeneous, that is medium is one whose properties (in this case the susceptibility) do not vary with position, linear dielectric, then this objection is void; in this rather special circumstance
 \begin{equation*}
@@ -189,7 +189,7 @@ A common way to beef up a capacitor is to fill parallel-plate capacitor with ins
     C=\epsilon_rC_{\text{vac}}
 \end{equation*}
 
-\subsubsection*{Energy in Dielectric Systems}
+\subsubsection{Energy in Dielectric Systems}
 It takes work to charge up a capacitor 
 \begin{equation*}
     W=\frac{1}{2}CV^2

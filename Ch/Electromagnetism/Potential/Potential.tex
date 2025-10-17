@@ -1,8 +1,8 @@
 \documentclass[../../../main.tex]{subfiles}
 
 \begin{document}
-\subsection*{Laplace's Equation}
-\subsubsection*{One Dimension.} Suppose $V$ depends on only one variable, $x$. Then Laplace's equation becomes
+\subsection{Laplace's Equation}
+\subsubsection{One Dimension.} Suppose $V$ depends on only one variable, $x$. Then Laplace's equation becomes
 \begin{equation*}
    \frac{\partial^2V}{\partial x^2}=0
 \end{equation*}
@@ -20,7 +20,7 @@ the equation for a straight line. The result of this solution are as follows:
     of V must occur at the end points. 
 \end{enumerate}
 
-\subsubsection*{Two Dimensions.} If $V$ depends on two variables, Laplace’s equation becomes
+\subsubsection{Two Dimensions.} If $V$ depends on two variables, Laplace’s equation becomes
 \begin{equation*}
     \frac{\partial^2V}{\partial x^2}+\frac{\partial^2V}{\partial y^2}=0
 \end{equation*}
@@ -34,7 +34,7 @@ one dimension
     \item $V$ has no local maxima or minima; all extrema occur at the boundaries.
 \end{enumerate} 
 
-\subsubsection*{Three Dimensions.} The same two properties remain true
+\subsubsection{Three Dimensions.} The same two properties remain true
 \begin{enumerate}
     \item The value of $V$ at point \textbf{r} is the average value of $V$ over a spherical surface of radius R centered at \textbf{r}:
     \begin{equation*}
@@ -43,20 +43,20 @@ one dimension
     \item As a consequence, $V$ can have no local maxima or minima; the extreme values of $V$ must occur at the boundaries. 
 \end{enumerate}
 
-\subsection*{Uniqueness Theorems}
-\subsubsection*{First Theorem.} The solution to Laplace's equation in
+\subsection{Uniqueness Theorems}
+\subsubsection{First Theorem.} The solution to Laplace's equation in
     some volume $\mathcal{V}$ is uniquely determined if $V$ is specified on the boundary surface $\mathcal{S}$.
 
 \begin{quote}
     Corollary: The potential in a volume $\mathcal{V}$ is uniquely determined if (a) the charge density throughout the region, and (b) the value of $V$ on all boundaries, are specified.
 \end{quote}
 
-\subsubsection*{Second Theorem.} In a volume V surrounded by conductors and containing a specified charge density $\rho$, the electric field is uniquely determined if the total charge on each conductor is given. (The region as a whole can be bounded by another conductor, or else unbounded.)
+\subsubsection{Second Theorem.} In a volume V surrounded by conductors and containing a specified charge density $\rho$, the electric field is uniquely determined if the total charge on each conductor is given. (The region as a whole can be bounded by another conductor, or else unbounded.)
 
-\subsection*{Image Method}
+\subsection{Image Method}
 Any stationary charge distribution near a grounded conducting plane can be treated introducing its mirror image--hence the name method of images. 
-\subsection*{Separation of Variable}
-\subsubsection*{Cartesian.} 
+\subsection{Separation of Variable}
+\subsubsection{Cartesian.} 
 The solution to partial differential equation can be obtained by assuming that the solution is in the form of products of two function. For Laplace equation in two dimension therefore,
 \begin{equation*}
     V (x, y) = X (x)Y (y)
@@ -96,7 +96,7 @@ The solutions are
 Z(z)&=E\sin lz+F\cos \cos lz
 \end{align*}
 
-\subsubsection*{Spherical Coordinates.} In the spherical system, Laplace's equation reads:
+\subsubsection{Spherical Coordinates.} In the spherical system, Laplace's equation reads:
 \begin{equation*}
     \frac{1}{r^2}\frac{\partial}{\partial r}\biggl(r^2\frac{\partial V}{\partial r}\biggr)+\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\biggl(\sin\theta\frac{\partial V}{\partial \theta}\biggr)+\frac{1}{r^2\sin^2\theta}\frac{\partial^2 V}{\partial \phi^2}=0
 \end{equation*}
@@ -142,7 +142,7 @@ Notice that $P_l (x)$ is (as the name suggests) an $l$th-order polynomial in $x$
     V(r,\theta)=\sum_{l=0}^{\infty}\biggl(A_lr^l+\frac{B_l}{r^{l+1}}\biggr)P_l (\cos\theta)
 \end{equation*}
 
-\subsection*{Multipole Expansion}
+\subsection{Multipole Expansion}
 I propose now to develop a systematic expansion for the potential of any localized charge distribution, in powers of $1/r$. The potential at \textbf{r} is given by
 \begin{equation*}
     V(\mathbf{r})=\frac{1}{4\pi \epsilon_0}\int\frac{1}{\rcurs}\rho(\mathbf{r}')d\tau'
@@ -171,7 +171,7 @@ This is the desired result--the multipole expansion of $V$ in powers of $1/r$. T
     \caption*{Monopole, Dipole, Quadrupole, and Octopole}
 \end{figure*}
 
-\subsubsection*{The Monopole and Dipole Terms.} Ordinarily, the multipole expansion is dominated (at large r) by the monopole
+\subsubsection{The Monopole and Dipole Terms.} Ordinarily, the multipole expansion is dominated (at large r) by the monopole
 term:
 \begin{equation*}
      V_{\text{mon}}(\mathbf{r})=\frac{1}{4\pi \epsilon_0}\frac{Q}{r},
@@ -202,7 +202,7 @@ For a physical dipole (equal and opposite charges, $\pm q$),
 \end{equation*}
 where \textbf{d} is the vector from the negative charge to the positive one. However, that this is only the approximate potential of the physical dipole--evidently there are higher multipole contributions. A physical dipole becomes a pure dipole, then, in the rather artificial limit $d \rightarrow0$, $q\rightarrow \infty$, with the product $qd = p$ held fixed. Dipole moments are vectors, and they add accordingly.
 
-\subsubsection*{Origin of Coordinates in Multipole Expansions.} A point charge at the origin constitutes a “pure” monopole; if it is not at the origin, it's no longer a pure monopole. Point charge at \ref{fig:multipole1} has a dipole moment $\mathbf{p} = qd\; \mathbf{\hat{y}}$, and a corresponding dipole term in its potential. The monopole potential $(1/4\pi\epsilon_0)q/r$ is not quite correct for this configuration; rather, the exact potential is $(1/4\pi\epsilon_0)q/\rcurs$. The multipole expansion is a series in inverse powers of r (the distance to the origin), and when we expand $1/\rcurs$, we get all powers, not just the first.
+\subsubsection{Origin of Coordinates in Multipole Expansions.} A point charge at the origin constitutes a “pure” monopole; if it is not at the origin, it's no longer a pure monopole. Point charge at \ref{fig:multipole1} has a dipole moment $\mathbf{p} = qd\; \mathbf{\hat{y}}$, and a corresponding dipole term in its potential. The monopole potential $(1/4\pi\epsilon_0)q/r$ is not quite correct for this configuration; rather, the exact potential is $(1/4\pi\epsilon_0)q/\rcurs$. The multipole expansion is a series in inverse powers of r (the distance to the origin), and when we expand $1/\rcurs$, we get all powers, not just the first.
 \begin{figure}
     \centering
     \normfigL{../Rss/Electromagnetism/Potential/MultipoleCoordinate.png}
@@ -218,7 +218,7 @@ So moving the origin (or, what amounts to the same thing, moving the charge) can
     &=\mathbf{p}-Q\mathbf{a}
 \end{align*}
 
-\subsubsection*{Electric Field of a Dipole.} If we choose coordinates so that $p$ is at the origin and points in the z direction, then the field at $ r, \theta$ is:
+\subsubsection{Electric Field of a Dipole.} If we choose coordinates so that $p$ is at the origin and points in the z direction, then the field at $ r, \theta$ is:
 \begin{figure*}[h]
     \centering
     \normfigL{../Rss/Electromagnetism/Potential/MultiPoleField.png}

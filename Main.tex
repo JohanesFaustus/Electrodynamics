@@ -1,31 +1,6 @@
 \documentclass[10pt]{report}
 \usepackage[paperheight=25.5 cm, paperwidth=14.25cm, left=1.75cm, right=1.75cm, top=1.5cm, bottom=1.5cm]{geometry}
-\usepackage{amsmath, esdiff, esint, indentfirst, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, svg, csquotes, longtable, booktabs }
-
-\usepackage{titlesec}
-\titleformat{\chapter}[hang]{\thispagestyle{empty}\centering \Huge \bfseries}{}{}{}[\clearpage]
-\titleformat{\section}[hang]{\bfseries\Large\centering}{}{}{}[\vspace{0.5cm}]
-\titleformat{\subsection}[hang]{\bfseries\large}{}{}{}[\noindent\rule{\textwidth}{0.4pt}]
-\titleformat{\subsubsection}[runin]{\bfseries}{}{}{\indent}
-\titleformat{\paragraph}[runin]{\itshape}{}{}{\indent}
-
-\graphicspath{{./Rss/}}
-\def\rcurs{{\mbox{$\resizebox{.08in}{.08in}{\includegraphics{{/RFonts/BoldR.pdf}}}$}}}
-\def\brcurs{{\mbox{$\resizebox{.08in}{.08in}{\includegraphics{{/RFonts/BoldR.pdf}}}$}}}
-\def\hrcurs{{\mbox{$ \hat \brcurs$}}}
-
-\newcommand{\normfig}[1]{\includegraphics[width=0.5\textwidth]{#1}}
-\newcommand{\normfigL}[1]{\includegraphics[width=0.8\textwidth]{#1}}
-\newcommand{\normfigXL}[1]{\includegraphics[width=\textwidth]{#1}}
-\newcommand{\dfig}[1]{\includegraphics[width=0.3\textwidth]{#1}}
-
-\newcommand{\A}{\mathbf{A}}
-\newcommand{\B}{\mathbf{B}}
-\newcommand{\C}{\mathbf{C}}
-\newcommand{\x}{\mathbf{\hat{x}}}
-\newcommand{\y}{\mathbf{\hat{y}}}
-\newcommand{\z}{\mathbf{\hat{z}}}
-
+\input{Ch/Preamble/pre.tex}
 \usepackage[backend=biber]{biblatex}
 \addbibresource{./export.bib}
 
@@ -38,67 +13,69 @@
 \nocite{Serway2019}
 \subfile{./Cover/cov.tex}
 
-\chapter*{Electromagnetism}
-\section*{Vector Analysis}
+\chapter{Electromagnetism}\clearpage
+\section{Vector Analysis}
 \subfile{./PhysicalMathematics/Section/VectorAnalysis/VA.tex}\clearpage
 
-\section*{Electrostatics}
+\section{Electrostatics}
 \subfile{./Ch/Electromagnetism/Electrostatics/Elecstat.tex}\clearpage
 \subfile{./Ch/Electromagnetism/Electrostatics/EstatAppen.tex}\clearpage
 
-\section*{Potential}
+\section{Potential}
 \subfile{./Ch/Electromagnetism/Potential/Potential.tex}\clearpage
 \subfile{./Ch/Electromagnetism/Potential/Appendix.tex}\clearpage
 
-\section*{Electric Field in Matter}
+\section{Electric Field in Matter}
 \subfile{./Ch/Electromagnetism/Field in Matter/EMatter.tex}\clearpage
 
-\section*{Magnetostatics}
+\section{Magnetostatics}
 \subfile{./Ch/Electromagnetism/Magnetostat/Magnetostat.tex}\clearpage
 \subfile{./Ch/Electromagnetism/Magnetostat/MagAppend.tex}\clearpage
 
-\section*{Magnetic Field in Matter}
+\section{Magnetic Field in Matter}
 \subfile{./Ch/Electromagnetism/Field in Matter/Bmatter.tex}\clearpage
 
-\section*{Electrodynamics}
+\section{Electrodynamics}
 \subfile{./Ch/Electromagnetism/Electrodynamics/Electrodynamics.tex}\clearpage
 \subfile{./Ch/Electromagnetism/Electrodynamics/EldAppend.tex}\clearpage
 
-\chapter*{Electrodynamics}
+\chapter{Electrodynamics}
+\clearpage
 \subfile{./Ch/Electrodynamics/Conserv/Conserv.tex}\clearpage
 
 \subfile{./Ch/Electrodynamics/EMWave/EMWa.tex}\clearpage
 
-\chapter*{Wave}
-
-\section*{Simple Harmonic Motion}
+\chapter{Wave}
+\clearpage
+\section{Simple Harmonic Motion}
 \subfile{./Ch/Wave/SHM/SHM.tex}\clearpage
 
-\section*{Damped Harmonic Oscillation}
+\section{Damped Harmonic Oscillation}
 \subfile{./Ch/Wave/DHO/DHO.tex}\clearpage
 
-\section*{Forced Oscillation}
+\section{Forced Oscillation}
 \subfile{./Ch/Wave/Forced/FO.tex}\clearpage
 
-\section*{Traveling Wave}
+\section{Traveling Wave}
 \subfile{./Ch/Wave/Travel/Tr.tex}\clearpage
 \subfile{./Ch/Wave/Travel/TrAppend.tex}\clearpage
 
-\section*{Standing Wave}
+\section{Standing Wave}
 \subfile{./Ch/Wave/Stand/Stand.tex}\clearpage
 
-\section*{Interference}
+\section{Interference}
 \subfile{./Ch/Wave/Interference/Inter.tex}\clearpage
 \subfile{./Ch/Wave/Interference/IntAppend.tex}\clearpage
 
-\subsubsection*{Dispersion}
+\subsubsection{Dispersion}
 \subfile{./Ch/Wave/Dispersion/Disp.tex}\clearpage
 
-\chapter*{Optics}
-\section*{Introduction}
+\chapter{Optics}
+\clearpage
+\section{Introduction}
 \subfile{./Ch/Optics/Intro/intro.tex}\clearpage
 
-\section*{Optical Geometry}
+\section{Optical Geometry}
 \subfile{./Ch/Optics/Geometry/Geometry.tex}\clearpage
 \printbibliography
 \end{document}

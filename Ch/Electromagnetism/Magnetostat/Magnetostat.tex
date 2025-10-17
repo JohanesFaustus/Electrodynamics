@@ -1,8 +1,8 @@
 \documentclass[../../../main.tex]{subfiles}
 
 \begin{document}
-\subsection*{Lorentz Force Law}
-\subsubsection*{Magnetic forces.} The magnetic force on a charge $Q$, moving with velocity $\mathbf{v}$ in a magnetic ﬁeld \textbf{B}, is 
+\subsection{Lorentz Force Law}
+\subsubsection{Magnetic forces.} The magnetic force on a charge $Q$, moving with velocity $\mathbf{v}$ in a magnetic ﬁeld \textbf{B}, is 
 \begin{equation*}
     \mathbf{F}_{\text{mag}} = Q(\mathbf{v} \times \mathbf{B})
 \end{equation*}
@@ -23,7 +23,7 @@ For if $Q$ moves an amount $d\mathbf{l} = \mathbf{v} \;dt$, the work done is
 \end{equation*}
 This follows because $\mathbf{v} \times \mathbf{B}$ is perpendicular to $\mathbf{v}$. Magnetic forces may alter the direction in which a particle moves, but they cannot speed it up or slow it down.
 
-\subsubsection*{Current.} The current in a wire is the charge per unit time passing a given point. A line charge $\lambda$ traveling down a wire at speed \textbf{v} constitutes a current
+\subsubsection{Current.} The current in a wire is the charge per unit time passing a given point. A line charge $\lambda$ traveling down a wire at speed \textbf{v} constitutes a current
 \begin{equation*}
     \mathbf{I}=\lambda\mathbf{v}
 \end{equation*}
@@ -43,7 +43,7 @@ this as
 \end{equation*}
 where the current is constant (in magnitude) along the wire.
 
-\subsubsection*{Surface current density.} Consider a “ribbon” of inﬁnitesimal width $dl\bot$, running parallel to the ﬂow. If the current in this ribbon is $d\mathbf{I}$, the surface current density is
+\subsubsection{Surface current density.} Consider a “ribbon” of inﬁnitesimal width $dl\bot$, running parallel to the ﬂow. If the current in this ribbon is $d\mathbf{I}$, the surface current density is
 \begin{equation*}
     \mathbf{K}\equiv\frac{d\mathbf{I}}{dl\bot}
 \end{equation*}
@@ -56,7 +56,7 @@ The magnetic force on the surface current is
     \mathbf{F}_{\text{mag}}=\int (\mathbf{v}\times\mathbf{B})\sigma\;da= \int (\mathbf{K}\times\mathbf{B})\;da
 \end{equation*}
 
-\subsubsection*{Volume current density.} Consider a tube of inﬁnitesimal cross-section $da\bot$, running parallel to the ﬂow. If the current in this tube is $d\mathbf{I}$, the volume current density is
+\subsubsection{Volume current density.} Consider a tube of inﬁnitesimal cross-section $da\bot$, running parallel to the ﬂow. If the current in this tube is $d\mathbf{I}$, the volume current density is
 \begin{equation*}
     \mathbf{J}\equiv\frac{d\mathbf{I}}{da\bot}
 \end{equation*}
@@ -77,7 +77,7 @@ The magnetic force on a volume current is therefore
 \end{figure*}
 
 
-\subsubsection*{Continuity equation.} From the definition of volume current, the total current crossing a surface $\mathcal{S}$ can be written as
+\subsubsection{Continuity equation.} From the definition of volume current, the total current crossing a surface $\mathcal{S}$ can be written as
 \begin{equation*}
     I=\int_{\mathcal{S}}\mathbf{J}\cdot d\mathbf{a}
 \end{equation*}
@@ -95,12 +95,12 @@ where minus sign reﬂects the fact that an outward ﬂow decreases the charge l
 \end{equation*}
 This is the precise mathematical statement of local charge conservation; it is called the continuity equation.
 
-\subsubsection*{Dictionary.} For future reference, let me summarize the “dictionary” we have implicitly developed for translating equations into the forms appropriate to point, line, surface, and volume currents:
+\subsubsection{Dictionary.} For future reference, let me summarize the “dictionary” we have implicitly developed for translating equations into the forms appropriate to point, line, surface, and volume currents:
 \begin{equation*}
     \sum_{n=1}^{n}q_i\mathbf{v}_i\sim\int_\mathcal{L}\mathbf{I}\;dl \sim \int_\mathcal{S}\mathbf{K}\;da \sim \int_\mathcal{V}\mathbf{J}\;d\tau
 \end{equation*}
 
-\subsection*{Biot-Savart Law}
+\subsection{Biot-Savart Law}
 Steady currents produce magnetic ﬁelds that are constant in time; the theory of steady currents is called magnetostatics. By steady current I mean a continuous ﬂow that has been going on forever, without change and without charge piling up anywhere. Formally, electro/magnetostatics is the régime
 \begin{equation*}
     \frac{\partial\rho}{\partial t}=0 \quad\frac{\partial \mathbf{J}}{\partial t}=0
@@ -113,7 +113,7 @@ When a steady current ﬂows in a wire, its magnitude I must be the same all alo
     \nabla\cdot \mathbf{J}=0
 \end{equation*}
 
-\subsubsection*{Biot-Savart law.} The magnetic ﬁeld of a steady line current is given by the Biot-Savart law 
+\subsubsection{Biot-Savart law.} The magnetic ﬁeld of a steady line current is given by the Biot-Savart law 
 \begin{equation*}
     \mathbf{B}(\mathbf{r})=\frac{\mu_0}{4\pi}\int \frac{\mathbf{I} \times\hrcurs}{\rcurs^2}dl'=\frac{\mu_0I}{4\pi}\int \frac{d \mathbf{l} \times\hrcurs}{\rcurs^2}
 \end{equation*}
@@ -127,7 +127,7 @@ The constant $\mu_0$ is called the permeability of free space:
     \normfig{../Rss/Electromagnetism/Magnetostatics/BiotSavart}
 \end{figure*}
 
-\subsection*{The Hall Effect} 
+\subsection{The Hall Effect} 
 \begin{figure*}[t]
     \centering
     \normfig{../Rss/Electromagnetism/Magnetostatics/HallEffect}
@@ -148,8 +148,8 @@ Since infinitesimal charge $dq$ inside infinitesimal length $dx$ inside conducto
 \end{equation*}
 where $R_H=1/nq$ is called the Hall coefficient. This relationship shows that a properly calibrated conductor can be used to measure the magnitude of an unknown magnetic field. 
 
-\subsection*{Divergence and Curl of Magnetic Field}
-\subsubsection*{Curl.} Magnetic field of an inﬁnite straight wire is
+\subsection{Divergence and Curl of Magnetic Field}
+\subsubsection{Curl.} Magnetic field of an inﬁnite straight wire is
 \begin{equation*}
     \mathbf{B}=\frac{\mu_0I}{2\pi s}\boldsymbol{\hat{\phi}}
 \end{equation*}
@@ -180,12 +180,12 @@ and hence
 
 Most current conﬁgurations cannot be constructed out of inﬁnite straight wires, so the next section is devoted to the formal derivation of the divergence and curl of B, starting from the Biot-Savart law itself.
 
-\subsubsection*{Divergence.} Evidently the divergence of the magnetic ﬁeld is
+\subsubsection{Divergence.} Evidently the divergence of the magnetic ﬁeld is
 \begin{equation*}
     \nabla \cdot \mathbf{B}=0
 \end{equation*}
 
-\subsection*{Ampere's Law}
+\subsection{Ampere's Law}
 The equation for the curl of \textbf{B}
 \begin{equation*}
     \nabla\times \mathbf{B}=\mu_0 \mathbf{J}
@@ -204,7 +204,7 @@ Since $\int\mathbf{J} \cdot d\mathbf{a}$ is the total current passing through th
 \end{equation*}
 Like Gauss’s law, Ampère’s law is always true (for steady currents), but it is not always useful. The current conﬁgurations that can be handled by Ampère’s law are Inﬁnite straight lines, Inﬁnite planes, Inﬁnite solenoids, Toroids. 
 
-\subsection*{Magnetic Vector Potential}
+\subsection{Magnetic Vector Potential}
 Just as $\nabla \times \mathbf{E}=0$ permitted us to introduce a scalar potential ($V $) in electrostatics $\mathbf{E}=-\nabla V $, so $\nabla \cdot \mathbf{B}=0 $ invites the introduction of a vector potential \textbf{A} in magnetostatics
 \begin{equation*}
     B=\nabla\times \mathbf{ A}
@@ -232,7 +232,7 @@ and surface currents
     \mathbf{A}(\mathbf{r})=\frac{\mu_0}{4\pi}\int\frac{\mathbf{K}(\mathbf{r'})}{\rcurs}da'
 \end{equation*}
 
-\subsection*{Multipole Expansion}
+\subsection{Multipole Expansion}
 If you want an approximate formula for the vector potential of a localized current distribution, valid at distant points, a multipole expansion is in order. As we found
 \begin{equation*}
     \frac{1}{\rcurs}=\frac{1}{r}\sum_{n=0}^{\infty} \biggl(\frac{r'}{r}\biggr)^nP_n(\cos\alpha)
@@ -274,7 +274,7 @@ where \textbf{m} is the magnetic dipole moment
     \mathbf{m}\equiv I\int d\mathbf{a}=I\mathbf{a}
 \end{equation*}
 
-\subsubsection*{Field of Dipole.} In practice, the dipole potential is a suitable approximation whenever 
+\subsubsection{Field of Dipole.} In practice, the dipole potential is a suitable approximation whenever 
 the distance $r$ greatly exceeds the size of the loop. You must take an inﬁnitesimally small loop at the origin, but then, in order to keep the dipole moment ﬁnite, you have to crank the current up to inﬁnity, with the product $m = I a$ held ﬁxed. The magnetic ﬁeld of a (perfect) dipole is easiest to calculate if we put $\mathbf{m}$ at the origin and let it point in the $z$-direction. Accordingly, the potential at point $(r, \theta, \phi)$ is 
 \begin{equation*}
     \mathbf{A}_\text{dip}(\mathbf{r})=\frac{\mu_0 }{4\pi  }\frac{m\sin\theta}{r^2}\boldsymbol{\hat{\phi}}
@@ -291,7 +291,7 @@ dipole--plus and minus charges a short distance apart.
     \caption*{Figure: Field of a "pure" dipole and "physical" dipole}
 \end{figure*}
 
-\subsection*{Boundary Condition}
+\subsection{Boundary Condition}
 In ELECTROSTATICS, I drew a triangular diagram to summarize the relations among the three fundamental quantities of electrostatics. A similar ﬁgure can be constructed for magnetostatics, relating the current density \textbf{J}, the ﬁeld \textbf{B}, and the potential \textbf{A}.
 
 \begin{figure*}[ht]

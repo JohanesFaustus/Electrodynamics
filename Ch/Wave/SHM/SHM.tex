@@ -1,6 +1,6 @@
 \documentclass[../../../main.tex]{subfiles}
 \begin{document}
-\subsection*{Mass on A Spring}
+\subsection{Mass on A Spring}
 For small displacements the force produced by the spring is described by Hooke's law:
 \begin{equation*}
     F = -kx 
@@ -23,7 +23,7 @@ the roots of auxilary equation are therefore $D=\pm \omega i$. Thus, the general
     x=a\cos \omega t+ b \sin \omega t= A\cos \omega t +\phi
 \end{equation*}
 
-\subsubsection*{Energy of a mass on a spring.} The work done on the spring, extending it from $x'$ to $ x' + dx'$, is $kx'dx'$. Hence, the work done extending it from its unstretched length by an amount x
+\subsubsection{Energy of a mass on a spring.} The work done on the spring, extending it from $x'$ to $ x' + dx'$, is $kx'dx'$. Hence, the work done extending it from its unstretched length by an amount x
 \begin{equation*}
     U=\int_{0}^{x}kx'dx'= \frac{1}{2} kx^2
 \end{equation*}
@@ -36,7 +36,7 @@ Substituting the value of $x$ and $v=dx/dt$, we get
     E=\frac{1}{2}kA^2
 \end{equation*}
 
-\subsection*{Pendulum}
+\subsection{Pendulum}
 \begin{figure*}[b]
     \centering
     \normfig{../Rss/Waves/SHM/Pend.png}
@@ -56,7 +56,7 @@ This is the equation of SHM with $ \omega=\sqrt{g/ l}$ and its general solution
     \theta=\theta_0 \cos \omega t +\phi
 \end{equation*}
 
-\subsubsection*{Energy of pendulum.} For small $\theta$, we have
+\subsubsection{Energy of pendulum.} For small $\theta$, we have
 \begin{align*}
     l^2& = (l - y)^2 + x^2\\
     2ly&=Y^2+x^2
@@ -98,7 +98,7 @@ giving
 \end{equation*}
 it follows that the angular frequency of oscillation $\omega$ is equal to $\sqrt{\beta/\alpha}$.
 
-\subsubsection*{Physical pendulum.} In a physical pendulum the mass is not concentrated at a point as in the simple pendulum, but is distributed over the whole body. An example of a physical pendulum consists of a uniform rod of length $l$ that pivots about a horizontal axis at its upper end. 
+\subsubsection{Physical pendulum.} In a physical pendulum the mass is not concentrated at a point as in the simple pendulum, but is distributed over the whole body. An example of a physical pendulum consists of a uniform rod of length $l$ that pivots about a horizontal axis at its upper end. 
 
 Noting that $\tau=I\ddot{\theta}=\mathbf{r}\times\mathbf{F}$
 \begin{align*}
@@ -117,7 +117,7 @@ This is SHM with $\omega = \sqrt{3g/2l} $ and $T = 2\pi \sqrt{2l/3g}$.
     \caption*{Physical pendulum}
 \end{figure*}
 
-\subsection*{Potential approach.} Suppose a system is oscillating inside potential $V(x)$. Using Taylor series, we rewite the potential at $x=x_0$ as
+\subsection{Potential approach.} Suppose a system is oscillating inside potential $V(x)$. Using Taylor series, we rewite the potential at $x=x_0$ as
 \begin{equation*}
     V(x)=V(x_0)+x\frac{dV}{dx}\bigg|_{x=x_0}+\frac{x^2}{2}\frac{d^2V}{dx^2}\bigg|_{x=x_0}+\dots
 \end{equation*}
@@ -134,8 +134,8 @@ Thus its frequency
     \omega=\biggl(\frac{1}{m}\frac{d^2V}{dx^2}\bigg|_{x=x_0}\biggr)^{1/2}
 \end{equation*} 
 
-\subsection*{Similarities in Physics}
-\subsubsection*{LC circuit.} Initially, capacitor is charged to voltage $V_C=q/C$. Switch then closed and  charge begins to flow through the inductor and a current $\dot{q}$ flows in the circuit. This is a time-varying current and produces a voltage across the inductor given $V_L=L\ddot{q}$. We can analyse the LC circuit using Kirchhoff's law, which states that the sum of the voltages around the circuit is zero
+\subsection{Similarities in Physics}
+\subsubsection{LC circuit.} Initially, capacitor is charged to voltage $V_C=q/C$. Switch then closed and  charge begins to flow through the inductor and a current $\dot{q}$ flows in the circuit. This is a time-varying current and produces a voltage across the inductor given $V_L=L\ddot{q}$. We can analyse the LC circuit using Kirchhoff's law, which states that the sum of the voltages around the circuit is zero
 \begin{align*}
     V_C+V_L&=\\
     \frac{q}{C}+L\ddot{q}&=0\\
@@ -150,7 +150,7 @@ The energy stored in a capacitor charged to voltage $V_C$ is equal to $(1/2) CV_
     &=\frac{1}{2}\frac{q^2}{C}+\frac{1}{2}LI^2
 \end{align*}
 
-\subsubsection*{Similarities in physics.} We note the similarities in both cases 
+\subsubsection{Similarities in physics.} We note the similarities in both cases 
 \begin{equation*}
     \ddot{Z}=-\frac{\beta}{\alpha}Z\qquad E=\frac{1}{2}\alpha\dot{Z}^2+\frac{1}{2}\beta Z^2
 \end{equation*}

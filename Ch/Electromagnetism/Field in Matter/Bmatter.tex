@@ -1,12 +1,12 @@
 \documentclass[../../../main.tex]{subfiles}
 
 \begin{document}
-\subsection*{Magnetized Object}
+\subsection{Magnetized Object}
 All magnetic phenomena are due to electric charges in motion, and in fact, if you could examine a piece of magnetic material on an atomic scale you would ﬁnd tiny currents: electrons orbiting around nuclei and spinning about their axes--in other words, dipole. Ordinarily, they cancel each other out because of the random orientation of the atoms. But when a magnetic ﬁeld is applied, a net alignment of these magnetic dipoles occurs, and the medium becomes magnetically polarized, or magnetized. 
 
 Unlike electric polarization, which is almost always in the same direction as \textbf{E}, some materials acquire a magnetization parallel to \textbf{B} (paramagnets) and some opposite to \textbf{B} (diamagnets). A few substances, called ferromagnets, retain their magnetization even after the external ﬁeld has been removed—for these, the magnetization is not determined by the present ﬁeld but by the whole magnetic “history” of the object.
 
-\subsection*{Paramagnetism and Torques}
+\subsection{Paramagnetism and Torques}
 Center the loop at the origin, and tilt it an angle $\theta$ from the $z$ axis towards the y-axis. Let \textbf{B} point in the $z$ direction. The forces on the two sloping sides cancel--they tend to stretch the loop, but they don’t rotate it. 
 \begin{equation*}
     \mathbf{N} = aF \sin \theta\; \mathbf{\hat{x}}
@@ -49,7 +49,7 @@ Early physicists thought magnetic dipoles consisted of positive and negative mag
     \caption*{Figure: Gilbert model, electric dipole and Ampere model}
 \end{figure*}
 
-\subsection*{Diamagnetism and Electrons Orbit}
+\subsection{Diamagnetism and Electrons Orbit}
 Let’s assume the  orbit of electrons is a circle of radius $R$. Although technically this orbital motion does not constitute a steady current, in practice it's going to look like a steady current with period the period $T = 2\pi R/v$
 \begin{equation*}
     I=\frac{-e}{T}=-\frac{ev}{2\pi R}
@@ -88,14 +88,14 @@ Thus, when \textbf{B} is turned on, then, the electron speeds up. A change in or
 \end{equation*}
 Notice that the change in m is opposite to the direction of \textbf{B}. Ordinarily, the electron orbits are randomly oriented, and the orbital dipole moments cancel out. But in the presence of a magnetic ﬁeld, each atom picks up a little “extra” dipole moment, and these increments are all antiparallel to the ﬁeld. This is the mechanism responsible for diamagnetism. It is typically much weaker than paramagnetism, and is therefore observed mainly in atoms with even numbers of electrons, where paramagnetism is usually absent.
 
-\subsection*{Magnetization}
+\subsection{Magnetization}
 In the presence of a magnetic ﬁeld, matter becomes magnetized. We have discussed two mechanisms that account for this magnetic polarization: (1) paramagnetism (the dipoles associated with the spins of unpaired electrons experience a torque tending to line them up parallel to the ﬁeld) and (2) diamagnetism (the orbital speed of the electrons is altered in such a way as to change the orbital dipole moment in a direction opposite to the ﬁeld). Whatever the cause, we describe the state of magnetic polarization by the vector quantity
 \begin{equation*}
     \mathbf{M}\equiv\text{magnetic moment per unit volume}=\frac{\mathbf{m}}{\mathcal{V}}
 \end{equation*}
 called the magnetization. 
 
-\subsection*{Bound Current} 
+\subsection{Bound Current} 
 The vector potential of a single dipole \textbf{m} is
 \begin{equation*}
     \mathbf{A} (\mathbf{r})=\frac{\mu_0}{4\pi}  \frac{\mathbf{m}\times \brcurs}{\rcurs^2}
@@ -124,7 +124,7 @@ where $\mathbf{\hat{n}}$ is the normal unit vector. With these deﬁnitions
 
 What this means is that the potential (and hence also the ﬁeld) of a magnetized object is the same as would be produced by a volume current throughout the material, plus a surface current on the boundary. Instead of integrating the contributions of all the inﬁnitesimal dipoles, we ﬁrst determine the bound currents, and then ﬁnd the ﬁeld they produce, in the same way we would calculate the ﬁeld of any other volume and surface currents.
 
-\subsubsection*{Physical interpretation.} Consider thin slab of uniformly magnetized material, with the dipoles represented by tiny current loops--notice that all the “internal” currents cancel. Say that each of the tiny loops has area $a$ and thickness $t$. In terms of the magnetization $M$, its dipole moment is $m = Mat$. In terms of the circulating current $I$, however, $m = I a$. Therefore, $I = Mt$, so the surface current is $K_b = I/t = M$, more precisely 
+\subsubsection{Physical interpretation.} Consider thin slab of uniformly magnetized material, with the dipoles represented by tiny current loops--notice that all the “internal” currents cancel. Say that each of the tiny loops has area $a$ and thickness $t$. In terms of the magnetization $M$, its dipole moment is $m = Mat$. In terms of the circulating current $I$, however, $m = I a$. Therefore, $I = Mt$, so the surface current is $K_b = I/t = M$, more precisely 
 \begin{equation*}
     \mathbf{K}_b=\mathbf{M}\times \mathbf{\hat{n}}
 \end{equation*}
@@ -146,7 +146,7 @@ In general, then
     \mathbf{J}_b=\nabla \times \mathbf{M}
 \end{equation*}
 
-\subsection*{Auxiliary Field H}
+\subsection{Auxiliary Field H}
 the effect of magnetization is to establish bound currents $ \mathbf{J}_b=\nabla \times \mathbf{M}$ within the material and $ \mathbf{K}_b=  \mathbf{M}\times\mathbf{\hat{n}}$ on the surface. We are now ready to put everything together: the ﬁeld attributable to bound currents, plus the ﬁeld due to everything else--which I shall call the free current
 \begin{equation*}
     \mathbf{J}=\mathbf{J}_b+\mathbf{J}_f
@@ -173,13 +173,13 @@ or
 \end{equation*}
 where $I_{\text{f}_\text{enc}}$ is the total free current passing through the Amperian loop.
 
-\subsubsection*{Deceptive parallel.} Whereas $\nabla \cdot \mathbf{B} = 0$, the divergence of \textbf{H} is not, in general, zero. In fact 
+\subsubsection{Deceptive parallel.} Whereas $\nabla \cdot \mathbf{B} = 0$, the divergence of \textbf{H} is not, in general, zero. In fact 
 \begin{equation*}
     \nabla \cdot\mathbf{H}=-\nabla\mathbf{M}
 \end{equation*}
 Only when the divergence of \textbf{M} vanishes is the parallel between \textbf{B} and $\mu_0\mathbf{M}$ faithful. If the problem to find \textbf{H} exhibits cylindrical, plane, solenoidal, or toroidal symmetry, then you can get H by the usual Ampère’s law methods. If the requisite symmetry is absent, you’ll have to think of another approach, and in particular you must not assume that \textbf{H} is zero just because there is no free current in sight. 
 
-\subsection*{Linear Medium}
+\subsection{Linear Medium}
 In paramagnetic and diamagnetic materials, the magnetization is sustained by the ﬁeld; when \textbf{B} is removed, \textbf{M} disappears. In fact, for most substances the magnetization is proportional to the ﬁeld. Thus, I express the proportionality in terms of \textbf{H}, instead of \textbf{B}
 \begin{equation*}
     \mathbf{M}=\chi_m \mathbf{H}
@@ -208,7 +208,7 @@ Incidentally, the volume bound current density in a homogeneous linear material 
     \mathbf{J}_b=\nabla\times \mathbf{M}=\nabla\times \chi_m \mathbf{H}=\chi_m\mathbf{J}_f
 \end{equation*}
 
-\subsubsection*{Defective parallel.} You might suppose that linear media escape the defect in the parallel between \textbf{B} and \textbf{H}: since \textbf{M} and \textbf{H} are now proportional to \textbf{B}, does it not follow that their divergence, must always vanish? Unfortunately, it does not. Formally,
+\subsubsection{Defective parallel.} You might suppose that linear media escape the defect in the parallel between \textbf{B} and \textbf{H}: since \textbf{M} and \textbf{H} are now proportional to \textbf{B}, does it not follow that their divergence, must always vanish? Unfortunately, it does not. Formally,
 \begin{align*}
     \nabla\cdot\mathbf{H}&= \nabla\cdot\frac{\mathbf{B}}{\mu}\\
     \nabla\cdot\mathbf{H}&=\frac{1}{\mu}\nabla\cdot\mathbf{B}+\mathbf{B}\cdot\nabla\cdot\frac{1}{\mu}\\
@@ -220,12 +220,12 @@ so \textbf{H} is not divergenceless (in general) at points where $\mu$ is changi
 \end{equation*}
 and hence, by the divergence theorem, $\nabla\cdot\mathbf{M}$ cannot vanish everywhere within it.
 
-\subsection*{Ferromagnets}
+\subsection{Ferromagnets}
 In a linear medium, the alignment of atomic dipoles is maintained by a magnetic ﬁeld imposed from the outside. Ferromagnets--which are emphatically not linear--require no external ﬁelds to sustain the magnetization; the alignment is “frozen in.” In a ferromagnet, each dipole “likes” to point in the same direction as its neighbors. The reason for this preference is essentially quantum mechanical. 
 
 But if that is true, why isn’t every wrench and nail a powerful magnet? The answer is that the alignment occurs in relatively small patches, called domains. Each domain contains billions of dipoles, all lined up, but the domains themselves are randomly oriented and their magnetic ﬁelds cancel, so as a whole the object is not magnetized.
 
-\subsubsection*{Hysteresis loop.} How, then, would you produce a permanent magnet? If you put a piece of iron into a strong magnetic ﬁeld, the torque $\mathbf{N} = \mathbf{m} \times \mathbf{B}$ tends to align the dipoles parallel to the ﬁeld. Since they like to stay parallel to their neighbors, most of the dipoles will resist this torque. However, at the boundary between two domains, there are competing neighbors, and the torque will throw its weight on the side of the domain most nearly parallel to the ﬁeld. The net effect of the magnetic ﬁeld, then, is to move the domain boundaries and domains parallel to the ﬁeld grow. If the ﬁeld is strong enough, one domain takes over entirely, and the iron is said to be saturated.
+\subsubsection{Hysteresis loop.} How, then, would you produce a permanent magnet? If you put a piece of iron into a strong magnetic ﬁeld, the torque $\mathbf{N} = \mathbf{m} \times \mathbf{B}$ tends to align the dipoles parallel to the ﬁeld. Since they like to stay parallel to their neighbors, most of the dipoles will resist this torque. However, at the boundary between two domains, there are competing neighbors, and the torque will throw its weight on the side of the domain most nearly parallel to the ﬁeld. The net effect of the magnetic ﬁeld, then, is to move the domain boundaries and domains parallel to the ﬁeld grow. If the ﬁeld is strong enough, one domain takes over entirely, and the iron is said to be saturated.
 
 This process is not entirely reversible. When the ﬁeld is switched off, there will be some return to randomly oriented domains, but it is far from complete. You now have a permanent magnet.
 

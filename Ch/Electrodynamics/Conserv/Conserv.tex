@@ -1,13 +1,13 @@
 \documentclass[../../../main.tex]{subfiles}
 \begin{document}
-\subsection*{Charge Conservation}
+\subsection{Charge Conservation}
 The continuity equation for charge is
 \begin{equation*}
     \frac{\partial \rho}{\partial t} =\nabla \cdot \mathbf{J}
 \end{equation*}
 This simply say that the charge in some region changes, then exactly that amount of charge must have passed in or out through the surface.
 
-\subsubsection*{Derivation.}
+\subsubsection{Derivation.}
 The charge inside volume is
 \begin{equation*}
     Q=\int_\mathcal{V}\rho\; d\tau
@@ -25,7 +25,7 @@ Thus
     \frac{\partial\rho}{\partial t}=-\nabla\cdot\mathbf{J}
 \end{equation*}
 
-\subsection*{Energy Conservation}
+\subsection{Energy Conservation}
 The energy conservation is stated by the Poynting theorem
 \begin{equation*}
     \frac{dW}{dt}=-\frac{d}{dt}\int_\mathcal{V}u\;d\tau -\oint_\mathcal{S}\mathbf{S}\cdot d\mathbf{a}
@@ -44,7 +44,7 @@ The local continuity equation for energy reads
 \end{equation*}
 Here, $u$ plays the role of $\rho$ and $\mathbf{S}$ plays $\mathbf{J}$.
 Like the case of charge, this equation state that if energy density decreases at a point, it must be due to energy flowing out of that region.
-\subsubsection*{Derivation.}
+\subsubsection{Derivation.}
 Recall the Lorentz force law
 \begin{equation*}
     \mathbf{F}\cdot d\mathbf{l}=q(\mathbf{E}+\mathbf{v}\times \mathbf{B})\cdot\mathbf{v}\;dt=q\mathbf{E}\cdot v;dt
@@ -103,7 +103,7 @@ which yield the continuity equation for energy
     \frac{\partial u}{\partial t}=-\nabla\cdot\mathbf{S}
 \end{equation*}
 
-\subsection*{Momentum conservation}
+\subsection{Momentum conservation}
 From the Lorentz force law
 \begin{equation*}
     F=\int_\mathcal{V}\rho(\mathbf{E}+\mathbf{v}\times\mathbf{B})\;d\tau= \int(\rho\mathbf{E}+\mathbf{J}\times\mathbf{B})\;d\tau
