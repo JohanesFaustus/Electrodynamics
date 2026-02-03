@@ -1,17 +1,67 @@
 \documentclass[../../../main.tex]{subfiles}
 \begin{document}
 A generic electromagnetic field is the superposition of many monochromatic electromagnetic waves.
-Calling $\omega_k$ the angular frequency of the monochromatic wave with wavenumber $\mathbf{k}$, the total energy $H$ of the electromagnetic field is
+Calling $\omega_\mathbf{k}$ the angular frequency of the monochromatic wave with wavenumber $\mathbf{k}$, the total energy $H$ of the electromagnetic field is
 \begin{equation*}
-  H = \sum_\mathbf{k} \sum_s \hbar \omega_k n_{\mathbf{k}s}
+  H = \sum_\mathbf{k} \sum_s \hbar \omega_\mathbf{k} n_{\mathbf{k}s}
 \end{equation*}
 where $n_{\mathbf{k}s}$ is the number of photons with wavevector $\mathbf{k}$ and polarization $s$.
 Taking into account the second quantization of the field
 \begin{equation*}
-  \hat{H }=\sum_\mathbf{k}  \sum_s \hbar \omega_k \left( \hat{N }_{\mathbf{k} s }+ \frac{1 }{2} \right)
+  \hat{H }=\sum_\mathbf{k}  \sum_s \hbar \omega_\mathbf{k} \left( \hat{N }_{\mathbf{k} s }+ \frac{1 }{2} \right)
 \end{equation*}
 with $\hat{N}_{\mathbf{k}s}$ is the quantum number operator
 \begin{align*}
   \hat{N}_{\mathbf{k}s} \ket{\dots n_{\mathbf{k}s} \dots}= n_{\mathbf{k}s} \ket{\dots n_{\mathbf{k}s} \dots}
 \end{align*}
+
+In classical electrodynamics, the electromagnetic wave can be written in terms of a scalar potential $\phi(\mathbf{r}, t)$ and vector potential $\mathbf{A}(\mathbf{r},t)$
+\begin{equation*}
+  E = -\nabla \phi - \frac{\partial A}{\partial t},
+  B = \nabla \land A
+\end{equation*}
+This field is of course continuous.
+Quantum field treatment however state that the field is quantized with annihilation and creation operator association with it
+\begin{align*}
+  \hat{\mathbf{E}}(r, t) & =  i \sum_\mathbf{k} \sum_s \sqrt{\frac{\hbar \omega_\mathbf{k}}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^+ e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] \epsilon_{\mathbf{k}s}                                        \\
+  \hat{\mathbf{B}}(r, t) & =  \sum_\mathbf{k} \sum_s \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_\mathbf{k} V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^+ e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \epsilon_{\mathbf{k}s}
+\end{align*}
+Here, photons emerge automatically as excitations of these operators.
+
+\subsection{The Second Quantization of Light}
+The first quantization of light refer to the quantization of electromagnetic energy as photon, while the second quantization of light refer to the quantization of the electromagnetic waves.
+This can be achieved in the following steps
+\begin{enumerate}
+  \item Using Coulomb gauge
+  \item
+\end{enumerate}
+
+\subsubsection{Coulomb gauge.}
+Gauge transformation can be applied to the electromagnetic potential since they do not define electromagnetic wave uniquely
+\begin{equation*}
+  \phi \rightarrow \phi' = \phi + \frac{\partial \Lambda}{\partial t} \qquad
+  A \rightarrow A' = A - \nabla \Lambda
+\end{equation*}
+We then use the Coulomb gauge such that
+\begin{equation*}
+  \nabla  \cdot \mathbf{A } =0
+\end{equation*}
+Physically, the Coulomb gauge constant $\mathbf{A}$ such that only the transversal (perpendicular) to the wave vector $\mathbf{k}$ survive.
+This can be seen by considering a complex monochromatic plane wave $\mathbf{A}(\mathbf{r},t)=\mathbf{A}_0 e^{i(\mathbf{k}\cdot \mathbf{r }-\omega t)}$.
+The Coulomb gauge gives
+\begin{equation*}
+  \nabla  \cdot \mathbf{A}=  \nabla \cdot  \mathbf{A}_0  e^{i(k \cdot \mathbf{r} - \omega t)} = \mathbf{A}_0 \cdot (i \mathbf{k}) e^{i(k \cdot \mathbf{r} - \omega t)} = \mathbf{k } \cdot \mathbf{A} = 0
+\end{equation*}
+From the Coulomb gauge and Gauss law $\nabla \cdot \mathbf{E}=\rho/\epsilon_0$ in vacuum, we also obtain the Laplace equation by applying gradient into it
+\begin{equation*}
+  \nabla ^2 \phi = 0
+\end{equation*}
+Imposing that the scalar potential is zero at inﬁnity, this Laplace’s equation has the unique solution
+\begin{equation*}
+  \phi(\mathbf{r},t)=0
+\end{equation*}
+and consequently
+\begin{equation*}
+  E = - \frac{\partial A}{\partial t} \qquad B = \nabla \land A
+\end{equation*}
 \end{document}
