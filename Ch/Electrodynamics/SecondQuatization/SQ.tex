@@ -3,7 +3,7 @@
 A generic electromagnetic field is the superposition of many monochromatic electromagnetic waves.
 Calling $\omega_\mathbf{k}$ the angular frequency of the monochromatic wave with wavenumber $\mathbf{k}$, the total energy $H$ of the electromagnetic field is
 \begin{equation*}
-  H = \sum_\mathbf{k} \sum_s \hbar \omega_\mathbf{k} n_{\mathbf{k}s}
+  H = \sum_{\mathbf{k},s} \hbar \omega_\mathbf{k} n_{\mathbf{k}s}
 \end{equation*}
 where $n_{\mathbf{k}s}$ is the number of photons with wavevector $\mathbf{k}$ and polarization $s$.
 Taking into account the second quantization of the field
@@ -23,17 +23,19 @@ In classical electrodynamics, the electromagnetic wave can be written in terms o
 This field is of course continuous.
 Quantum field treatment however state that the field is quantized with annihilation and creation operator association with it
 \begin{align*}
-  \hat{\mathbf{E}}(r, t) & =  i \sum_\mathbf{k} \sum_s \sqrt{\frac{\hbar \omega_\mathbf{k}}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^+ e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] \epsilon_{\mathbf{k}s}                                        \\
-  \hat{\mathbf{B}}(r, t) & =  \sum_\mathbf{k} \sum_s \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_\mathbf{k} V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^+ e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{E}}(r, t) & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_\mathbf{k}}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^+ e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] \epsilon_{\mathbf{k}s}                                        \\
+  \hat{\mathbf{B}}(r, t) & =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_\mathbf{k} V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^+ e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \epsilon_{\mathbf{k}s}
 \end{align*}
-Here, photons emerge automatically as excitations of these operators.
+As with other quantum field theory, photon is the excitation of the quantum electromagnetic field.
 
 \subsection{The Second Quantization of Light}
 The first quantization of light refer to the quantization of electromagnetic energy as photon, while the second quantization of light refer to the quantization of the electromagnetic waves.
 This can be achieved in the following steps
 \begin{enumerate}
-  \item Using Coulomb gauge
-  \item
+  \item Use Coulomb gauge
+  \item Decompose the field
+  \item Hamiltonian formulation
+  \item Promote the variables to operators
 \end{enumerate}
 
 \subsubsection{Coulomb gauge.}
@@ -64,4 +66,43 @@ and consequently
 \begin{equation*}
   E = - \frac{\partial A}{\partial t} \qquad B = \nabla \land A
 \end{equation*}
+
+\subsubsection{Quantum electromagnetic field.}
+We can expand the vector potential $\mathbf{A}(r, t)$ as a Fourier series of monochromatic plane waves.
+\begin{equation*}
+  A(\mathbf{r}, t) = \sum_{\mathbf{k},s} A_{\mathbf{} s}(t) \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \epsilon_{\mathbf{k} s}
+\end{equation*}
+The vector potential is a real vector field $\mathbf{A} = \mathbf{A}^*$ and consequently $A_{-\mathbf{k},s}=A^*_{\mathbf{k},s}$.
+Thus, we can sum the series over independent $\mathbf{k}$
+\begin{equation*}
+  A(\mathbf{r}, t) = \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+\end{equation*}
+where the complex plane waves $e^{i \mathbf{k } \cdot \mathbf{r}}$ normalized in a volume $V$ are the basis functions of the expansion, and $\epsilon_{\mathbf{k}s}$ are mutually orthogonal real unit vectors of polarization which are also orthogonal to $\mathbf{k}$.
+With this, we can write the  quantized electric field
+\begin{equation*}
+  \mathbf{E}(\mathbf{r}, t) = -\sum_{\mathbf{k},s} \left[ \dot{A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} + \dot{A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+\end{equation*}
+\begin{align*}
+  \mathbf B(\mathbf r,t)
+   & = \nabla \times \mathbf A(\mathbf r,t) \\
+   & = \sum_{\mathbf k,s}
+  \left[
+    A_{\mathbf k s}(t)\frac{\nabla \times \left(e^{i\mathbf k\cdot\mathbf r}\boldsymbol{\epsilon}_{\mathbf k s}\right)}{\sqrt V}
+    + A_{\mathbf k s}^*(t)\frac{\nabla \times \left(e^{-i\mathbf k\cdot\mathbf r}\boldsymbol{\epsilon}_{\mathbf k s}\right)}{\sqrt V}
+  \right]                                   \\
+   & = \sum_{\mathbf k,s}
+  \left[
+    A_{\mathbf k s}(t)\frac{(\nabla e^{i\mathbf k\cdot\mathbf r})\times\boldsymbol{\epsilon}_{\mathbf k s}}{\sqrt V}
+    + A_{\mathbf k s}^*(t)\frac{(\nabla e^{-i\mathbf k\cdot\mathbf r})\times\boldsymbol{\epsilon}_{\mathbf k s}}{\sqrt V}
+  \right]                                   \\
+   & = \sum_{\mathbf k,s}
+  \left[
+    A_{\mathbf k s}(t)\frac{(i\mathbf k)e^{i\mathbf k\cdot\mathbf r}\times\boldsymbol{\epsilon}_{\mathbf k s}}{\sqrt V}
+    + A_{\mathbf k s}^*(t)\frac{(-i\mathbf k)e^{-i\mathbf k\cdot\mathbf r}\times\boldsymbol{\epsilon}_{\mathbf k s}}{\sqrt V}
+  \right]                                   \\
+   & = \sum_{\mathbf k,s}
+  \left[ A_{ks}(t)\frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} - A_{ks}^*(t)\frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right]
+  i\mathbf k \times \boldsymbol{\epsilon}_{\mathbf k s}
+\end{align*}
+where we have used $\nabla \times (f \mathbf{v}) = (\nabla f) \times \mathbf{v}$ for constant $\mathbf{v}$.
 \end{document}
