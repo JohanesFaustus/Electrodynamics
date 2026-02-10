@@ -201,15 +201,33 @@ The work done on a unit charge by you against the back emf, in one trip around t
 \begin{equation*}
     \frac{dW}{dt}=-\upvarepsilon I=LI\frac{dI}{dt}
 \end{equation*}
-If we start with zero current and build it up to a ﬁnal value I, the work done
+If we start with zero current and build it up to a ﬁnal value I, the work done is obtained integrating the last equation over time
 \begin{equation*}
     W=\frac{1}{2}LI^2
 \end{equation*}
-There is a nicer way to write $W$, which has the advantage that it is readily generalized to surface and volume currents
+Recall
 \begin{equation*}
-    W=\frac{1}{2\mu_0}\bigg[\int_\mathcal{V} B^2\;d\tau-\oint \mathbf{A}\times \mathbf{B}\cdot d\mathbf{a}\bigg]
+    \Phi = \int B \cdot d \mathbf{a} = \int (\nabla \times \mathbf{A}) \cdot d \mathbf{a} = \oint \mathbf{A} \cdot d \mathbf{l}
 \end{equation*}
-Now, the integration is to be taken over the entire volume occupied by the current, but \textbf{J} is zero out there anyway. In particular, if we agree to integrate over all space, then the surface integral goes to zero, and we are left with
+Since $\Phi=LI$, then
+\begin{equation*}
+    LI=\oint \mathbf{A} \cdot d \mathbf{l}
+\end{equation*}
+Therefore
+\begin{equation*}
+    W = \frac{1}{2} \mathbf{I} \oint \mathbf{A} \cdot d \mathbf{l} = \frac{1}{2} \oint (\mathbf{A} \cdot \mathbf{I}) dl \implies \frac{1}{2} \int_\mathcal{V} (\mathbf{A} \cdot \mathbf{J}) \;d\tau
+\end{equation*}
+The generalization comes from the definition of current density $    \mathbf{J}\;d\tau = \mathbf{I}\;d \mathbf{l}$.
+Next use Ampere law $\nabla  \times \mathbf{B}=\mu_0 \mathbf{J}$
+\begin{equation*}
+    W  = \frac{1}{2} \int_\mathcal{V} \mathbf{A} \cdot \nabla \times \mathbf{B} \;d\tau
+\end{equation*}
+Then use integration by parts $    \int_{a}^{b} f(\frac{dg}{dx})\;dx=-\int_{a}^{b} g\left(\frac{df}{dx}\right)\;dx+ fg \lvert_{a}^{b}$ to transfer the derivative from $\mathbf{B}$ to $\mathbf{A}$
+\begin{align*}
+    W & = \frac{1}{2\mu_0}\bigg[\int_\mathcal{V} B^2\;d\tau-\int \nabla \cdot ( \mathbf{A}\times \mathbf{B}) \;d\tau\bigg] \\
+    W & = \frac{1}{2\mu_0}\bigg[\int_\mathcal{V} B^2\;d\tau-\oint \mathbf{A}\times \mathbf{B}\cdot d\mathbf{a}\bigg]
+\end{align*}
+Now, the integration is to be taken over the entire volume occupied by the current, but \textbf{J} is zero out there anyway. In particular, if we agree to integrate over all space, then the surface integral goes to zero (due to $\mathbf{A}$ and $\mathbf{B}$), and we are left with
 \begin{equation*}
     W=\frac{1}{2\mu_0}\int B^2 \;d\tau\qquad\text{Over all Space}
 \end{equation*}

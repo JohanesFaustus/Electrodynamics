@@ -10,7 +10,7 @@ The constant $\epsilon_0$ is called (ludicrously) the permittivity of free space
     \epsilon_0=8.85\times 10^{-12}\frac{\text{C$^2$}}{\text{Nm$^2$}}
 \end{equation*}
 
-\subsubsection{Electric Field.} Total force on Q can be written as 
+\subsubsection{Electric Field.} Total force on Q can be written as
 \begin{equation*}
     \mathbf{F}=Q\mathbf{E}
 \end{equation*}
@@ -19,8 +19,8 @@ where
     \mathbf{E}=\frac{1}{4\pi \epsilon_0}\sum_{i=1}^{n}\frac{q_i}{\rcurs_i^2}\hrcurs
 \end{equation*}
 
-\subsubsection{Continuous Charge Distributions.} 
-If, instead, the charge is distributed continuously over some region, the sum becomes an integral 
+\subsubsection{Continuous Charge Distributions.}
+If, instead, the charge is distributed continuously over some region, the sum becomes an integral
 \begin{equation*}
     \mathbf{E}=\frac{1}{4\pi \epsilon_0}\int\frac{1}{\rcurs_i^2}\hrcurs\;dq
 \end{equation*}
@@ -48,13 +48,13 @@ and for a volume charge
     \mathbf{E}=\frac{1}{4\pi \epsilon_0}\int\frac{\rho(\mathbf{r'})}{\rcurs_i^2}\hrcurs\;d\tau'
 \end{equation*}
 
-\subsubsection{Gauss's law.} 
-The flux of \textbf{E} through a surface S 
+\subsubsection{Gauss's law.}
+The flux of \textbf{E} through a surface S
 \begin{equation*}
     \Phi_E \equiv \int_{S} \mathbf{E}\cdot d\mathbf{a}
 \end{equation*}
 is a measure of the “number of field lines” passing through S. The flux through any closed surface is a measure of the
-total charge inside. This is the essence of Gauss's law. 
+total charge inside. This is the essence of Gauss's law.
 \begin{equation*}
     \oint \mathbf{E}\cdot d\mathbf{a}=\frac{1}{\epsilon_0}Q_{enc}
 \end{equation*}
@@ -72,7 +72,7 @@ And since this holds for any volume, the integrands must be equal
     \nabla \cdot \mathbf{E}=\frac{1}{\epsilon_0}\rho
 \end{equation*}
 
-\subsubsection{Curl of E.} The integral of \textbf{E} around a closed path is zero 
+\subsubsection{Curl of E.} The integral of \textbf{E} around a closed path is zero
 \begin{equation*}
     \oint \mathbf{E} \cdot d\mathbf{l}  =0
 \end{equation*}
@@ -98,7 +98,7 @@ Applying fundamental theorem for gradients, we get
 Electric field \textbf{E} will point from high potential to low potential.
 
 \subsubsection{Poisson's Equation and Laplace's Equation}
-Poisson's Equation state the divergence of E in terms of volume. 
+Poisson's Equation state the divergence of E in terms of volume.
 Since $   \mathbf{E} =-\nabla V$, divergence of E in terms of V
 \begin{equation*}
     \nabla^2 V=-\frac{\rho}{\epsilon_0}
@@ -125,7 +125,7 @@ and, for a volume charge, it's
 
 \subsubsection{Boundary Conditions.}
 We have, in the course of our discussion, discussed the three
-fundamental quantities of electrostatics: $\rho$, $\mathbf{E}$, and V and derived all six formulas interrelating  them. 
+fundamental quantities of electrostatics: $\rho$, $\mathbf{E}$, and V and derived all six formulas interrelating  them.
 
 \begin{figure*}[b]
     \centering
@@ -182,7 +182,7 @@ If you have set the reference point (point a) at infinity, therefore
 In this sense, potential $V$ is potential energy $W$ (the work it takes to create the system) per unit charge $Q$, just as the field is the force per unit charge ($\mathbf{E}=\mathbf{F}/Q$).
 
 \subsubsection{The Energy of a Point Charge Distribution.}
-The work it would take to assemble an entire collection of point charges is 
+The work it would take to assemble an entire collection of point charges is
 \begin{equation*}
     W=\frac{1}{2}\sum_{i=1}^{n}q_i\biggl(\sum_{j\neq i}^{n}\frac{1}{4\pi \epsilon_0}\frac{q_j}{\rcurs_{ij}}\biggr)=\frac{1}{2}\sum_{i=1}^{n}q_iV(\mathbf{r}_i)
 \end{equation*}
@@ -196,11 +196,15 @@ where $V(\mathbf{r}_i)$ is potential at point $\mathbf{r}_i$
 \begin{equation*}
     W=\frac{1}{2}\int\rho V\;d\tau
 \end{equation*}
-which can be written using Gauss's law and integration by parts as
-\begin{equation*}
-    W=\frac{\epsilon_0}{2}\Biggl(\int_{V}E^2\;d\tau+ \oint V\mathbf{E}\cdot d\mathbf{a}\Biggr)
-\end{equation*}
-Integration can be done over whatever volume you use (as long as it encloses all the charge), but the contribution from the volume integral goes up, and that of the surface integral goes down, as you take larger and larger volumes. In particular, why not integrate over all space? Thus,
+which can be written using Gauss's law $\rho=\epsilon_0 \nabla \cdot \mathbf{E}$ then integration by parts $    \int_{a}^{b} f(\frac{dg}{dx})\;dx=-\int_{a}^{b} g\left(\frac{df}{dx}\right)\;dx+ fg \lvert_{a}^{b}$ as
+\begin{align*}
+    W & =  \frac{\epsilon_0}{2} \int (\nabla \cdot \mathbf{E}) \mathbf{V} \, d\tau                                                  \\
+      & = \frac{\varepsilon_0}{2} \left[ - \int \mathbf{E} \cdot (\nabla V)\; d\tau + \oint V \mathbf{E} \cdot d \mathbf{a} \right] \\
+    W & = \frac{\epsilon_0}{2}\Biggl(\int_{V}E^2\;d\tau+ \oint V\mathbf{E}\cdot d\mathbf{a}\Biggr)
+\end{align*}
+where we have transferred the derivative from $\mathbf{E}$ to $V$.
+Integration can be done over whatever volume you use (as long as it encloses all the charge), but the contribution from the volume integral goes up (due to $d\tau$), and that of the surface integral goes down (due to $\mathbf{E}$ and $V$), as you take larger and larger volumes.
+Thus,
 \begin{equation*}
     W=\frac{\epsilon_0}{2}\int E^2\;d\tau\quad\text{Over all Space}
 \end{equation*}
@@ -222,8 +226,8 @@ A perfect conductor would contain an unlimited supply of free charges. From this
     \item \textbf{E} is perpendicular to the surface, just outside a conductor
 \end{enumerate}
 
-\subsubsection{Surface Charge and the Force on a Conductor.} 
-Because the field inside a conductor is zero, 
+\subsubsection{Surface Charge and the Force on a Conductor.}
+Because the field inside a conductor is zero,
 the field immediately outside is
 \begin{equation*}
     \mathbf{E}=\frac{\sigma}{\epsilon_0}\mathbf{\hat{n}}
@@ -239,9 +243,9 @@ In the presence of an electric field, a surface charge will experience a force; 
     \mathbf{f}=\sigma\mathbf{E}_{\text{average}}=\frac{1}{2}\sigma(\mathbf{E}_{\text{above}}-\mathbf{E}_{\text{below}})
 \end{equation*}
 In the case of a conductor, the field is zero inside. Therefore,
-    \begin{equation*}
-        \mathbf{f}=\frac{1}{2\epsilon_0}\sigma^2\mathbf{\hat{n}}
-    \end{equation*} 
+\begin{equation*}
+    \mathbf{f}=\frac{1}{2\epsilon_0}\sigma^2\mathbf{\hat{n}}
+\end{equation*}
 This amounts to an outward electrostatic pressure on the surface, tending to draw the conductor into the field, regardless of the sign of $\sigma$. Expressing the pressure in terms of the field just outside the surface
 \begin{equation*}
     P=\frac{\epsilon_0}{2}E^2
