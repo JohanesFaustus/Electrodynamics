@@ -17,8 +17,8 @@ with $\hat{N}_{\mathbf{k}s}$ is the quantum number operator
 
 In classical electrodynamics, the electromagnetic wave can be written in terms of a scalar potential $\phi(\mathbf{r}, t)$ and vector potential $\mathbf{A}(\mathbf{r},t)$
 \begin{equation*}
-  E = -\nabla \phi - \frac{\partial A}{\partial t},
-  B = \nabla \land A
+  E = -\nabla \phi - \frac{\partial \mathbf{A}}{\partial t},\qquad
+  B = \nabla \land \mathbf{A}
 \end{equation*}
 This field is of course continuous.
 Quantum field treatment however state that the field is quantized with annihilation and creation operator association with it
@@ -64,24 +64,34 @@ Imposing that the scalar potential is zero at inﬁnity, this Laplace’s equati
 \end{equation*}
 and consequently
 \begin{equation*}
-  E = - \frac{\partial A}{\partial t} \qquad B = \nabla \land A
+  \mathbf{E} = - \frac{\partial \mathbf{A}}{\partial t} \qquad \mathbf{B} = \nabla \land \mathbf{A}
 \end{equation*}
 
 \subsubsection{Quantum electromagnetic field.}
 We can expand the vector potential $\mathbf{A}(r, t)$ as a Fourier series of monochromatic plane waves.
 \begin{equation*}
-  A(\mathbf{r}, t) = \sum_{\mathbf{k},s} A_{\mathbf{} s}(t) \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \epsilon_{\mathbf{k} s}
+  \mathbf{A}(\mathbf{r}, t) = \sum_{\mathbf{k},s} A_{\mathbf{k} s}(t) \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \boldsymbol{\epsilon}_{\mathbf{k} s}
 \end{equation*}
-The vector potential is a real vector field $\mathbf{A} = \mathbf{A}^*$ and consequently $A_{-\mathbf{k},s}=A^*_{\mathbf{k},s}$.
+It follows from  classical electrodynamics that the vector potential is a real vector field $\mathbf{A} = \mathbf{A}^*$.
+Choosing real polarization vectors $\boldsymbol{\epsilon}_{\mathbf{k} s}=\epsilon ^*_{\mathbf{k} s}$
+\begin{equation*}
+  \mathbf{A}(\mathbf{r},t) = \sum_{\mathbf{k},s} A^*_{\mathbf{k} s}(t) \boldsymbol{\epsilon}_{\mathbf{k} s} \frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}}
+  = \sum_{\mathbf{k},s} A^*_{-\mathbf{k} s}(t) \epsilon_{-\mathbf{k} s} \frac{e^{i \mathbf{text} \cdot \mathbf{r}}}{\sqrt{V}}
+\end{equation*}
+where we relabel $\mathbf{k} \rightarrow -\mathbf{k}$.
+Consequently $A_{-\mathbf{k},s}=A^*_{\mathbf{k},s}$.
 Thus, we can sum the series over independent $\mathbf{k}$
 \begin{equation*}
-  A(\mathbf{r}, t) = \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+  \mathbf{A}(\mathbf{r}, t) = \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
 \end{equation*}
 where the complex plane waves $e^{i \mathbf{k } \cdot \mathbf{r}}$ normalized in a volume $V$ are the basis functions of the expansion, and $\epsilon_{\mathbf{k}s}$ are mutually orthogonal real unit vectors of polarization which are also orthogonal to $\mathbf{k}$.
+Note that the first representation count over all possible $\mathbf{k}$: both $\mathbf{k}$ and $-\mathbf{k}$ are included; meanwhile the second only the representation $\left\{ \mathbf{k},-\mathbf{k} \right\} $ are included.
+
 With this, we can write the  quantized electric field
 \begin{equation*}
   \mathbf{E}(\mathbf{r}, t) = -\sum_{\mathbf{k},s} \left[ \dot{A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} + \dot{A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
 \end{equation*}
+and magnetic field
 \begin{align*}
   \mathbf B(\mathbf r,t)
    & = \nabla \times \mathbf A(\mathbf r,t) \\
@@ -104,5 +114,107 @@ With this, we can write the  quantized electric field
   \left[ A_{ks}(t)\frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} - A_{ks}^*(t)\frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right]
   i\mathbf k \times \boldsymbol{\epsilon}_{\mathbf k s}
 \end{align*}
-where we have used $\nabla \times (f \mathbf{v}) = (\nabla f) \times \mathbf{v}$ for constant $\mathbf{v}$.
+where we have used $\nabla \times (f \mathbf{v}) = (\nabla f) \times \mathbf{v}$ for spatial constant $\mathbf{v}$ such that $\nabla  \times \mathbf{v}=0$.
+
+\subsubsection{Quantum electromagnetic field Hamiltonian.}
+A familiar result of electromagnetism is that the classical energy of the electromagnetic ﬁeld in vacuum is given by
+\begin{align*}
+  H & =  \int d^3 \mathbf{r} \left( \frac{\epsilon_0}{2} \mathbf{E}^2 + \frac{1}{2\mu_0} \mathbf{B}^2 \right)                                                                        \\
+  H & =  \int d^3 \mathbf{r} \left( \frac{\epsilon_0}{2} \left( \frac{\partial \mathbf{A}}{\partial t} \right)^2 + \frac{1}{2\mu_0} \left( \nabla \land \mathbf{A} \right)^2 \right)
+\end{align*}
+To evaluate the Hamiltonian, we evaluate the time derivative and the curl term.
+The time derivative is easy enough
+\begin{equation*}
+  \frac{\partial \mathbf{A}}{\partial t} = \sum_{\mathbf{k},s} \left[ \frac{\dot{A}_{\mathbf{k} s} e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + \frac{\dot{A}^*_{\mathbf{k} s} e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k} s}
+\end{equation*}
+To evaluate the curl term use $\nabla \times (f \mathbf{v}) = (\nabla f) \times \mathbf{v}$ again
+\begin{align*}
+  \nabla \times \mathbf{A} & =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{1}{\sqrt{V}} \nabla \times  e^{i\mathbf{k} \cdot \mathbf{r}} + A_{\mathbf{k}s}^*(t) \frac{1}{\sqrt{V}}\nabla \times e^{-i\mathbf{k} \cdot \mathbf{r}} \right] \epsilon_{\mathbf{k}s}                                                          \\
+  \nabla \times \mathbf{A} & =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k} s} \frac{i \mathbf{k} \times \boldsymbol{\epsilon}_{\mathbf{k} s}}{\sqrt{V}} e^{i \mathbf{k} \cdot \mathbf{r}} - A^*_{\mathbf{k} s} \frac{i \mathbf{k} \times \boldsymbol{\epsilon}_{\mathbf{k} s}}{\sqrt{V}} e^{-i \mathbf{k} \cdot \mathbf{r}} \right]
+\end{align*}
+Another thing to note is the Fourier transform of 3d Dirac delta
+\begin{equation*}
+  \int_{\mathbb{R}^3} d^3 \mathbf{r} \, e^{i(\mathbf{k}-\mathbf{k}') \cdot \mathbf{r}} = (2\pi)^3 \delta^3(\mathbf{k}-\mathbf{k}')
+\end{equation*}
+with continuous $\mathbf{k}$.
+Discrete $\mathbf{k}=2 \pi/L(n_x, n_y, n_z), n_i \in \mathbb{Z}$ takes place in system is enclosed in a finite box of volume $V=L^3$ turns the integral into
+\begin{equation*}
+  \int_V d^3 \mathbf{r} \;e^{i(\mathbf{k}-\mathbf{k}') \cdot r} = V \delta_{\mathbf{k},\mathbf{k}'}
+\end{equation*}
+
+Now the time derivative term reads
+\begin{multline*}
+  \left( \frac{\partial \mathbf A}{\partial t} \right)^2
+  = \sum_{\mathbf k,s} \sum_{\mathbf k', s'} \bigg[
+    \dot A_{\mathbf k s} \dot A_{\mathbf k' s'} \frac{e^{i (\mathbf k + \mathbf k') \cdot \mathbf r}}{V}
+    + \dot A_{\mathbf k s} \dot A_{\mathbf k' s'}^* \frac{e^{i (\mathbf k - \mathbf k') \cdot \mathbf r}}{V}\\
+    + \dot A_{\mathbf k s}^* \dot A_{\mathbf k' s'} \frac{e^{-i (\mathbf k - \mathbf k') \cdot \mathbf r}}{V}
+    + \dot A_{\mathbf k s}^* \dot A_{\mathbf k' s'}^* \frac{e^{-i (\mathbf k + \mathbf k') \cdot \mathbf r}}{V}
+    \bigg] (\boldsymbol\epsilon_{\mathbf k s} \cdot \boldsymbol\epsilon_{\mathbf k' s'})
+\end{multline*}
+Suppose earlier we pick positive value of $\mathbf{k}$.
+The term of exponent containing $\mathbf{k} + \mathbf{k}$ vanishes because by the Dirac delta
+\begin{equation*}
+  \int_V d^3 \mathbf{r} \;e^{i(\mathbf{k}+\mathbf{k}') \cdot r} = V \delta_{\mathbf{k},-\mathbf{k}'}
+\end{equation*}
+only the term $\mathbf{k}=-\mathbf{k}'$ survive.
+As such, the integral evaluate into
+\begin{equation*}
+  \int d^3 \mathbf{r} \left( \frac{\partial \mathbf{A}}{\partial t} \right)^2  = \sum_{\mathbf{k},s}  \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right)
+\end{equation*}
+Also, the polarization orthogonality gives $\boldsymbol{\epsilon}_{ks} \cdot \boldsymbol{\epsilon}_{\mathbf{k} s'} =\delta_{ss'}$.
+Each mode amplitude $A_{\mathbf{k}s}(t)$ behaves exactly like a classical harmonic oscillator due to $\mathbf{A}(\mathbf{r},t)$ obeying the wave equation that yield harmonic oscillator differential equation, whose solution is $A_{\mathbf{k}s}(t)=A_{\mathbf{k}s}(0)e^{i\omega_kt}$.
+Thus $\dot{A}_{\mathbf{k}s}=-i\omega_kA_{\mathbf{k}s}$ and
+\begin{equation*}
+  \frac{\epsilon_0 }{2 }\int d^3 \mathbf{r} \left( \frac{\partial \mathbf{A}}{\partial t} \right)^2
+  =\frac{1 }{2} \sum_{\mathbf{k},s}  \omega_k^2 \left( {A}_{\mathbf{k} s}^{*} A_{\mathbf{k} s} + A_{\mathbf{k} s} A_{\mathbf{k} s}^{*} \right)
+\end{equation*}
+
+Next the curl term
+\begin{multline*}
+  (\nabla \times \mathbf A)^2
+  = \sum_{\mathbf k,s} \sum_{\mathbf k',s'} \bigg[
+    A_{\mathbf k s} A_{\mathbf k' s'} \frac{-(\mathbf k \times \boldsymbol\epsilon_{\mathbf k s}) \cdot (\mathbf k' \times \boldsymbol\epsilon_{\mathbf k' s'})}{V} e^{i (\mathbf k + \mathbf k') \cdot \mathbf r}\\
+    + A_{\mathbf k s} A_{\mathbf k' s'}^* \frac{(\mathbf k \times \boldsymbol\epsilon_{\mathbf k s}) \cdot (\mathbf k' \times \boldsymbol\epsilon_{\mathbf k' s'})}{V} e^{i (\mathbf k - \mathbf k') \cdot \mathbf r} \\
+    + A_{\mathbf k s}^* A_{\mathbf k' s'} \frac{(\mathbf k \times \boldsymbol\epsilon_{\mathbf k s}) \cdot (\mathbf k' \times \boldsymbol\epsilon_{\mathbf k' s'})}{V} e^{-i (\mathbf k - \mathbf k') \cdot \mathbf r}\\
+    + A_{\mathbf k s}^* A_{\mathbf k' s'}^* \frac{-(\mathbf k \times \boldsymbol\epsilon_{\mathbf k s}) \cdot (\mathbf k' \times \boldsymbol\epsilon_{\mathbf k' s'})}{V} e^{-i (\mathbf k + \mathbf k') \cdot \mathbf r}
+    \bigg].
+\end{multline*}
+Pretty long, but that's fine.
+The cross term vanishes again I hope\dots
+\begin{align*}
+  \int d^3 \mathbf{r}  \; (\nabla \times \mathbf A)^2
+   & =  \sum_{\mathbf{k},s}  \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right) |\mathbf{k }\times \boldsymbol{\epsilon}_{\mathbf{k}s} |^2 \\
+   & =  \sum_{\mathbf{k},s} k^2 \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right)
+\end{align*}
+Do note that $\mathbf{f} \times \mathbf{v}=|\mathbf{f}| |\mathbf{v}| \sin \theta$ and that the polarization vector is perpendicular to the wave vector.
+Using $\omega_k = ck$ and $c^2=1/\epsilon_0\mu_0$ to write $\epsilon_0\omega_k^2=k^2/\mu_0$, the integral turns
+\begin{equation*}
+  \frac{1 }{2\mu_0} \int d^3 \mathbf{r}  \; (\nabla \times \mathbf A)^2
+  =\frac{1 }{2} \sum_{\mathbf{k},s}  \omega_k^2 \left( {A}_{\mathbf{k} s}^{*} A_{\mathbf{k} s} + A_{\mathbf{k} s} A_{\mathbf{k} s}^{*} \right)
+\end{equation*}
+
+Therefore, the  Hamiltonian for both field
+\begin{equation*}
+  H  = \sum_{\mathbf{k},s}  \omega_k^2 \left( {A}_{\mathbf{k} s}^{*} A_{\mathbf{k} s} + A_{\mathbf{k} s} A_{\mathbf{k} s}^{*} \right)
+\end{equation*}
+In terms of dimensionless complex coefﬁcients
+\begin{equation*}
+  A_{\mathbf{k}s}(t)=\sqrt{\frac{\hbar }{2\epsilon_0 \omega_k }} a_{\mathbf{k }s}(t)\quad
+  A ^*_{\mathbf{k}s}(t)=\sqrt{\frac{\hbar }{2\epsilon_0 \omega_k }} a_{\mathbf{k }s} ^*(t)
+\end{equation*}
+we can write
+\begin{equation*}
+  H = \sum_{\mathbf{k},s} \frac{\hbar \omega_{k}}{2} \left( a_{\mathbf{k} s}^* a_{\mathbf{k} s} + a_{\mathbf{k} s} a_{\mathbf{k} s}^* \right)
+\end{equation*}
+Instead of using the complex amplitudes, one can introduce the real variables
+\begin{equation*}
+  q_{ks}(t) = \sqrt{\frac{2\hbar}{\omega_k}}\frac{1}{2} \left[ a_{ks}(t) + a_{ks}^*(t) \right]  \quad
+  p_{ks}(t) = \frac{\sqrt{2\hbar \omega_k}  }{2i} \left[ a_{ks}(t) - a_{ks}^*(t) \right]
+\end{equation*}
+such that
+\begin{equation*}
+  H = \sum_{\mathbf{ k} s}  \left( \frac{p_{\mathbf{k},s}^{2}}{2} + \frac{1}{2} \omega_{k}^{2} q_{\mathbf{k} s}^{2} \right)
+\end{equation*}
+
 \end{document}
