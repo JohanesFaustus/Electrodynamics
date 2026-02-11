@@ -23,8 +23,8 @@ In classical electrodynamics, the electromagnetic wave can be written in terms o
 This field is of course continuous.
 Quantum field treatment however state that the field is quantized with annihilation and creation operator association with it
 \begin{align*}
-  \hat{\mathbf{E}}(r, t) & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_\mathbf{k}}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^+ e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] \epsilon_{\mathbf{k}s}                                        \\
-  \hat{\mathbf{B}}(r, t) & =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_\mathbf{k} V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^+ e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{E}}(\mathbf{r}, t) & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_\mathbf{k}}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] \epsilon_{\mathbf{k}s}                                        \\
+  \hat{\mathbf{B}}(\mathbf{r}, t) & =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_\mathbf{k} V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \epsilon_{\mathbf{k}s}
 \end{align*}
 As with other quantum field theory, photon is the excitation of the quantum electromagnetic field.
 
@@ -111,7 +111,7 @@ and magnetic field
     + A_{\mathbf k s}^*(t)\frac{(-i\mathbf k)e^{-i\mathbf k\cdot\mathbf r}\times\boldsymbol{\epsilon}_{\mathbf k s}}{\sqrt V}
   \right]                                   \\
    & = \sum_{\mathbf k,s}
-  \left[ A_{ks}(t)\frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} - A_{ks}^*(t)\frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right]
+  \left[ A_{\mathbf{k } s}(t)\frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} - A_{\mathbf{k } s}^*(t)\frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right]
   i\mathbf k \times \boldsymbol{\epsilon}_{\mathbf k s}
 \end{align*}
 where we have used $\nabla \times (f \mathbf{v}) = (\nabla f) \times \mathbf{v}$ for spatial constant $\mathbf{v}$ such that $\nabla  \times \mathbf{v}=0$.
@@ -214,7 +214,69 @@ Instead of using the complex amplitudes, one can introduce the real variables
 \end{equation*}
 such that
 \begin{equation*}
-  H = \sum_{\mathbf{ k} s}  \left( \frac{p_{\mathbf{k},s}^{2}}{2} + \frac{1}{2} \omega_{k}^{2} q_{\mathbf{k} s}^{2} \right)
+  H = \sum_{\mathbf{ k} s}  \left( \frac{p_{\mathbf{k}s}^{2}}{2} + \frac{1}{2} \omega_{k}^{2} q_{\mathbf{k} s}^{2} \right)
 \end{equation*}
+
+\subsubsection{Operator promotion.}
+The next step is to promote the complex coefﬁcients into ladder operator satifying $[\hat{a}_{\mathbf{k} s}, \hat{a}_{\mathbf{k}'s'}^\dagger] = \delta_{\mathbf{k},\mathbf{k}'} \delta_{s,s'}$
+\begin{equation*}
+  a_{\mathbf{k} s} \rightarrow \hat{a}_{\mathbf{k}s} \qquad
+  a^*_{\mathbf{k}s} \rightarrow \hat{a}^\dagger_ {\mathbf{k}s}
+\end{equation*}
+The quantum Hamiltonian is thus given by
+\begin{equation*}
+  \hat{H} = \sum_{\mathbf{k},s} \frac{\hbar \omega_{k}}{2} \left( \hat{a}_{\mathbf{k} s}^\dagger \hat{a}_{\mathbf{k} s} + \hat{a}_{\mathbf{k} s} \hat{a}_{\mathbf{k} s}^\dagger \right)
+\end{equation*}
+Using the commutator relation $\hat{a}_{\mathbf{k} s}\hat{a}_{\mathbf{k}s}^\dagger= \hat{a}_{\mathbf{k}s}^\dagger\hat{a}_{\mathbf{k} s} +1 $
+\begin{equation*}
+  \hat{H} = \sum_{\mathbf{k},s} \frac{\hbar \omega_{k}}{2} \left( 2\hat{a}_{\mathbf{k} s}^\dagger \hat{a}_{\mathbf{k} s} + 1\right)
+  = \sum_{\mathbf{k},s} \hbar \omega_{k} \left( \hat{a}_{\mathbf{k} s}^\dagger \hat{a}_{\mathbf{k} s} + \frac{1 }{2}\right)
+\end{equation*}
+Or, using number operator which counts the number of photons in the single-particle in state $\ket{\mathbf{k }s}$
+\begin{equation*}
+  \hat{H}= \sum_{\mathbf{k},s} \hbar \omega_{k} \left( \hat{N}_{\mathbf{k} s} + \frac{1 }{2}\right)
+\end{equation*}
+
+In 1927 Paul Dirac performed the quantization of the classical Hamiltonian by promoting the real coordinates $q_{\mathbf{k }s}$ and the real momenta $p_{\mathbf{k }s}$ to operators satifying $[\hat{q}_{\mathbf{k} s}, \hat{p}_{\mathbf{k}'s'}^\dagger] =i \hbar  \delta_{\mathbf{k},\mathbf{k}'} \delta_{s,s'}$
+\begin{equation*}
+  q_{\mathbf{k} s} \rightarrow \hat{q}_{\mathbf{k}s} \qquad
+  p^*_{\mathbf{k}s} \rightarrow \hat{p}^\dagger_ {\mathbf{k}s}
+\end{equation*}
+The Hamiltonian is given by
+\begin{equation*}
+  \hat{H} = \sum_{\mathbf{ k}, s}  \left( \frac{\hat{p}_{\mathbf{k}s}^{2}}{2} + \frac{1}{2} \omega_{k}^{2} \hat{q}_{\mathbf{k} s}^{2} \right)
+\end{equation*}
+Annihilation and creation operators can be expressed in terms of these operator
+\begin{equation*}
+  \hat{a}_{\mathbf{k } s} = \sqrt{\frac{\omega_k}{2\hbar}} \left( \hat{q}_{\mathbf{k } s} + \frac{i}{\omega_k} \hat{p}_{\mathbf{k } s} \right) \quad
+  \hat{a}_{\mathbf{k } s} ^\dagger= \sqrt{\frac{\omega_k}{2\hbar}} \left( \hat{q}_{\mathbf{k } s} - \frac{i}{\omega_k} \hat{p}_{\mathbf{k } s} \right)
+\end{equation*}
+
+Next we move to the electric field.
+Since $\dot{A}_{\mathbf{k}s}=-i\omega_kA_{\mathbf{k}s}$, the electric field now reads
+\begin{equation*}
+  \mathbf{E}(\mathbf{r}, t) = i\sum_{\mathbf{k},s}\omega_k \left[ \dot{A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} - \dot{A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+\end{equation*}
+Introduce the dimensionless coefﬁcients
+\begin{equation*}
+  \mathbf{E}(\mathbf{r}, t) = i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ a_{\mathbf{k } s}(t) e^{i\mathbf{k} \cdot \mathbf{r}} - a_{ks}^*(t) e^{-i\mathbf{k} \cdot \mathbf{r}} \right] \epsilon_{\mathbf{k } s}.
+\end{equation*}
+Finally promote the coefﬁcients into operators
+\begin{equation*}
+  \hat{\mathbf{E}}(\mathbf{r}, t) =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_\mathbf{k}}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] \epsilon_{\mathbf{k}s}
+\end{equation*}
+where we expand the ladder operator definition using $\hat{a}_{\mathbf{k }s }(t)=\hat{a}_{\mathbf{k }s}e^{-\omega_kt}$.
+
+For the magnetic field case, we begin by inserting the dimensionless amplitude
+\begin{equation*}
+  \mathbf{B}(\mathbf{r},t) = \sum_{\mathbf k,s}   \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k V}}
+  \left[ a_{\mathbf{k } s}(t)\frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} - a_{\mathbf{k } s}^*(t)\frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right]   i\mathbf k \times \boldsymbol{\epsilon}_{\mathbf k s}
+\end{equation*}
+then simply promote them into operator
+\begin{equation*}
+  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_\mathbf{k} V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] i \mathbf{k} \times \epsilon_{\mathbf{k}s}
+\end{equation*}
+Still missing factor of $1/|\mathbf{k}|$ to make $\mathbf{k}\to \hat{\mathbf{k}}$.
+Convention difference perhaps?
 
 \end{document}
