@@ -302,4 +302,38 @@ Notice that in the definition of the Fock space $\mathcal{F}$ one must include t
   = \ket{0_{\mathbf{k} s}0_{\mathbf{k}'s'}\cdots }
   =\bigotimes_{\mathbf{k },s} \ket{0_{\mathbf{k }s}}
 \]
+
+\subsection{Ladder Operator}
+The operators $\hat{a}_{\mathbf{k }s}$ and $\hat{a}^\dagger_{\mathbf{k }s}$ are called annihilation and creation operators because they respectively destroy and create one photon with wavevector $\mathbf{k}$ and polarization $s$, namely
+\begin{align*}
+  \hat{a}_{\mathbf{k }s} | \cdots n_{\mathbf{k }s} \cdots \rangle         & = \sqrt{n_{\mathbf{k }s}} |  \cdots n_{\mathbf{k }s} - 1 \cdots \rangle    \\
+  \hat{a}^\dagger_{\mathbf{k }s} | \cdots n_{\mathbf{k }s} \cdots \rangle & = \sqrt{n_{\mathbf{k }s} + 1} |\cdots  n_{\mathbf{k }s} + 1 \cdots \rangle
+\end{align*}
+Consequently, for the vacuum state $|0\rangle$ one define
+\begin{align*}
+  \hat{a}_{\mathbf{k }s} | 0 \rangle   & = 0_F                                                 \\
+  \hat{a}^+_{\mathbf{k }s} | 0 \rangle & = | 1_{\mathbf{k }s} \rangle = | \mathbf{k} s \rangle
+\end{align*}
+where $0_F$ is the zero of the Fock space (usually indicated with $0$), and $| k s \rangle$ is clearly the state of one photon with wavevector $k$ and polarization $s$, such that
+\begin{equation*}
+  \langle \mathbf{r} | \mathbf{k} s \rangle = \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V} \epsilon_{\mathbf{k }s}}
+\end{equation*}
+
+It follows immediately that the number operator
+\begin{equation*}
+  \hat{N }_{\mathbf{k }s } = \hat{a } ^\dagger_{\mathbf{k }s }\hat{a }_{\mathbf{k }s}
+\end{equation*}
+have the action of
+\begin{equation*}
+  \hat{N}_{\mathbf{k }s} | \cdots n_{\mathbf{k }s} \cdots \rangle = n_{\mathbf{k }s}  | \cdots n_{\mathbf{k }s}  \cdots \rangle
+\end{equation*}
+The follow-up is as follows
+\begin{align*}
+  \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} | \cdots n_{ks} \cdots \rangle
+   & =  \hat{a }^\dagger_{\mathbf{k }s}\sqrt{n_{ks}} | \cdots (n_{ks} - 1) \cdots \rangle \\
+  \hat{N }_{\mathbf{k }s}| \cdots n_{ks} \cdots \rangle
+   & =  n_{ks} | \cdots n_{ks} \cdots \rangle
+\end{align*}
+
+
 \end{document}
