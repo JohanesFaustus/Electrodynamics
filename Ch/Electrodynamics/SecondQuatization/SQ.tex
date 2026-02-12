@@ -279,4 +279,27 @@ then simply promote them into operator
 Still missing factor of $1/|\mathbf{k}|$ to make $\mathbf{k}\to \hat{\mathbf{k}}$.
 Convention difference perhaps?
 
+\subsection{Foch State}
+The operators $\hat{a}_{\mathbf{k }s }$ and $\hat{a }_{\mathbf{k }s}$ act in Foch space $\mathcal{F}$.
+A generic state of this Fock space F is given by
+\begin{equation*}
+  \ket{\left\{ n_{\mathbf{k }s} \right\} }
+  = \ket{n_{\mathbf{k} s}n_{\mathbf{k}'s'}n_{\mathbf{k}''s''} \cdots }
+  =\bigotimes_{\mathbf{k },s} \ket{n_{\mathbf{k }s}}
+\end{equation*}
+where there are \( n_{\mathbf{k} s} \) photons with wavevector \( \mathbf{k} \) and polarization \( s \), \( n_{\mathbf{k}'s'} \) photons with wavevector \( \mathbf{k}' \) and polarization \( s' \), \( n_{\mathbf{k}''s''} \) photons with wavevector \( \mathbf{k}'' \) and polarization \( s'' \), et cetera.
+For example, the state $\ket{ 0_{\mathbf{k} s} 1_{\mathbf{k}'s'}  2_{\mathbf{k}''s''}}$.
+Here, the entire mode $\mathbf{k},s$ is in vacuum or no photon exist; mode $\mathbf{k'},s'$ has one photon; and mode $\mathbf{k}'',s''$ has two.
+
+The Fock space \( \mathcal{F} \) is given by
+\begin{equation*}
+  \mathcal{F} = \mathcal{H}_0 \oplus \mathcal{H}_1 \oplus \mathcal{H}_2 \oplus \mathcal{H}_3 \oplus \cdots = \bigoplus_{n=0}^{\infty} \mathcal{H}_n = \mathcal{F} = \bigoplus_{n=0}^{\infty} \mathcal{H}^{\otimes n}
+\end{equation*}
+where $  \mathcal{H}_n = \mathcal{H} \otimes \mathcal{H} \otimes \cdots \otimes \mathcal{H} = \mathcal{H}^{\otimes n}$ is the Hilbert space of $n$ identical photons, which is $n$ times the tensor product of the single-photon Hilbert space $\mathcal{H}$
+Notice that in the definition of the Fock space $\mathcal{F}$ one must include the space $\mathcal{H}_0 = \mathcal{H}^{\otimes 0}$, which is the Hilbert space of 0 photons, containing only the vacuum state
+\[
+  \ket{0}
+  = \ket{0_{\mathbf{k} s}0_{\mathbf{k}'s'}\cdots }
+  =\bigotimes_{\mathbf{k },s} \ket{0_{\mathbf{k }s}}
+\]
 \end{document}
