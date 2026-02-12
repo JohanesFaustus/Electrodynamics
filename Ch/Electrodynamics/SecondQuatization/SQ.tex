@@ -303,6 +303,87 @@ Notice that in the definition of the Fock space $\mathcal{F}$ one must include t
   =\bigotimes_{\mathbf{k },s} \ket{0_{\mathbf{k }s}}
 \]
 
+\subsubsection{Ladder operator.}
+If there are exactly $n$ photons in this polarized monochromatic wave $\omega=\omega_k=c|\mathbf{k}|$ the Fock state of the system is given by
+\begin{equation*}
+  \ket{n }= \frac{1 }{\sqrt{n !}}\left( \hat{a }^\dagger \right) ^n \ket{0}
+\end{equation*}
+This can be generalized into
+\begin{equation*}
+  \ket{n_{\mathbf{k }s} }= \frac{1 }{\sqrt{n_{\mathbf{k }s}!}}\left( \hat{a }^\dagger_{\mathbf{k }s} \right) ^{n_{\mathbf{k }s}} \ket{0}
+\end{equation*}
+or for multimode
+\begin{equation*}
+  \ket{\left\{ n_{\mathbf{k }s}  \right\} }
+  =\prod_{\mathbf{k },s} \frac{1 }{\sqrt{n_{\mathbf{k }s}!}}\left( \hat{a }^\dagger_{\mathbf{k }s} \right) ^{n_{\mathbf{k }s}} \ket{0}
+\end{equation*}
+
+To prove this, we define unnormalized state
+\begin{equation*}
+  \ket{n'_{\mathbf{k }s}}=\hat{a}^\dagger_{\mathbf{k }s} \ket{0}
+\end{equation*}
+and use the relations
+\begin{gather*}
+  \hat{a}_{\mathbf{k }s} (\hat{a}^\dagger_{\mathbf{k }s} )^n
+  = (\hat{a}^\dagger_{\mathbf{k }s} )^n a +n (\hat{a}^\dagger_{\mathbf{k }s} )^{n-1} \\
+  \hat{a}_{\mathbf{k }s} ^n(\hat{a}^\dagger_{\mathbf{k }s}) ^n \ket{0}= n! \ket{0}
+\end{gather*}
+
+First let us use induction to prove said relation.
+With both being the induction hypothesis, our base case $n$ is the commutator relation
+\begin{equation*}
+  \hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} =\hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} +1
+\end{equation*}
+We prove for $n+1$ by considering
+\begin{align*}
+  \hat{a}_{\mathbf{k }s} (\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}+1}
+                                                                 &
+  = \hat{a}_{\mathbf{k }s} (\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}} \hat{a}^\dagger_{\mathbf{k }s}
+  =[(\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}} a +{n_{\mathbf{k }s}} (\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}-1}]\hat{a}^\dagger_{\mathbf{k }s}                                                    \\
+                                                                 &
+  = (\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}} \hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s}+ {n_{\mathbf{k }s}} (\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}-1}\hat{a}^\dagger_{\mathbf{k }s} \\
+                                                                 &
+  =  (\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}} (\hat{a}^\dagger_{\mathbf{k }s}  \hat{a}_{\mathbf{k }s} +1)+{n_{\mathbf{k }s}} (\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}}                             \\
+  \hat{a}_{\mathbf{k }s} (\hat{a}^\dagger_{\mathbf{k }s} )^{n+1} & =
+  (\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}+1}\hat{a}_{\mathbf{k }s} + ({n_{\mathbf{k }s}}+1)(\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}}
+\end{align*}
+which is our hypothesis for ${n_{\mathbf{k }s}} \to {n_{\mathbf{k }s}}+1$.
+The action of this relation is as follows
+\begin{equation*}
+  \hat{a}_{\mathbf{k }s} (\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}} \ket{0}
+  =(\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}} a +{n_{\mathbf{k }s}} (\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}-1}   \ket{0}= {n_{\mathbf{k }s}} (\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}-1}\ket{0}
+\end{equation*}
+Next we use this relation, which has been proven, to prove the second relation.
+Using induction again, we consider base case $n$ as
+\begin{equation*}
+  (\hat{a}_{\mathbf{k }s} )^0 (\hat{a}^\dagger_{\mathbf{k }s} )^0 = \ket{0}=0!\ket{0}
+\end{equation*}
+It holds, then for $n+1$ consider
+\begin{equation*}
+  \hat{a}_{\mathbf{k }s} (\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}+1} \ket{0}
+  = ({n_{\mathbf{k }s}}+1) (\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}}\ket{0}
+\end{equation*}
+then apply $\hat{a}_{\mathbf{k }s} ^{n_{\mathbf{k }s}}$ along with the second hypothesis
+\begin{align*}
+  (\hat{a}_{\mathbf{k }s})^{{n_{\mathbf{k }s}}+1} (\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}+1} \ket{0}
+   & =  ({n_{\mathbf{k }s}}+1) (\hat{a}_{\mathbf{k }s} )^{n_{\mathbf{k }s}}(\hat{a}^\dagger_{\mathbf{k }s} )^{{n_{\mathbf{k }s}}}\ket{0} \\
+   & = ({n_{\mathbf{k }s}}+1){n_{\mathbf{k }s}}! \ket{0}=({n_{\mathbf{k }s}}+1)\ket{0}
+\end{align*}
+It holds once more.
+We now back at normalizing the state $\ket{{n_{\mathbf{k }s}}'}$ by taking the inner product and inserting the normalizing constant
+\begin{equation*}
+  \alpha^2\braket{{n_{\mathbf{k }s}}' | {n_{\mathbf{k }s}}'}=\alpha \braket{0 | \hat{a}_{\mathbf{k }s} ^{n_{\mathbf{k }s}} (\hat{a}^\dagger_{\mathbf{k }s} )^{n_{\mathbf{k }s}}|0}={n_{\mathbf{k }s}}!\\
+  \alpha=\frac{1 }{\sqrt{{n_{\mathbf{k }s}}!}}
+\end{equation*}
+Thus the normalized state
+\begin{equation*}
+  \ket{{n_{\mathbf{k }s}}}=\alpha \ket{{n_{\mathbf{k }s}}'}= \frac{1 }{\sqrt{{n_{\mathbf{k }s}}! }}(\hat{a}^\dagger_{\mathbf{k }s}   )^{n_{\mathbf{k }s}} \ket{0}
+\end{equation*}
+
+For the multimode state, we can insert a product over $\mathbf{k },s$.
+This follows from each mode contributes its own independent ladder algebra and total state is obtained by applying all independent excitations.
+This meant that excitation of mode $(\mathbf{k},s)$ is unaffected by excitation of a distinct mode $(\mathbf{k}',s')$
+
 \subsection{Ladder Operator}
 The operators $\hat{a}_{\mathbf{k }s}$ and $\hat{a}^\dagger_{\mathbf{k }s}$ are called annihilation and creation operators because they respectively destroy and create one photon with wavevector $\mathbf{k}$ and polarization $s$, namely
 \begin{align*}
