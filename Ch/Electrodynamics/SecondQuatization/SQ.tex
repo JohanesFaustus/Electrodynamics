@@ -371,11 +371,11 @@ If there are exactly $n$ photons in this polarized monochromatic wave $\omega=\o
 \begin{equation*}
   \ket{n }= \frac{1 }{\sqrt{n !}}\left( \hat{a }^\dagger \right) ^n \ket{0}
 \end{equation*}
-This can be generalized into
+or more precisely
 \begin{equation*}
   \ket{n_{\mathbf{k }s} }= \frac{1 }{\sqrt{n_{\mathbf{k }s}!}}\left( \hat{a }^\dagger_{\mathbf{k }s} \right) ^{n_{\mathbf{k }s}} \ket{0}
 \end{equation*}
-or for multimode
+This can be generalized into  multimode state
 \begin{equation*}
   \ket{\left\{ n_{\mathbf{k }s}  \right\} }
   =\prod_{\mathbf{k },s} \frac{1 }{\sqrt{n_{\mathbf{k }s}!}}\left( \hat{a }^\dagger_{\mathbf{k }s} \right) ^{n_{\mathbf{k }s}} \ket{0}
@@ -561,7 +561,12 @@ $|\alpha\rangle$ does not have a fixed number of photons, i.e. it is not an eige
 \end{equation*}
 The definition is chosen to make the quantum state most closely resemble classical behavior.
 By defining a state as an eigenstate of $\hat{a}$, we select a state where the "field amplitude" itself has a well-defined value.
-The reason being that the electromagnetic field can written as a linear combination of the ladder operators.
+The reason being that the electromagnetic field can written as a linear combination of the annihilation operators.
+
+In the multimode state, the definition reads
+\begin{equation*}
+  \hat{a}_{\mathbf{k }s} \ket{\left\{ \alpha_{\mathbf{k }s} \right\} }=\alpha_{\mathbf{k }s} \ket{\left\{ \alpha_{\mathbf{k }s} \right\} }
+\end{equation*}
 
 \subsubsection{Derivation: Fock state.}
 The coherent state $|\alpha\rangle$ can be expanded as
@@ -597,13 +602,38 @@ and in general
   c_n = \frac{\alpha^n}{\sqrt{n!}} c_0
 \end{equation*}
 Substituting back
-\[
+\begin{equation*}
   |\alpha\rangle = \sum_{n=0}^{\infty} c_0 \frac{\alpha^n}{\sqrt{n!}} |n\rangle ,
-\]
+\end{equation*}
 where the parameter $c_0$ is fixed by the normalization
+\begin{equation*}
+  \langle \alpha | \alpha \rangle = |c_0|^2 \sum_{n=0}^{\infty} \frac{\alpha^{2n}}{n!} = |c_0|^2 e^{|\alpha|^2}\implies c_0 = e^{-|\alpha|^2/2}
+\end{equation*}
 
-\[
-  \langle \alpha | \alpha \rangle = |c_0|^2 \sum_{n=0}^{\infty} \frac{\alpha^{2n}}{n!} = |c_0|^2 e^{|\alpha|^2}\implies c_0 = e^{-|\alpha|^2/2} ,
-\]
+Putting it all together, the single mode state reads
+\begin{equation*}
+  |\alpha\rangle = e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle
+\end{equation*}
+
+For the multimode coherent state, note that the state is a tensor product of single mode over $(\mathbf{k},s)$
+\begin{equation*}
+  \ket{\left\{ \alpha_{\mathbf{k }s} \right\} } = \bigotimes_{\mathbf{k},s} \ket{\alpha_{\mathbf{k }s}}=
+  \bigotimes e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle
+\end{equation*}
+Using the relation
+\begin{equation*}
+  \bigotimes_i \left(b_i \sum_{n_i } c_{n_i }^{(i )}\ket{n_i}  \right)
+  =
+  \left( \prod_i b_i \right) \sum_{\left\{ n_i  \right\} }\left( \prod_i  c_{n_i} ^{(i)}\right)  \bigotimes_i \ket{n_i}
+\end{equation*}
+yields
+\begin{align*}
+  \ket{\left\{ \alpha_{\mathbf{k }s} \right\} }
+   & =
+  \left( \prod_{\mathbf{k},s} e^{-|\alpha_{\mathbf{k }s}|^2/2} \right) \sum_{\{n_{\mathbf{k }s}\}} \left( \prod_{\mathbf{k},s} \frac{\alpha_{\mathbf{k }s}^{n_{\mathbf{k }s}}}{\sqrt{n_{\mathbf{k }s}!}} \right) \bigotimes_{\mathbf{k },s}|n_{\mathbf{k }s}\rangle \\
+  | \{ \alpha_{\mathbf{k }s} \} \rangle
+   & =
+  \exp\left(-\frac{1}{2} \sum_{\mathbf{k},s} |\alpha_{\mathbf{k }s}|^2\right) \sum_{\{ n_{\mathbf{k }s} \}} \left( \prod_{\mathbf{k},s} \frac{\alpha_{\mathbf{k }s}^{n_{\mathbf{k }s}}}{\sqrt{n_{\mathbf{k }s}!}} \right) \ket{\{ n_{\mathbf{k }s} \}}
+\end{align*}
 
 \end{document}

@@ -1,5 +1,17 @@
 \documentclass[10pt]{report}
-\usepackage[paperheight=25.5 cm, paperwidth=14.25cm, left=1.75cm, right=1.75cm, top=1.5cm, bottom=1.5cm]{geometry}
+%Custom papersize, roughly the ratio of smartphone for convinience
+
+\newif\ifaFive
+% default state is false
+% uncomment below to make a5 papersize
+\aFivetrue
+
+\ifaFive
+    \usepackage[a5paper, left=1.75cm,right=1.75cm,top=1.5cm,bottom=1.5cm]{geometry}
+\else
+    \usepackage[paperheight=25.5 cm,paperwidth=14.25cm,left=1.75cm,right=1.75cm,top=1.5cm,bottom=1.5cm]{geometry}
+\fi
+
 \input{Ch/Preamble/pre.tex}
 \usepackage[backend=biber]{biblatex}
 \addbibresource{./export.bib}
