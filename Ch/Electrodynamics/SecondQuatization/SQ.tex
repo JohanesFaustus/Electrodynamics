@@ -1,18 +1,22 @@
 \documentclass[../../../main.tex]{subfiles}
 \begin{document}
-A generic electromagnetic field is the superposition of many monochromatic electromagnetic waves.
-Calling $\omega_\mathbf{k}$ the angular frequency of the monochromatic wave with wavenumber $\mathbf{k}$, the total energy $H$ of the electromagnetic field is
+A generic electromagnetic field is the superposition of many  single frequency monochromatic electromagnetic waves.
+Calling $\omega_k$ the angular frequency of the monochromatic wave with wavenumber $\mathbf{k}$, the total energy $H$ of the electromagnetic field is
 \begin{equation*}
-  H = \sum_{\mathbf{k},s} \hbar \omega_\mathbf{k} n_{\mathbf{k}s}
+  H =  \int d^3 \mathbf{r} \left( \frac{\epsilon_0}{2} \mathbf{E}^2 + \frac{1}{2\mu_0} \mathbf{B}^2 \right)                                                                        \\
+\end{equation*}
+or the semi-classical version
+\begin{equation*}
+  H = \sum_{\mathbf{k},s} \hbar \omega_k n_{\mathbf{k}s}
 \end{equation*}
 where $n_{\mathbf{k}s}$ is the number of photons with wavevector $\mathbf{k}$ and polarization $s$.
 Taking into account the second quantization of the field
 \begin{equation*}
-  \hat{H }=\sum_\mathbf{k}  \sum_s \hbar \omega_\mathbf{k} \left( \hat{N }_{\mathbf{k} s }+ \frac{1 }{2} \right)
+  \hat{H }=\sum_{\mathbf{k}s} \hbar \omega_k \left( \hat{N }_{\mathbf{k} s }+ \frac{1 }{2} \right)
 \end{equation*}
 with $\hat{N}_{\mathbf{k}s}$ is the quantum number operator
 \begin{align*}
-  \hat{N}_{\mathbf{k}s} \ket{\dots n_{\mathbf{k}s} \dots}= n_{\mathbf{k}s} \ket{\dots n_{\mathbf{k}s} \dots}
+  \hat{N}_{\mathbf{k},s} \ket{\dots n_{\mathbf{k}s} \dots}= n_{\mathbf{k}s} \ket{\dots n_{\mathbf{k}s} \dots}
 \end{align*}
 
 In classical electrodynamics, the electromagnetic wave can be written in terms of a scalar potential $\phi(\mathbf{r}, t)$ and vector potential $\mathbf{A}(\mathbf{r},t)$
@@ -23,10 +27,15 @@ In classical electrodynamics, the electromagnetic wave can be written in terms o
 This field is of course continuous.
 Quantum field treatment however state that the field is quantized with annihilation and creation operator association with it
 \begin{align*}
-  \hat{\mathbf{E}}(\mathbf{r}, t) & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_\mathbf{k}}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] \epsilon_{\mathbf{k}s}                                        \\
-  \hat{\mathbf{B}}(\mathbf{r}, t) & =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_\mathbf{k} V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{E}}(\mathbf{r}, t) & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \epsilon_{\mathbf{k}s}                                        \\
+  \hat{\mathbf{B}}(\mathbf{r}, t) & =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \epsilon_{\mathbf{k}s}
 \end{align*}
 As with other quantum field theory, photon is the excitation of the quantum electromagnetic field.
+Aside, my derivation yield
+\begin{equation*}
+  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 V} \mu_0} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{\hat{k}} \times \epsilon_{\mathbf{k}s}
+\end{equation*}
+Different constant??
 
 \subsection{The Second Quantization of Light}
 The first quantization of light refer to the quantization of electromagnetic energy as photon, while the second quantization of light refer to the quantization of the electromagnetic waves.
@@ -41,8 +50,8 @@ This can be achieved in the following steps
 \subsubsection{Coulomb gauge.}
 Gauge transformation can be applied to the electromagnetic potential since they do not define electromagnetic wave uniquely
 \begin{equation*}
-  \phi \rightarrow \phi' = \phi + \frac{\partial \Lambda}{\partial t} \qquad
-  A \rightarrow A' = A - \nabla \Lambda
+  \phi \rightarrow \phi' = \phi + \frac{\partial }{\partial t} \Lambda(\mathbf{r },t)\qquad
+  A \rightarrow A' = A - \nabla \Lambda(\mathbf{r },t)
 \end{equation*}
 We then use the Coulomb gauge such that
 \begin{equation*}
@@ -255,7 +264,7 @@ Annihilation and creation operators can be expressed in terms of these operator
 Next we move to the electric field.
 Since $\dot{A}_{\mathbf{k}s}=-i\omega_kA_{\mathbf{k}s}$, the electric field now reads
 \begin{equation*}
-  \mathbf{E}(\mathbf{r}, t) = i\sum_{\mathbf{k},s}\omega_k \left[ \dot{A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} - \dot{A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+  \mathbf{E}(\mathbf{r}, t) = i\sum_{\mathbf{k},s}\omega_k \left[ {A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} - {A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
 \end{equation*}
 Introduce the dimensionless coefﬁcients
 \begin{equation*}
@@ -263,24 +272,29 @@ Introduce the dimensionless coefﬁcients
 \end{equation*}
 Finally promote the coefﬁcients into operators
 \begin{equation*}
-  \hat{\mathbf{E}}(\mathbf{r}, t) =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_\mathbf{k}}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{E}}(\mathbf{r}, t) =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \epsilon_{\mathbf{k}s}
 \end{equation*}
 where we expand the ladder operator definition using $\hat{a}_{\mathbf{k }s }(t)=\hat{a}_{\mathbf{k }s}e^{-\omega_kt}$.
 
 For the magnetic field case, we begin by inserting the dimensionless amplitude
 \begin{equation*}
   \mathbf{B}(\mathbf{r},t) = \sum_{\mathbf k,s}   \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k V}}
-  \left[ a_{\mathbf{k } s}(t)\frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} - a_{\mathbf{k } s}^*(t)\frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right]   i\mathbf k \times \boldsymbol{\epsilon}_{\mathbf k s}
+  \left[ a_{\mathbf{k } s}(t)e^{i \mathbf{k} \cdot \mathbf{r}} - a_{\mathbf{k } s}^*(t)e^{-i \mathbf{k} \cdot \mathbf{r}} \right]   i\mathbf k \times \boldsymbol{\epsilon}_{\mathbf k s}
 \end{equation*}
 then simply promote them into operator
 \begin{equation*}
-  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_\mathbf{k} V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_\mathbf{k} t)} \right] i \mathbf{k} \times \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{k} \times \epsilon_{\mathbf{k}s}
 \end{equation*}
-Still missing factor of $1/|\mathbf{k}|$ to make $\mathbf{k}\to \hat{\mathbf{k}}$.
+Still missing some factor of $1/|\mathbf{k}|$ to make $\mathbf{k}\to \hat{\mathbf{k}}$ in the last term.
+Forcing it regardless, yields
+\begin{equation*}
+  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 V} \mu_0} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{\hat{k}} \times \epsilon_{\mathbf{k}s}
+\end{equation*}
+a different constant.
 Convention difference perhaps?
 
-\subsection{Foch State}
-The operators $\hat{a}_{\mathbf{k }s }$ and $\hat{a }_{\mathbf{k }s}$ act in Foch space $\mathcal{F}$.
+\subsection{Fock State}
+The operators $\hat{a}_{\mathbf{k }s }$ and $\hat{a }_{\mathbf{k }s}$ act in Fock space $\mathcal{F}$.
 A generic state of this Fock space F is given by
 \begin{equation*}
   \ket{\left\{ n_{\mathbf{k }s} \right\} }
@@ -383,6 +397,76 @@ Thus the normalized state
 For the multimode state, we can insert a product over $\mathbf{k },s$.
 This follows from each mode contributes its own independent ladder algebra and total state is obtained by applying all independent excitations.
 This meant that excitation of mode $(\mathbf{k},s)$ is unaffected by excitation of a distinct mode $(\mathbf{k}',s')$
+
+\subsubsection{Coherent state.}
+By using the number operator, one obtain
+\begin{equation*}
+  \hat{N}_{\mathbf{k }s} | \cdots n_{\mathbf{k }s} \cdots \rangle = n_{\mathbf{k }s}  | \cdots n_{\mathbf{k }s}  \cdots \rangle
+\end{equation*}
+Viewed in this light, the Fock state is the eigenstate of number operator and has a definite photon number, read: eigenvalue.
+
+Despite this, the Fock state has no coherent phase and thus unable to properly interference.
+This result can be seen by considering the expectation value of electromagnetic field.
+Notice that
+\begin{equation*}
+  \hat{\mathbf{E}} \propto \sum_{\mathbf{k}s} \left( \hat{a}_{\mathbf{k }s} -\hat{a}^\dagger_{\mathbf{k }s}  \right) \quad
+  \hat{\mathbf{B}} \propto \sum_{\mathbf{k}s} \left( \hat{a}_{\mathbf{k }s} -\hat{a}^\dagger_{\mathbf{k }s}  \right)
+\end{equation*}
+However
+\begin{align*}
+  \braket{n_{\mathbf{k }s}  | \hat{a}_{\mathbf{k }s} |n_{\mathbf{k }s} }          & =   \sqrt{n_{\mathbf{k }s}} \braket{n_{\mathbf{k }s}  | n_{\mathbf{k }s} -1} =0     \\
+  \braket{n_{\mathbf{k }s}  | \hat{a}^\dagger_{\mathbf{k }s}  |n_{\mathbf{k }s} } & =   \sqrt{n_{\mathbf{k }s}+1} \braket{n_{\mathbf{k }s}  | n_{\mathbf{k }s} + 1} = 0
+\end{align*}
+Thus
+\begin{equation*}
+  \braket{n_{\mathbf{k }s}  | \hat{\mathbf{E }}|n_{\mathbf{k }s} }=0\qquad
+  \braket{n_{\mathbf{k }s}  | \hat{\mathbf{B }}|n_{\mathbf{k }s} }=0
+\end{equation*}
+The vanishing result does not mean the field is absent, it means that the average electromagnetic field amplitude is zero and field fluctuates symmetrically about zero.
+The vanishing result thus can be seen as a consequence of undefined phase of Fock space.
+
+The square of the field is different case, however.
+With the fields written as
+\begin{align*}
+  \hat{\mathbf{E}}^2 & \propto \sum_{\mathbf{k}s}\sum_{\mathbf{k}'s'} \left( -\hat{a}_{\mathbf{k }s}\hat{a}_{\mathbf{k }'s'} +\hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }'s'} +\hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }'s'}  -\hat{a}^\dagger_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }'s'}  \right) \\
+  \hat{\mathbf{B}}^2 & \propto \sum_{\mathbf{k}s}\sum_{\mathbf{k}'s'} \left( -\hat{a}_{\mathbf{k }s}\hat{a}_{\mathbf{k }'s'} +\hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }'s'} +\hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }'s'}  -\hat{a}^\dagger_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }'s'}  \right) \\
+\end{align*}
+where we have inserted the factor $i$.
+Along with
+\begin{gather*}
+  \braket{\hat{a}_{\mathbf{k }s}   \hat{a}_{\mathbf{k }s} }=0                        \quad
+  \braket{\hat{a}_{\mathbf{k }s}   \hat{a}^\dagger_{\mathbf{k }s} }=n_{\mathbf{k }s}+1 \\
+  \braket{\hat{a}^\dagger_{\mathbf{k }s}   \hat{a}_{\mathbf{k }s} }=n_{\mathbf{k }s} \quad
+  \braket{\hat{a}^\dagger_{\mathbf{k }s}   \hat{a}^\dagger_{\mathbf{k }s} }=0
+\end{gather*}
+the expectation value now can be evaluated as
+\begin{equation*}
+  \braket{n_{\mathbf{k }s}  | \hat{\mathbf{E }}^2|n_{\mathbf{k }s} }\propto2 n_{\mathbf{k }s}+1
+  \qquad
+  \braket{n_{\mathbf{k }s}  | \hat{\mathbf{B }}^2|n_{\mathbf{k }s} }\propto2 n_{\mathbf{k }s}+1
+\end{equation*}
+or with all terms inserted
+\begin{equation*}
+  \braket{n_{\mathbf{k }s}  | \hat{\mathbf{E }}^2|n_{\mathbf{k }s} }= \frac{\hbar \omega_k }{\epsilon_0 V}\left( n_{\mathbf{k }s}+\frac{1 }{2} \right)
+  \quad
+  \braket{n_{\mathbf{k }s}  | \hat{\mathbf{B }}^2|n_{\mathbf{k }s} }= \frac{\hbar \omega_k \mu_0}{V}\left( n_{\mathbf{k }s}+\frac{1 }{2} \right)
+\end{equation*}
+We can insert this into classical Hamiltonian
+\begin{align*}
+  H & =   \int d^3 \mathbf{r} \left( \frac{\epsilon_0}{2} \mathbf{E}^2 + \frac{1}{2\mu_0} \mathbf{B}^2 \right)         \\
+    & = \int d^3 \mathbf{r } \left[ \frac{\hbar  \omega_k }{2V }\left( n_{\mathbf{k }s}+\frac{1 }{2 } \right)  \right] \\
+  H & = \hbar \omega_k \left( n_{\mathbf{k }s}+\frac{1 }{2} \right)
+\end{align*}
+This result match the quantum Hamiltonian
+\begin{equation*}
+  \braket{n_{\mathbf{k }s} |H|n_{\mathbf{k }s} }
+  =
+  \braket{n_{\mathbf{k }s} | \sum_{\mathbf{k}s} \hbar \omega_k \left( \hat{N }_{\mathbf{k} s }+ \frac{1 }{2} \right)|n_{\mathbf{k }s} }
+  = \hbar \omega_k \left( n_{\mathbf{k }s}+\frac{1 }{2} \right)
+\end{equation*}
+This mean that the field have definite energy despite not having definite phase.
+The fact that the energy is definite despite the field fluctuates is because both energy and phase are conjugate variables in the quantum.
+This field fluctuation reflects uncertainty in phase.
 
 \subsection{Ladder Operator}
 The operators $\hat{a}_{\mathbf{k }s}$ and $\hat{a}^\dagger_{\mathbf{k }s}$ are called annihilation and creation operators because they respectively destroy and create one photon with wavevector $\mathbf{k}$ and polarization $s$, namely
