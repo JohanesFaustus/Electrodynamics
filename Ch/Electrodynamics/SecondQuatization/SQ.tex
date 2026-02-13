@@ -360,11 +360,11 @@ The Fock space \( \mathcal{F} \) is given by
 \end{equation*}
 where $  \mathcal{H}_n = \mathcal{H} \otimes \mathcal{H} \otimes \cdots \otimes \mathcal{H} = \mathcal{H}^{\otimes n}$ is the Hilbert space of $n$ identical photons, which is $n$ times the tensor product of the single-photon Hilbert space $\mathcal{H}$
 Notice that in the definition of the Fock space $\mathcal{F}$ one must include the space $\mathcal{H}_0 = \mathcal{H}^{\otimes 0}$, which is the Hilbert space of 0 photons, containing only the vacuum state
-\[
+\begin{equation*}
   \ket{0}
   = \ket{0_{\mathbf{k} s}0_{\mathbf{k}'s'}\cdots }
   =\bigotimes_{\mathbf{k },s} \ket{0_{\mathbf{k }s}}
-\]
+\end{equation*}
 
 \subsubsection{Ladder operator.}
 If there are exactly $n$ photons in this polarized monochromatic wave $\omega=\omega_k=c|\mathbf{k}|$ the Fock state of the system is given by
@@ -447,7 +447,7 @@ For the multimode state, we can insert a product over $\mathbf{k },s$.
 This follows from each mode contributes its own independent ladder algebra and total state is obtained by applying all independent excitations.
 This meant that excitation of mode $(\mathbf{k},s)$ is unaffected by excitation of a distinct mode $(\mathbf{k}',s')$
 
-\subsubsection{Coherent state.}
+\subsubsection{(In)Coherent state.}
 By using the number operator, one obtain
 \begin{equation*}
   \hat{N}_{\mathbf{k }s} | \cdots n_{\mathbf{k }s} \cdots \rangle = n_{\mathbf{k }s}  | \cdots n_{\mathbf{k }s}  \cdots \rangle
@@ -549,5 +549,61 @@ The follow-up is as follows
    & =  n_{ks} | \cdots n_{ks} \cdots \rangle
 \end{align*}
 
+\subsection{Coherent State}
+The coherent state $|\alpha\rangle$, introduced in 1963 by Roy Glauber, is the eigenstate of the annihilation operator $\hat{a}$
+\begin{equation*}
+  \hat{a}|\alpha\rangle = \alpha|\alpha\rangle
+\end{equation*}
+with complex eigenvalue $\alpha = |\alpha|e^{i\theta}$.
+$|\alpha\rangle$ does not have a fixed number of photons, i.e. it is not an eigenstate of the number operator $\hat{N}$,
+\begin{equation*}
+  |\alpha\rangle = e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle
+\end{equation*}
+The definition is chosen to make the quantum state most closely resemble classical behavior.
+By defining a state as an eigenstate of $\hat{a}$, we select a state where the "field amplitude" itself has a well-defined value.
+The reason being that the electromagnetic field can written as a linear combination of the ladder operators.
+
+\subsubsection{Derivation: Fock state.}
+The coherent state $|\alpha\rangle$ can be expanded as
+\begin{equation*}
+  |\alpha\rangle = \sum_{n=0}^{\infty} c_n |n\rangle
+\end{equation*}
+Then we have
+\begin{equation*}
+  \hat{a} |\alpha\rangle = \hat{a} \sum_{n=0}^{\infty} c_n |n\rangle = \sum_{n=0}^{\infty} c_n \hat{a}|n\rangle = \sum_{n=1}^{\infty} c_n \sqrt{n}|n-1\rangle = \sum_{n=0}^{\infty} c_{n+1}\sqrt{n+1} |n\rangle
+\end{equation*}
+and
+\begin{equation*}
+  \alpha \ket{\alpha} =  \alpha \sum_{n=0 }^{\infty}c_n \ket{n}= \sum_{n=0 }^{\infty }\alpha c_n \ket{n}
+\end{equation*}
+Thus,
+\begin{equation*}
+  \alpha |\alpha\rangle = \alpha \sum_{n=0}^{\infty} c_n |n\rangle .
+\end{equation*}
+Since, by definition $  \hat{a} |\alpha\rangle = \alpha |\alpha\rangle$, it follows that
+\begin{align*}
+  c_{n+1} \sqrt{n+1} & = \alpha c_n                    \\
+  c_{n+1}            & = \frac{\alpha}{\sqrt{n+1}} c_n
+\end{align*}
+namely
+\begin{align*}
+  c_1 & =  \frac{\alpha}{\sqrt{1}} c_0                                 \\
+  c_2 & =\frac{\alpha }{\sqrt{2}}c_1= \frac{\alpha^2}{\sqrt{2!}} c_0   \\
+  c_3 & =  \frac{\alpha }{\sqrt{3 }}c_2=\frac{\alpha^3}{\sqrt{3!}} c_0 \\
+      & \vdots
+\end{align*}
+and in general
+\begin{equation*}
+  c_n = \frac{\alpha^n}{\sqrt{n!}} c_0
+\end{equation*}
+Substituting back
+\[
+  |\alpha\rangle = \sum_{n=0}^{\infty} c_0 \frac{\alpha^n}{\sqrt{n!}} |n\rangle ,
+\]
+where the parameter $c_0$ is fixed by the normalization
+
+\[
+  \langle \alpha | \alpha \rangle = |c_0|^2 \sum_{n=0}^{\infty} \frac{\alpha^{2n}}{n!} = |c_0|^2 e^{|\alpha|^2}\implies c_0 = e^{-|\alpha|^2/2} ,
+\]
 
 \end{document}
