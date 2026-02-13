@@ -57,12 +57,6 @@ We then use the Coulomb gauge such that
 \begin{equation*}
   \nabla  \cdot \mathbf{A } =0
 \end{equation*}
-Physically, the Coulomb gauge constant $\mathbf{A}$ such that only the transversal (perpendicular) to the wave vector $\mathbf{k}$ survive.
-This can be seen by considering a complex monochromatic plane wave $\mathbf{A}(\mathbf{r},t)=\mathbf{A}_0 e^{i(\mathbf{k}\cdot \mathbf{r }-\omega t)}$.
-The Coulomb gauge gives
-\begin{equation*}
-  \nabla  \cdot \mathbf{A}=  \nabla \cdot  \mathbf{A}_0  e^{i(k \cdot \mathbf{r} - \omega t)} = \mathbf{A}_0 \cdot (i \mathbf{k}) e^{i(k \cdot \mathbf{r} - \omega t)} = \mathbf{k } \cdot \mathbf{A} = 0
-\end{equation*}
 From the Coulomb gauge and Gauss law $\nabla \cdot \mathbf{E}=\rho/\epsilon_0$ in vacuum, we also obtain the Laplace equation by applying gradient into it
 \begin{equation*}
   \nabla ^2 \phi = 0
@@ -80,20 +74,8 @@ and consequently
 We can expand the vector potential $\mathbf{A}(r, t)$ as a Fourier series of monochromatic plane waves.
 \begin{equation*}
   \mathbf{A}(\mathbf{r}, t) = \sum_{\mathbf{k},s} A_{\mathbf{k} s}(t) \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \boldsymbol{\epsilon}_{\mathbf{k} s}
+  =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
 \end{equation*}
-It follows from  classical electrodynamics that the vector potential is a real vector field $\mathbf{A} = \mathbf{A}^*$.
-Choosing real polarization vectors $\boldsymbol{\epsilon}_{\mathbf{k} s}=\epsilon ^*_{\mathbf{k} s}$
-\begin{equation*}
-  \mathbf{A}(\mathbf{r},t) = \sum_{\mathbf{k},s} A^*_{\mathbf{k} s}(t) \boldsymbol{\epsilon}_{\mathbf{k} s} \frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}}
-  = \sum_{\mathbf{k},s} A^*_{-\mathbf{k} s}(t) \epsilon_{-\mathbf{k} s} \frac{e^{i \mathbf{text} \cdot \mathbf{r}}}{\sqrt{V}}
-\end{equation*}
-where we relabel $\mathbf{k} \rightarrow -\mathbf{k}$.
-Consequently $A_{-\mathbf{k},s}=A^*_{\mathbf{k},s}$.
-Thus, we can sum the series over independent $\mathbf{k}$
-\begin{equation*}
-  \mathbf{A}(\mathbf{r}, t) = \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
-\end{equation*}
-where the complex plane waves $e^{i \mathbf{k } \cdot \mathbf{r}}$ normalized in a volume $V$ are the basis functions of the expansion, and $\epsilon_{\mathbf{k}s}$ are mutually orthogonal real unit vectors of polarization which are also orthogonal to $\mathbf{k}$.
 Note that the first representation count over all possible $\mathbf{k}$: both $\mathbf{k}$ and $-\mathbf{k}$ are included; meanwhile the second only the representation $\left\{ \mathbf{k},-\mathbf{k} \right\} $ are included.
 
 With this, we can write the  quantized electric field
@@ -172,7 +154,7 @@ As such, the integral evaluate into
   \int d^3 \mathbf{r} \left( \frac{\partial \mathbf{A}}{\partial t} \right)^2  = \sum_{\mathbf{k},s}  \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right)
 \end{equation*}
 Also, the polarization orthogonality gives $\boldsymbol{\epsilon}_{ks} \cdot \boldsymbol{\epsilon}_{\mathbf{k} s'} =\delta_{ss'}$.
-Each mode amplitude $A_{\mathbf{k}s}(t)$ behaves exactly like a classical harmonic oscillator due to $\mathbf{A}(\mathbf{r},t)$ obeying the wave equation that yield harmonic oscillator differential equation, whose solution is $A_{\mathbf{k}s}(t)=A_{\mathbf{k}s}(0)e^{i\omega_kt}$.
+Vector potential obeys the wave equation whose solution is $A_{\mathbf{k}s}(t)=A_{\mathbf{k}s}(0)e^{i\omega_kt}$.
 Thus $\dot{A}_{\mathbf{k}s}=-i\omega_kA_{\mathbf{k}s}$ and
 \begin{equation*}
   \frac{\epsilon_0 }{2 }\int d^3 \mathbf{r} \left( \frac{\partial \mathbf{A}}{\partial t} \right)^2
@@ -196,6 +178,7 @@ The cross term vanishes again I hope\dots
    & =  \sum_{\mathbf{k},s}  \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right) |\mathbf{k }\times \boldsymbol{\epsilon}_{\mathbf{k}s} |^2 \\
    & =  \sum_{\mathbf{k},s} k^2 \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right)
 \end{align*}
+Yup it does.
 Do note that $\mathbf{f} \times \mathbf{v}=|\mathbf{f}| |\mathbf{v}| \sin \theta$ and that the polarization vector is perpendicular to the wave vector.
 Using $\omega_k = ck$ and $c^2=1/\epsilon_0\mu_0$ to write $\epsilon_0\omega_k^2=k^2/\mu_0$, the integral turns
 \begin{equation*}
@@ -292,6 +275,72 @@ Forcing it regardless, yields
 \end{equation*}
 a different constant.
 Convention difference perhaps?
+
+\subsection{Vector Potential}
+The Coulomb gauge definition of vector potential $\nabla \cdot  \mathbf{A}=0$ constraint the vector to only the transversal (perpendicular) to the wave vector $\mathbf{k}$.
+This can be seen by considering a complex monochromatic plane wave $\mathbf{A}(\mathbf{r},t)=\mathbf{A}_0 e^{i(\mathbf{k}\cdot \mathbf{r }-\omega t)}$.
+Under Coulomb gauge
+\begin{equation*}
+  \nabla  \cdot \mathbf{A}=  \nabla \cdot  \mathbf{A}_0  e^{i(k \cdot \mathbf{r} - \omega t)} = \mathbf{A}_0 \cdot (i \mathbf{k}) e^{i(k \cdot \mathbf{r} - \omega t)} = \mathbf{k } \cdot \mathbf{A} = 0
+\end{equation*}
+This complex monochromatic plane wave is valid solution to wave equation that the vector potential obey.
+
+We can expand the vector potential $\mathbf{A}(r, t)$ as a Fourier series of monochromatic plane waves.
+\begin{equation*}
+  \mathbf{A}(\mathbf{r}, t)
+  = \sum_{\mathbf{k},s} A_{\mathbf{k} s}(t) \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \boldsymbol{\epsilon}_{\mathbf{k} s}
+\end{equation*}
+It follows from  classical electrodynamics that the vector potential is a real vector field $\mathbf{A} = \mathbf{A}^*$.
+Choosing real polarization vectors $\boldsymbol{\epsilon}_{\mathbf{k} s}=\epsilon ^*_{\mathbf{k} s}$
+\begin{equation*}
+  \mathbf{A}(\mathbf{r},t) = \sum_{\mathbf{k},s} A^*_{\mathbf{k} s}(t)  \frac{e^{-i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}}\boldsymbol{\epsilon}_{\mathbf{k} s}
+  = \sum_{\mathbf{k},s} A^*_{-\mathbf{k} s}(t)  \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}}\boldsymbol{\epsilon}_{\mathbf{k} s}
+\end{equation*}
+where we relabel $\mathbf{k} \rightarrow -\mathbf{k}$.
+Consequently $A_{-\mathbf{k},s}=A^*_{\mathbf{k},s}$.
+Thus, we can sum the series over independent $\mathbf{k}$
+\begin{equation*}
+  \mathbf{A}(\mathbf{r}, t) = \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+\end{equation*}
+where the complex plane waves $e^{i \mathbf{k } \cdot \mathbf{r}}$ normalized in a volume $V$ are the basis functions of the expansion, and $\epsilon_{\mathbf{k}s}$ are mutually orthogonal real unit vectors of polarization which are also orthogonal to $\mathbf{k}$.
+Note that the first representation count over all possible $\mathbf{k}$: both $\mathbf{k}$ and $-\mathbf{k}$ are included; meanwhile the second only the representation $\left\{ \mathbf{k},-\mathbf{k} \right\} $ are included.
+
+Aside, it is called the Coulomb gauge because it would produce the Coulomb potential.
+Start form the gauge $\nabla \cdot \mathbf{A}=0$, then consider the electric field enforced by the gauge
+\begin{equation*}
+  \mathbf{E}= -\nabla \phi+\frac{\partial \mathbf{A }}{\partial T}=-\nabla \phi
+\end{equation*}
+Then take the divergence
+\begin{equation*}
+  \nabla \cdot \mathbf{E }= -\nabla ^2 \phi
+\end{equation*}
+According to Gauss law
+\begin{equation*}
+  \nabla ^2 \phi=-\frac{\rho(\mathbf{r},t )}{\epsilon_0}
+\end{equation*}
+which is the Poisson equation whose solution is the Coulomb potential
+\begin{equation*}
+  \phi(\mathbf{r},t)=\frac{1}{4\pi \epsilon_0}\int\frac{1}{\rcurs}\rho(\mathbf{r}',t)d\tau'
+\end{equation*}
+where $\mathbf{r}$ is the field point (point in space where you are evaluating), $\mathbf{r}'$ is the source point (the location in space of an element of charge), and $\rcurs$ as the distance between source and field point.
+
+\subsubsection{Wave equation.}
+Each mode amplitude $A_{\mathbf{k}s}(t)$ behaves exactly like a classical harmonic oscillator due to $\mathbf{A}(\mathbf{r},t)$ obeying the wave equation that yield harmonic oscillator differential equation, whose solution is $A_{\mathbf{k}s}(t)=A_{\mathbf{k}s}(0)e^{i\omega_kt}$.
+This can be proven by
+\begin{align*}
+  \left( \nabla^2 - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right)    \sum_{\mathbf{k},s} A_{\mathbf{k} s}(t) \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \boldsymbol{\epsilon}_{\mathbf{k} s}
+   & = 0  \\
+  \sum_{\mathbf{k },s} \left[ -k^2 A_{\mathbf{k }s}(t) - \frac{1}{c^2} \frac{d^2 }{dt^2}A_{\mathbf{\mathbf{k}s}}(t) \right] \frac{e^{i \mathbf{k }\cdot \mathbf{r}}}{\sqrt{V} \epsilon_{\mathbf{k }s}}
+   & =  0
+\end{align*}
+Each mode is independent, so
+\begin{equation*}
+  \frac{d^2 }{dt^2 }A_{\mathbf{k }s}(t)+\omega_k^2A_{\mathbf{A }s}(t)=0
+\end{equation*}
+with $\omega_k=ck$, which have the complex solutions
+\begin{equation*}
+  A_{\mathbf{k }s }(0)e^{-\omega_kt}
+\end{equation*}
 
 \subsection{Fock State}
 The operators $\hat{a}_{\mathbf{k }s }$ and $\hat{a }_{\mathbf{k }s}$ act in Fock space $\mathcal{F}$.
