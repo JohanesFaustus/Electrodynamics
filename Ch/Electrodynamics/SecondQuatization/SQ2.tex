@@ -24,9 +24,9 @@ where we relabel $\mathbf{k} \rightarrow -\mathbf{k}$.
 Consequently $A_{-\mathbf{k},s}=A^*_{\mathbf{k},s}$.
 Thus, we can sum the series over independent $\mathbf{k}$
 \begin{equation*}
-  \mathbf{A}(\mathbf{r}, t) = \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+  \mathbf{A}(\mathbf{r}, t) = \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{equation*}
-where the complex plane waves $e^{i \mathbf{k } \cdot \mathbf{r}}$ normalized in a volume $V$ are the basis functions of the expansion, and $\epsilon_{\mathbf{k}s}$ are mutually orthogonal real unit vectors of polarization which are also orthogonal to $\mathbf{k}$.
+where the complex plane waves $e^{i \mathbf{k } \cdot \mathbf{r}}$ normalized in a volume $V$ are the basis functions of the expansion, and $\boldsymbol{\epsilon}_{\mathbf{k}s}$ are mutually orthogonal real unit vectors of polarization which are also orthogonal to $\mathbf{k}$.
 Note that the first representation count over all possible $\mathbf{k}$: both $\mathbf{k}$ and $-\mathbf{k}$ are included; meanwhile the second only the representation $\left\{ \mathbf{k},-\mathbf{k} \right\} $ are included.
 
 Aside, it is called the Coulomb gauge because it would produce the Coulomb potential.
@@ -241,7 +241,7 @@ or with all terms inserted
 \end{equation*}
 We can insert this into classical Hamiltonian
 \begin{align*}
-  H & =   \int d^3 \mathbf{r} \sum_{\mathbf{k},s} \left( \frac{\epsilon_0}{2} \mathbf{E}^2 + \frac{1}{2\mu_0} \mathbf{B}^2 \right)        \\
+  H & =   \int d^3 \mathbf{r}  \left( \frac{\epsilon_0}{2} \mathbf{E}^2 + \frac{1}{2\mu_0} \mathbf{B}^2 \right)        \\
     & = \int d^3 \mathbf{r } \sum_{\mathbf{k},s} \left[ \frac{\hbar  \omega_k }{V }\left( n_{\mathbf{k }s}+\frac{1 }{2 } \right)  \right] \\
   H & = \sum_{\mathbf{k},s} \hbar \omega_k \left( n_{\mathbf{k }s}+\frac{1 }{2} \right)
 \end{align*}
@@ -285,10 +285,10 @@ have the action of
 \end{equation*}
 The follow-up is as follows
 \begin{align*}
-  \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} | \cdots n_{ks} \cdots \rangle
-   & =  \hat{a }^\dagger_{\mathbf{k }s}\sqrt{n_{ks}} | \cdots (n_{ks} - 1) \cdots \rangle \\
-  \hat{N }_{\mathbf{k }s}| \cdots n_{ks} \cdots \rangle
-   & =  n_{ks} | \cdots n_{ks} \cdots \rangle
+  \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} | \cdots n_{\mathbf{k}s} \cdots \rangle
+   & =  \hat{a }^\dagger_{\mathbf{k }s}\sqrt{n_{\mathbf{k}s}} | \cdots (n_{\mathbf{k}s} - 1) \cdots \rangle \\
+  \hat{N }_{\mathbf{k }s}| \cdots n_{\mathbf{k}s} \cdots \rangle
+   & =  n_{\mathbf{k}s} | \cdots n_{\mathbf{k}s} \cdots \rangle
 \end{align*}
 
 \subsection{Coherent State}
@@ -297,23 +297,27 @@ The coherent state $|\alpha\rangle$, introduced in 1963 by Roy Glauber, is the e
   \hat{a}|\alpha\rangle = \alpha|\alpha\rangle
 \end{equation*}
 with complex eigenvalue $\alpha = |\alpha|e^{i\theta}$.
-$|\alpha\rangle$ does not have a fixed number of photons, i.e. it is not an eigenstate of the number operator $\hat{N}$,
-\begin{equation*}
-  |\alpha\rangle = e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle
-\end{equation*}
-The definition is chosen to make the quantum state most closely resemble classical behavior.
-By defining a state as an eigenstate of $\hat{a}$, we select a state where the "field amplitude" itself has a well-defined value.
-The reason being that the electromagnetic field can written as a linear combination of the annihilation operators.
-
 The complex eigenvalue $\alpha$ can be written as
 \begin{equation*}
   \alpha = |\alpha| e^{i\theta}=\sqrt{\bar{N} }e^{i\theta}
 \end{equation*}
 The value $|\alpha|=\sqrt{\bar{N}}$ is obtained from
 \begin{equation*}
-  \braket{\hat{N}  } \braket{\alpha  | \hat{a}^\dagger \hat{a}|\alpha }=|\alpha|^2\implies |\alpha|=\sqrt{\bar{N}}
+  \braket{\hat{N}  } =\braket{\alpha  | \hat{a}^\dagger \hat{a}|\alpha }=|\alpha|^2\implies |\alpha|=\sqrt{\bar{N}}
 \end{equation*}
+The parameter $\theta$ is the phase of coherent amplitude $\alpha$.
+Physically, $\theta$ is the phase of the classical field that the coherent state represents.
 
+$|\alpha\rangle$ does not have a fixed number of photons, i.e. it is not an eigenstate of the number operator $\hat{N}$,
+The definition is chosen to make the quantum state most closely resemble classical behavior.
+By defining a state as an eigenstate of $\hat{a}$, we select a state where the "field amplitude" itself has a well-defined value.
+The reason being that the electromagnetic field can written as a linear combination of the annihilation operators.
+
+Coherent state may be expanded in Fock state as
+\begin{equation*}
+  |\alpha\rangle = e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle
+\end{equation*}
+The expansion demonstrates that the coherent state is not a number operator $\hat{N}$ eigenstate.
 In the multimode state, the definition reads
 \begin{equation*}
   \hat{a}_{\mathbf{k }s} \ket{\left\{ \alpha_{\mathbf{k }s} \right\} }=\alpha_{\mathbf{k }s} \ket{\left\{ \alpha_{\mathbf{k }s} \right\} }
@@ -325,6 +329,20 @@ with $  \ket{\left\{ \alpha_{\mathbf{k }s} \right\} } = \bigotimes_{\mathbf{k},s
   \exp\left(-\frac{1}{2} \sum_{\mathbf{k},s} |\alpha_{\mathbf{k }s}|^2\right) \sum_{\{ n_{\mathbf{k }s} \}} \left( \prod_{\mathbf{k},s} \frac{\alpha_{\mathbf{k }s}^{n_{\mathbf{k }s}}}{\sqrt{n_{\mathbf{k }s}!}} \right) \ket{\{ n_{\mathbf{k }s} \}}
 \end{equation*}
 
+By definition, the electromagnetic field is non-vanishing in this state
+\begin{align*}
+  \braket{  \hat{\mathbf{E}}  }
+      =  - \sum_{\mathbf{k},s} \sqrt{\frac{2\bar{N}_{\mathbf{k}s}\hbar \omega_k }{ \epsilon_0 V}}  \sin   \left( \mathbf{k} \cdot \mathbf{r} - \omega_k t+\theta_{\mathbf{k}s}  \right) \boldsymbol{\epsilon}_{\mathbf{k}s}\qquad
+  \braket{  \hat{\mathbf{B}}^2 }
+   = \braket{\hat{\mathbf{B}} }^2+\sum_{\mathbf{k },s}\frac{\hbar \omega_k}{2 V} \mu_0
+\end{align*}
+The energy of electromagnetic field can also be seen to be non-vanishing even at vacuum
+\begin{equation*}
+    \braket{  \hat{\mathbf{E}}^2 }
+    = \braket{\hat{\mathbf{E}} }^2+\sum_{\mathbf{k },s}\frac{\hbar \omega_k }{2\epsilon_0 V}\qquad
+  \braket{  \hat{\mathbf{B}}^2 }
+    = \braket{\hat{\mathbf{B}} }^2+\sum_{\mathbf{k },s}\frac{\hbar \omega_k}{2 V} \mu_0
+\end{equation*}
 
 \subsubsection{Derivation: Fock state.}
 The coherent state $|\alpha\rangle$ can be expanded as
@@ -338,10 +356,6 @@ Then we have
 and
 \begin{equation*}
   \alpha \ket{\alpha} =  \alpha \sum_{n=0 }^{\infty}c_n \ket{n}= \sum_{n=0 }^{\infty }\alpha c_n \ket{n}
-\end{equation*}
-Thus,
-\begin{equation*}
-  \alpha |\alpha\rangle = \alpha \sum_{n=0}^{\infty} c_n |n\rangle .
 \end{equation*}
 Since, by definition $  \hat{a} |\alpha\rangle = \alpha |\alpha\rangle$, it follows that
 \begin{align*}
@@ -392,5 +406,124 @@ yields
   | \{ \alpha_{\mathbf{k }s} \} \rangle
    & =
   \exp\left(-\frac{1}{2} \sum_{\mathbf{k},s} |\alpha_{\mathbf{k }s}|^2\right) \sum_{\{ n_{\mathbf{k }s} \}} \left( \prod_{\mathbf{k},s} \frac{\alpha_{\mathbf{k }s}^{n_{\mathbf{k }s}}}{\sqrt{n_{\mathbf{k }s}!}} \right) \ket{\{ n_{\mathbf{k }s} \}}
+\end{align*}
+
+\subsubsection{Derivation: coherence.}
+Form multimode definition
+\begin{equation*}
+  \hat{a}_{\mathbf{k }s} \ket{\left\{ \alpha_{\mathbf{k }s} \right\} }=\alpha_{\mathbf{k }s} \ket{\left\{ \alpha_{\mathbf{k }s} \right\} }
+\end{equation*}
+it can be seen that
+\begin{align*}
+  \sum_{\mathbf{k },s}  \braket{\left\{ \alpha_{\mathbf{k }s } \right\}    | \hat{a}_{\mathbf{k }s} | \left\{ \alpha_{\mathbf{k }s} \right\} }         & =  \sum_{\mathbf{k },s} \alpha_{\mathbf{k }s}   \\
+  \sum_{\mathbf{k },s} \braket{\left\{ \alpha_{\mathbf{k }s } \right\}    | \hat{a}^\dagger_{\mathbf{k }s}  | \left\{ \alpha_{\mathbf{k }s} \right\} } & = \sum_{\mathbf{k },s} \alpha_{\mathbf{k }s} ^*
+\end{align*}
+and
+\begin{gather*}
+  \sum_{\mathbf{k},s}\sum_{\mathbf{k}',s'} \braket{\hat{a}_{\mathbf{k }s}   \hat{a}_{\mathbf{k }'s'} }
+  =\left( \sum_{\mathbf{k},s} \alpha_{\mathbf{k}s} \right)^{2}
+  \\
+  \sum_{\mathbf{k},s}\sum_{\mathbf{k}',s'} \braket{\hat{a}_{\mathbf{k }s}   \hat{a}^\dagger_{\mathbf{k }'s'} }
+  =\left( \sum_{\mathbf{k},s} \alpha_{\mathbf{k}s}  \right) \left( \sum_{\mathbf{k},s} \alpha^{*}_{\mathbf{k}s} \right)
+  \\
+  \sum_{\mathbf{k},s}\sum_{\mathbf{k}',s'} \braket{\hat{a}^\dagger_{\mathbf{k }'s'}\hat{a}_{\mathbf{k }s}}
+  =\left( \sum_{\mathbf{k},s} \alpha^{*}_{\mathbf{k}s} \right) \left( \sum_{\mathbf{k},s} \alpha_{\mathbf{k}s} \right)
+  \\
+  \sum_{\mathbf{k},s}\sum_{\mathbf{k}',s'} \braket{\hat{a}^\dagger_{\mathbf{k }s}   \hat{a}^\dagger_{\mathbf{k }'s'} }
+  =\left( \sum_{\mathbf{k},s} \alpha^{*}_{\mathbf{k}s} \right)^{2}
+\end{gather*}
+along with Euler identity
+\begin{equation*}
+  e ^{i\phi}-e ^{-i\phi}=2i \sin \phi
+\end{equation*}
+
+These relations are enough to derive the following.
+First the fact that the electromagnetic
+\begin{align*}
+  \hat{\mathbf{E}} & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}                    \\
+  \hat{\mathbf{B}} & =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 V} \mu_0} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{\hat{k}} \times \boldsymbol{\epsilon}_{\mathbf{k}s}
+\end{align*}
+expectation value is non-zero in this state.
+The expectation value for electric field is derived as follows
+\begin{align*}
+  \braket{  \hat{\mathbf{E}}  }
+   & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \braket{\hat{a}_{\mathbf{k}s}  } e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \braket{\hat{a}_{\mathbf{k}s}^{\dagger}} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \boldsymbol{\epsilon}_{\mathbf{k}s} \\
+   & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \alpha_{\mathbf{k }s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \alpha_{\mathbf{k }s}^* e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}                             \\
+   & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\bar{N}_{\mathbf{k}s}\hbar \omega_k }{2 \epsilon_0 V}} \left[  e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t+ \theta_{\mathbf{k}s})} - e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t+\theta_{\mathbf{k}s}) } \right] \boldsymbol{\epsilon}_{\mathbf{k}s}        \\
+  \braket{  \hat{\mathbf{E}}  }
+   & =  - \sum_{\mathbf{k},s} \sqrt{\frac{2\bar{N}_{\mathbf{k}s}\hbar \omega_k }{ \epsilon_0 V}}  \sin   \left( \mathbf{k} \cdot \mathbf{r} - \omega_k t+\theta_{\mathbf{k}s}  \right) \boldsymbol{\epsilon}_{\mathbf{k}s}
+\end{align*}
+Whereas the magnetic field as
+\begin{align*}
+  \braket{  \hat{\mathbf{B}}  }
+   & =   \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k \mu_0}{2  V}} \left[ \braket{\hat{a}_{\mathbf{k}s}  } e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \braket{\hat{a}_{\mathbf{k}s}^{\dagger}} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \hat{\mathbf{k}}\times \boldsymbol{\epsilon}_{\mathbf{k}s}                                          \\
+   & =   \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k\mu_0}{2  V}} \left[ \alpha_{\mathbf{k }s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \alpha_{\mathbf{k }s}^* e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \hat{\mathbf{k}}\times \boldsymbol{\epsilon}_{\mathbf{k}s}                                                                       \\
+   & =   \sum_{\mathbf{k},s} \sqrt{\frac{\bar{N}_{\mathbf{k}s}\hbar \omega_k \mu_0}{2 V}} \left[  e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t+ \theta_{\mathbf{k}s})} - e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t+\theta_{\mathbf{k}s}) } \right] i \hat{\mathbf{k}}                                                  \times \boldsymbol{\epsilon}_{\mathbf{k}s} \\
+  \braket{  \hat{\mathbf{B}}  }
+   & =  - \sum_{\mathbf{k},s} \sqrt{\frac{2 \bar{N}_{\mathbf{k}s}\hbar \omega_k \mu_0}{V}}  \sin   \left( \mathbf{k} \cdot \mathbf{r} - \omega_k t+\theta_{\mathbf{k}s}  \right) \hat{\mathbf{k}}\times \boldsymbol{\epsilon}_{\mathbf{k}s}
+\end{align*}
+
+Then we move to the square of the field
+\begin{align*}
+  \hat{\mathbf{E}}^2
+   & =  - \sum_{\mathbf{k},s} \sum_{\mathbf{k}',s'} \frac{\hbar \omega_k}{2 \epsilon_0 V}
+  \bigg[ \hat{a}_{\mathbf{k }s} \hat{a}_{\mathbf{k }s}  e ^{2i\phi_{\mathbf{k }s}} -\hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} -\hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} \\
+   & \qquad\qquad+\hat{a}^\dagger_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} e ^{-2i\phi_{\mathbf{k }s}} \bigg]
+  \boldsymbol{\epsilon}_{\mathbf{k}s} \cdot \boldsymbol{\epsilon}_{\mathbf{k}'s'}                                                                                                                \\
+  \hat{\mathbf{E}}^2
+   & =  - \sum_{\mathbf{k},s} \frac{\hbar \omega_k}{2 \epsilon_0 V}
+  \left[ -\hat{a}_{\mathbf{k }s} \hat{a}_{\mathbf{k }s}  e ^{2i\phi_{\mathbf{k }s}}+ 2 \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} +1 -\hat{a}^\dagger_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} e ^{-2i\phi_{\mathbf{k }s}} \right]
+\end{align*}
+with $\phi_{\mathbf{k }s}=\mathbf{k }\cdot \mathbf{r }-\omega_kt$
+The expectation value then
+\begin{align*}
+  \braket{  \hat{\mathbf{E}}^2 }
+   & = \sum_{\mathbf{k},s} \frac{\hbar \omega_k}{2 \epsilon_0 V}
+  \left[2\braket{ \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} } -\braket{\hat{a}_{\mathbf{k }s} ^2}  e ^{2i\phi_{\mathbf{k }s}}   - \braket{(\hat{a}^\dagger_{\mathbf{k }s} )^2} e ^{-2i\phi_{\mathbf{k }s}} +1 \right] \\
+   & = \sum_{\mathbf{k},s} \frac{\hbar \omega_k}{2 \epsilon_0 V}
+  \left[ 2|\alpha_{\mathbf{k }s}|^2 -\alpha_{\mathbf{k }s}^2e ^{2i\phi_{\mathbf{k }s}} - (\alpha_{\mathbf{k }s }^*)^2e ^{-2i\phi_{\mathbf{k }s}}\right] + \sum_{\mathbf{k },s}\frac{\hbar \omega_k }{2\epsilon_0 V}               \\
+   & = \sum_{\mathbf{k},s} \frac{\bar{N}_{\mathbf{k }s}\hbar \omega_k}{2 \epsilon_0 V}
+  \left[ 2 -e ^{2i(\phi_{\mathbf{k }s}-\theta_{\mathbf{ks}})} - e^{-2i (\phi_{\mathbf{k }s}-\theta_{\mathbf{ks}})}\right] + \sum_{\mathbf{k },s}\frac{\hbar \omega_k }{2\epsilon_0 V}                                             \\
+  \braket{  \hat{\mathbf{E}}^2 }
+   & = \braket{\hat{\mathbf{E}} }^2+\sum_{\mathbf{k },s}\frac{\hbar \omega_k }{2\epsilon_0 V}
+\end{align*}
+
+Then the magnetic field
+\begin{align*}
+  \hat{\mathbf{B}}^2
+   & =-  \sum_{\mathbf{k},s} \sum_{\mathbf{k}',s'} \frac{\hbar \omega_k}{2 V} \mu_0
+  \bigg[ \hat{a}_{\mathbf{k }s} \hat{a}_{\mathbf{k }s}  e ^{2i\phi_{\mathbf{k }s}} -\hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} -\hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} \\
+   & \qquad\qquad+\hat{a}^\dagger_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} e ^{-2i\phi_{\mathbf{k }s}} \bigg]
+  (\mathbf{\hat{k}} \times \boldsymbol{\epsilon}_{\mathbf{k}s}) \cdot (\mathbf{\hat{k}'} \times \boldsymbol{\epsilon}_{\mathbf{k}'s'})                                                           \\
+  \hat{\mathbf{B}}^2
+   & =-  \sum_{\mathbf{k},s} \frac{\hbar \omega_k}{2 V} \mu_0
+  \left[ -\hat{a}_{\mathbf{k }s} \hat{a}_{\mathbf{k }s}  e ^{2i\phi_{\mathbf{k }s}}+ 2 \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} +1 -\hat{a}^\dagger_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} e ^{-2i\phi_{\mathbf{k }s}} \right]
+\end{align*}
+which have the expectation value of 
+\begin{align*}
+  \braket{  \hat{\mathbf{B}}^2 }
+   & = \sum_{\mathbf{k},s} \frac{\hbar \omega_k}{2 V} \mu_0
+  \left[2\braket{ \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s} } -\braket{\hat{a}_{\mathbf{k }s} ^2}  e ^{2i\phi_{\mathbf{k }s}}   - \braket{(\hat{a}^\dagger_{\mathbf{k }s} )^2} e ^{-2i\phi_{\mathbf{k }s}} +1 \right] \\
+   & = \sum_{\mathbf{k},s} \frac{\hbar \omega_k}{2 V} \mu_0
+  \left[ 2|\alpha_{\mathbf{k }s}|^2 -\alpha_{\mathbf{k }s}^2e ^{2i\phi_{\mathbf{k }s}} - (\alpha_{\mathbf{k }s }^*)^2e ^{-2i\phi_{\mathbf{k }s}}\right] + \sum_{\mathbf{k },s}\frac{\hbar \omega_k}{2 V} \mu_0               \\
+   & = \sum_{\mathbf{k},s} \frac{\bar{N }_{\mathbf{k }s}\hbar \omega_k}{2 V} \mu_0
+  \left[ 2 -e ^{2i(\phi_{\mathbf{k }s}-\theta_{\mathbf{ks}})} - e^{-2i (\phi_{\mathbf{k }s}-\theta_{\mathbf{ks}})}\right] + \sum_{\mathbf{k },s}\frac{\hbar \omega_k}{2 V} \mu_0\\
+  \braket{  \hat{\mathbf{B}}^2 }
+   & = \braket{\hat{\mathbf{B}} }^2+\sum_{\mathbf{k },s}\frac{\hbar \omega_k}{2 V} \mu_0
+\end{align*}
+We can insert this into classical Hamiltonian
+\begin{align*}
+  H & =   \frac{1}{ 2}\int d^3 \mathbf{r} \sum_{\mathbf{k},s} \left( \epsilon_0\mathbf{E}^2 + \frac{1}{\mu_0} \mathbf{B}^2 \right)        \\
+    & = \frac{1 }{2} \int d^3 \mathbf{r } \sum_{\mathbf{k},s} \left[ \braket{\mathbf{E}^2 }+\braket{\mathbf{B} }^2 +\frac{\hbar \omega_k }{V}\right] \\
+    & = \frac{1 }{2} \int d^3 \mathbf{r } \sum_{\mathbf{k},s} \left[ \frac{4 \bar{N }_{\mathbf{k }s }\hbar \omega_k }{V }\sin (\mathbf{k }\cdot \mathbf{r }-\omega_kt+\theta_{\mathbf{k }s})+\frac{\hbar \omega_k }{V}\right] \\
+  H & = \sum_{\mathbf{k },s}\left[ \bar{N }_{\mathbf{k }s}\hbar \omega_k+\frac{\hbar \omega_k }{2} \right]=  \sum_{\mathbf{k},s} \hbar \omega_k \left( \bar{N}_{\mathbf{k }s}+\frac{1 }{2} \right)
+\end{align*}
+to recover the same result of quantum Hamiltonian
+\begin{align*}
+  \braket{\left\{ \alpha_{\mathbf{k }s} \right\} |H|\left\{ \alpha_{\mathbf{k }s} \right\} }
+   & =
+  \left\langle \left\{ \alpha_{\mathbf{k }s} \right\} \Bigg| \sum_{\mathbf{k},s} \hbar \omega_k \left( \hat{N }_{\mathbf{k} s }+ \frac{1 }{2} \right)\Bigg|\left\{ \alpha_{\mathbf{k }s} \right\}  \right\rangle \\
+  \braket{H}
+   & =  \sum_{\mathbf{k},s} \hbar \omega_k \left( \bar{N}_{\mathbf{k }s} +\frac{1 }{2} \right)
 \end{align*}
 \end{document}

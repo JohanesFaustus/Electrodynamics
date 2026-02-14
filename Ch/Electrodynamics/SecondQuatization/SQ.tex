@@ -27,13 +27,13 @@ In classical electrodynamics, the electromagnetic wave can be written in terms o
 This field is of course continuous.
 Quantum field treatment however state that the field is quantized with annihilation and creation operator association with it
 \begin{align*}
-  \hat{\mathbf{E}}(\mathbf{r}, t) & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \epsilon_{\mathbf{k}s}                                        \\
-  \hat{\mathbf{B}}(\mathbf{r}, t) & =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{E}}(\mathbf{r}, t) & =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}                                        \\
+  \hat{\mathbf{B}}(\mathbf{r}, t) & =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \frac{\mathbf{k}}{|\mathbf{k}|} \wedge \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{align*}
 As with other quantum field theory, photon is the excitation of the quantum electromagnetic field.
 Aside, my derivation yield
 \begin{equation*}
-  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 V} \mu_0} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{\hat{k}} \times \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 V} \mu_0} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{\hat{k}} \times \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{equation*}
 Different constant??
 
@@ -74,13 +74,15 @@ and consequently
 We can expand the vector potential $\mathbf{A}(r, t)$ as a Fourier series of monochromatic plane waves.
 \begin{equation*}
   \mathbf{A}(\mathbf{r}, t) = \sum_{\mathbf{k},s} A_{\mathbf{k} s}(t) \frac{e^{i \mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \boldsymbol{\epsilon}_{\mathbf{k} s}
-  =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+  =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{e^{i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} + A_{\mathbf{k}s}^*(t) \frac{e^{-i\mathbf{k} \cdot \mathbf{r}}}{\sqrt{V}} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{equation*}
-Note that the first representation count over all possible $\mathbf{k}$: both $\mathbf{k}$ and $-\mathbf{k}$ are included; meanwhile the second only the representation $\left\{ \mathbf{k},-\mathbf{k} \right\} $ are included.
+Note that the first representation count over all possible $\mathbf{k}$: both $\mathbf{k}$ and $-\mathbf{k}$ are included.
+Meanwhile the second only the representation $\left\{ \mathbf{k},-\mathbf{k} \right\} $ are included.
+
 
 With this, we can write the  quantized electric field
 \begin{equation*}
-  \mathbf{E}(\mathbf{r}, t) = -\sum_{\mathbf{k},s} \left[ \dot{A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} + \dot{A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+  \mathbf{E}(\mathbf{r}, t) = -\sum_{\mathbf{k},s} \left[ \dot{A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} + \dot{A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{equation*}
 and magnetic field
 \begin{align*}
@@ -120,7 +122,7 @@ The time derivative is easy enough
 \end{equation*}
 To evaluate the curl term use $\nabla \times (f \mathbf{v}) = (\nabla f) \times \mathbf{v}$ again
 \begin{align*}
-  \nabla \times \mathbf{A} & =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{1}{\sqrt{V}} \nabla \times  e^{i\mathbf{k} \cdot \mathbf{r}} + A_{\mathbf{k}s}^*(t) \frac{1}{\sqrt{V}}\nabla \times e^{-i\mathbf{k} \cdot \mathbf{r}} \right] \epsilon_{\mathbf{k}s}                                                          \\
+  \nabla \times \mathbf{A} & =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{1}{\sqrt{V}} \nabla \times  e^{i\mathbf{k} \cdot \mathbf{r}} + A_{\mathbf{k}s}^*(t) \frac{1}{\sqrt{V}}\nabla \times e^{-i\mathbf{k} \cdot \mathbf{r}} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}                                             \\
   \nabla \times \mathbf{A} & =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k} s} \frac{i \mathbf{k} \times \boldsymbol{\epsilon}_{\mathbf{k} s}}{\sqrt{V}} e^{i \mathbf{k} \cdot \mathbf{r}} - A^*_{\mathbf{k} s} \frac{i \mathbf{k} \times \boldsymbol{\epsilon}_{\mathbf{k} s}}{\sqrt{V}} e^{-i \mathbf{k} \cdot \mathbf{r}} \right]
 \end{align*}
 Another thing to note is the Fourier transform of 3d Dirac delta
@@ -247,7 +249,7 @@ Annihilation and creation operators can be expressed in terms of these operator
 Next we move to the electric field.
 Since $\dot{A}_{\mathbf{k}s}=-i\omega_kA_{\mathbf{k}s}$, the electric field now reads
 \begin{equation*}
-  \mathbf{E}(\mathbf{r}, t) = i\sum_{\mathbf{k},s}\omega_k \left[ {A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} - {A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \epsilon_{\mathbf{k}s}
+  \mathbf{E}(\mathbf{r}, t) = i\sum_{\mathbf{k},s}\omega_k \left[ {A}_{\mathbf{k}s}(t)\frac{e^{i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} - {A}_{\mathbf{k}s}^*(t)\frac{e^{-i \mathbf{\mathbf{k}} \cdot \mathbf{r}}}{\sqrt{V}} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{equation*}
 Introduce the dimensionless coefﬁcients
 \begin{equation*}
@@ -255,7 +257,7 @@ Introduce the dimensionless coefﬁcients
 \end{equation*}
 Finally promote the coefﬁcients into operators
 \begin{equation*}
-  \hat{\mathbf{E}}(\mathbf{r}, t) =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{E}}(\mathbf{r}, t) =  i \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 \epsilon_0 V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{equation*}
 where we expand the ladder operator definition using $\hat{a}_{\mathbf{k }s }(t)=\hat{a}_{\mathbf{k }s}e^{-\omega_kt}$.
 
@@ -266,15 +268,20 @@ For the magnetic field case, we begin by inserting the dimensionless amplitude
 \end{equation*}
 then simply promote them into operator
 \begin{equation*}
-  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{k} \times \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k V}} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{k} \times \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{equation*}
 Still missing some factor of $1/|\mathbf{k}|$ to make $\mathbf{k}\to \hat{\mathbf{k}}$ in the last term.
 Forcing it regardless, yields
 \begin{equation*}
-  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 V} \mu_0} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{\hat{k}} \times \epsilon_{\mathbf{k}s}
+  \hat{\mathbf{B}}(\mathbf{r}, t) =  \sum_{\mathbf{k},s} \sqrt{\frac{\hbar \omega_k}{2 V} \mu_0} \left[ \hat{a}_{\mathbf{k}s} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} - \hat{a}_{\mathbf{k}s}^{\dagger} e^{-i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} \right] i \mathbf{\hat{k}} \times \boldsymbol{\epsilon}_{\mathbf{k}s}
 \end{equation*}
 a different constant.
 Convention difference perhaps?
 
+The operators may be written as a sum over all possible $\mathbf{k}$ rather than only independent $\mathbf{k}$, but this is a matter of convention and not a consequence of quantization itself.
+Upon quantization, the independent classical amplitudes are promoted to operators.
+The classical reality condition  $A_{-\mathbf{k}} = A_{\mathbf{k}}^*$ is replaced by the requirement that the field operator be Hermitian $\hat{\mathbf A}^\dagger = \hat{\mathbf A}$
+This Hermiticity is guaranteed by the structure of the operator expansion, where each annihilation operator is paired with its adjoint multiplying the opposite plane wave.
+Whether the summation is taken over all $\mathbf{k}$ or only over independent $\mathbf{k}$ is a bookkeeping choice. In either case, the Hermitian structure of the field operator ensures consistency, and the physical content is unchanged.
 
 \end{document}
