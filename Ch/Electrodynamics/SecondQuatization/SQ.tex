@@ -18,6 +18,8 @@ with $\hat{N}_{\mathbf{k}s}$ is the quantum number operator
 \begin{align*}
   \hat{N}_{\mathbf{k},s} \ket{\dots n_{\mathbf{k}s} \dots}= n_{\mathbf{k}s} \ket{\dots n_{\mathbf{k}s} \dots}
 \end{align*}
+Each Fourier mode $(\mathbf{k },s)$ acts as a quantum oscillator.
+While classical modes correspond to continuous amplitudes, quantum modes have discrete excitations (photons) and zero-point fluctuations.
 
 In classical electrodynamics, the electromagnetic wave can be written in terms of a scalar potential $\phi(\mathbf{r}, t)$ and vector potential $\mathbf{A}(\mathbf{r},t)$
 \begin{equation*}
@@ -283,5 +285,116 @@ Upon quantization, the independent classical amplitudes are promoted to operator
 The classical reality condition  $A_{-\mathbf{k}} = A_{\mathbf{k}}^*$ is replaced by the requirement that the field operator be Hermitian $\hat{\mathbf A}^\dagger = \hat{\mathbf A}$
 This Hermiticity is guaranteed by the structure of the operator expansion, where each annihilation operator is paired with its adjoint multiplying the opposite plane wave.
 Whether the summation is taken over all $\mathbf{k}$ or only over independent $\mathbf{k}$ is a bookkeeping choice. In either case, the Hermitian structure of the field operator ensures consistency, and the physical content is unchanged.
+
+\subsection{Zero-Point Energy and the Casimir Effect}
+In the case of the quantum electromagnetic field, there is an infinite number of harmonic oscillators and the total zero-point energy,
+\begin{equation*}
+  \braket{0 | H |0 }\equiv E_{\text{vac}}= \sum_{\mathbf{k },s } \frac{1 }{2 }\hbar \omega_k
+\end{equation*}
+is clearly infinite.
+The infinite constant $E_\text{vac}$ is usually eliminated by simply shifting to zero the energy associated to the vacuum state $\ket{0}$.
+
+Introducing the plates alters the allowed modes of the field, producing a vacuum energy $E'_\text{vac}(a)$ that depends on the plate separation $a$. The vacuum energy in free space, $E_\text{vac}$, serves as a reference.
+To quantify the effect, one defines the Casimir energy per unit area as
+\begin{equation*}
+  \mathcal{E}(a) = \frac{E'_\text{vac}(a) - E_\text{vac}}{L^2}= -\frac{\pi^2 }{720 }\frac{\hbar c }{a^3}
+\end{equation*}
+Experimentally, two parallel conducting plates are observed to attract each other when brought close together.
+This behavior reflects  systems evolution toward configurations of minimum energy.
+As the plates approach each other, the restriction on electromagnetic modes increases, reducing $E'_\text{vac}(a)$ and making $\mathcal{E}(a)$ more negative.
+This decrease in energy corresponds to a more favorable configuration, consistent with the observed attraction.
+The Casimir force per unit area is obtained by differentiating this energy with respect to the plate separation,
+\begin{equation*}
+  \mathcal{F} = - \frac{\partial \mathcal{E}}{\partial a} = - \frac{\pi^2 }{240 }\frac{\hbar c }{a^4}
+\end{equation*}
+Defining the energy difference as $E'_\text{vac} - E_\text{vac}$ ensures that the sign of the Casimir energy directly reflects the tendency of the system toward lower energy, so that a decrease in separation corresponds naturally to both a decrease in energy and an attractive force.
+
+\subsubsection{Derivation: Casimir energy per unit area.}
+Consider a cubic box of volume \( V = L^3 \) with periodic boundary conditions. The allowed wavevectors are discretized as
+\[
+  k_x = \frac{2\pi n_x}{L}, \quad k_y = \frac{2\pi n_y}{L}, \quad k_z = \frac{2\pi n_z}{L}, \quad n_x, n_y, n_z \in \mathbb{Z}.
+\]
+Each allowed \( k \) occupies a ``cell'' in \( k \)-space of volume
+\[
+  \Delta k_x \Delta k_y \Delta k_z = \left( \frac{2\pi}{L} \right)^3.
+\]
+In the continoum limit, the sum over discrete modes can be written as
+\begin{equation*}
+  \sum_{\mathbf{k},s} f(\mathbf{k},s) \rightarrow  \frac{V}{(2\pi)^{3}} 2\int d^{3}\mathbf{k} \; f(\mathbf{k})
+\end{equation*}
+The zero-point energy of the electromagnetic ﬁeld in a region of volume $V$ can be written as
+\begin{equation*}
+  E_\text{vac}=
+  V \int \frac{d^{3}\mathbf{k}}{(2\pi)^{3}} \hbar c \sqrt{k_{x}^{2} + k_{y}^{2} + k_{z}^{2}}
+\end{equation*}
+In particular, considering a region with the shape of a parallelepiped of length $L$ along both $x$ and $y$ and length $a$ along $z$
+\begin{align*}
+  E_\text{vac} & = \hbar c \int  \frac{L dk_{x}}{2\pi} \int \frac{L dk_{y}}{2\pi} \int  \frac{a dk_{z}}{2\pi} \sqrt{k_{x}^{2} + k_{y}^{2} + k_{z}^{2}}                                                                           \\
+               & = \frac{\hbar  c }{(2\pi)^3 }L^2 a \left( 2\pi \int_{0 }^{\infty }dk_{\parallel}\;k_{\parallel}\int dk_{\parallel}\sqrt{k_{\parallel}^2+k_z^2} \right)                                                          \\
+               & = \frac{\hbar  c }{(2\pi)^3 }L^2 a \left[ 2\pi \int_{0 }^{\infty }dk_{\parallel}\;k_{\parallel}\frac{\hbar c}{2\pi}\int_0^\infty dk_{\parallel}\sqrt{k_{\parallel}^2+\left( \frac{n \pi}{a} \right) ^2} \right] \\
+  E_\text{vac}
+               & =  \frac{\hbar c}{2\pi} L^{2} \int_{0}^{\infty} dk_{\parallel}k_{\parallel}\left[\int_{0}^{\infty} dn \sqrt{k_{\parallel}^{2} + \frac{n^{2} \pi^{2}}{a^{2}}}\right]
+\end{align*}
+where the expression is obtained setting $k_{\parallel} = \sqrt{k_{x}^{2} + k_{y}^{2}}$ and $n = (a/\pi)k_{z}$.
+
+Let us now consider different  case of metallic plates with length $L \gg a$ having parallel faces lying in the $(x,y)$ plane at distance $a$.
+The boundary condition of Maxwell equation for tangential components electric field reads
+\begin{equation*}
+  \mathbf{E}_1^{\parallel} - \mathbf{E}_2^{\parallel}=0
+\end{equation*}
+Since we use conductor, the electric inside the conductor must be zero, thus the tangential components must be zero $\mathbf{E}^{\parallel}=0$.
+The separation also ensures that $k_x$ and $k_y$ remains continuous but the $k_{z}$ is quantized via
+\begin{equation*}
+  k_{z} = n \pi/a
+\end{equation*}
+where now $n = 0, 1, 2, \ldots$ is an integer number
+This is equivalent to  Dirichlet boundary conditions where the electric field vanishes at the boundaries.
+In this case the zero-point energy in the volume $V = L^{2} a$ between the two plates reads
+\begin{equation*}
+  E'_\text{vac} =
+  \frac{\hbar c}{2\pi} L^{2} \int_{0}^{\infty} dk_{\parallel}k_{\parallel} \left( \frac{k_{\parallel}}{2} + \sum_{n=1}^{\infty} \sqrt{k_{\parallel} ^{2}+ \frac{n^{2} \pi^{2}}{a^{2}}}  \right)
+\end{equation*}
+where for \( k_z = 0 \) the state \(|(k_z, k_y, 0)1\rangle\)  normal to the \( xy \) plane satisfy $\mathbf{E}^{\parallel}=0$, while the state \(|(k_z, k_y, 0)2\rangle\) orthogonal to the \( z \) axis and lies in the $xy$ plane does not, thus does not contribute to the summation.
+
+This mode restriction result in the lowering zero-point energy.
+The difference between the unrestricted vacuum energy and the reduced cavity energy generates a force pulling the plates together.
+This is the Casimir force.
+
+The net energy per unit surface area
+\begin{align*}
+  \mathcal{E} & =  \frac{E'_{\text{vac}} - E_{\text{vac}}}{L^2}                                                                                                                                                                                                                          \\
+              & =  \frac{\hbar c}{2\pi}  \int_{0}^{\infty} dk_{\parallel}k_{\parallel} \left( \frac{k_{\parallel}}{2} + \sum_{n=1}^{\infty} \sqrt{k_{\parallel} ^{2}+ \frac{n^{2} \pi^{2}}{a^{2}}}  -\int_{0}^{\infty} dn \sqrt{k_{\parallel}^{2} + \frac{n^{2} \pi^{2}}{a^{2}}} \right) \\
+              & =  \frac{\hbar c}{2\pi} \left( \frac{\pi}{a } \right) ^{3} \int_{0}^{\infty} d\zeta \zeta \left( \frac{\zeta}{2} + \sum_{n=1}^{\infty} \sqrt{\zeta ^{2}+ n^2}  -\int_{0}^{\infty} dn \sqrt{\zeta^{2} + n^2} \right)                                                      \\
+              & =\pi^2 \frac{\hbar c }{2a^3} \left[ \frac{1}{2} A(0) + \sum_{n=1}^{\infty} A(n) - \int_{0}^{\infty} dn\; A(n) \right]
+\end{align*}
+with \( \zeta = a k_{\parallel}/\pi \) and
+\begin{equation*}
+  A(n) = \int_{0}^{+\infty} d\zeta \, \zeta \sqrt{\zeta^2 + n^2}
+  = \frac{1}{3} \left[ (n^2 + \infty)^{3/2} - n^2 \right]
+\end{equation*}
+Although divergent, it might be evaluated as
+\begin{equation*}
+  A(n)=  \frac{1}{2} \int_{n^{2}}^{\infty} \sqrt{u} \; du= \frac{1 }{2 }\frac{2 }{3 }u^{3/2}\bigg|_{n^2 }^{\infty }=
+  \frac{1 }{3 }\left( \infty-n^3 \right)
+\end{equation*}
+with the substitution of $u = \zeta^{2} + n^{2} $ and $\zeta\;d\zeta=du/2$.
+The divergent part, however, cancel each other according to Euler-MacLaurin formula for the difference of infinite series and integrals
+\begin{multline*}
+  \frac{1}{2} A(0) + \sum_{n=1}^{\infty} A(n) - \int_{0}^{\infty} dn A(n) = -\frac{1}{6 \cdot 2!} \frac{dA}{dn}\bigg|_{n=0} \\
+  + \frac{1}{30 \cdot 4!} \frac{d^3 A}{dn^3}\bigg|_{n=0} - \frac{1}{42\cdot 6!}  \frac{d^5 A}{dn^5}\bigg|_{n=0} + \cdots
+\end{multline*}
+Only the third order derivative survive
+\begin{equation*}
+  \mathcal{E}
+  =\pi^2 \frac{\hbar c }{2a^3} \frac{1}{30 \cdot 4!} \frac{d^3 A}{dn^3}\bigg|_{n=0}
+  =-\pi^2 \frac{\hbar c }{2a^3} \frac{1}{30 \cdot 4!} 2
+  = -\frac{\pi^2 }{720 }\frac{\hbar c }{a^3}
+\end{equation*}
+
+\subsubsection{Derivation: Casimir force.}
+The attractive force per unit area between the two plates is simply the separation derivative of the energy per unit area
+\begin{equation*}
+  \mathcal{F}=-\frac{dE}{da} = \frac{\pi^{2}}{720} \hbar c \cdot \frac{d}{da} \left( a^{-3} \right) = \frac{\pi^{2}}{720} \hbar c \cdot \left( -3 a^{-4} \right) = -\frac{\pi^{2}}{240} \hbar c \cdot a^{-4}
+\end{equation*}
 
 \end{document}
