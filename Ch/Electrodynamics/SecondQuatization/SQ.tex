@@ -127,15 +127,6 @@ To evaluate the curl term use $\nabla \times (f \mathbf{v}) = (\nabla f) \times 
   \nabla \times \mathbf{A} & =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k}s}(t) \frac{1}{\sqrt{V}} \nabla \times  e^{i\mathbf{k} \cdot \mathbf{r}} + A_{\mathbf{k}s}^*(t) \frac{1}{\sqrt{V}}\nabla \times e^{-i\mathbf{k} \cdot \mathbf{r}} \right] \boldsymbol{\epsilon}_{\mathbf{k}s}                                             \\
   \nabla \times \mathbf{A} & =  \sum_{\mathbf{k},s} \left[ A_{\mathbf{k} s} \frac{i \mathbf{k} \times \boldsymbol{\epsilon}_{\mathbf{k} s}}{\sqrt{V}} e^{i \mathbf{k} \cdot \mathbf{r}} - A^*_{\mathbf{k} s} \frac{i \mathbf{k} \times \boldsymbol{\epsilon}_{\mathbf{k} s}}{\sqrt{V}} e^{-i \mathbf{k} \cdot \mathbf{r}} \right]
 \end{align*}
-Another thing to note is the Fourier transform of 3d Dirac delta
-\begin{equation*}
-  \int_{\mathbb{R}^3} d^3 \mathbf{r} \, e^{i(\mathbf{k}-\mathbf{k}') \cdot \mathbf{r}} = (2\pi)^3 \delta^3(\mathbf{k}-\mathbf{k}')
-\end{equation*}
-with continuous $\mathbf{k}$.
-Discrete $\mathbf{k}=2 \pi/L(n_x, n_y, n_z), n_i \in \mathbb{Z}$ takes place in system is enclosed in a finite box of volume $V=L^3$ turns the integral into
-\begin{equation*}
-  \int_V d^3 \mathbf{r} \;e^{i(\mathbf{k}-\mathbf{k}') \cdot r} = V \delta_{\mathbf{k},\mathbf{k}'}
-\end{equation*}
 
 Now the time derivative term reads
 \begin{multline*}
@@ -147,17 +138,26 @@ Now the time derivative term reads
     + \dot A_{\mathbf k s}^* \dot A_{\mathbf k' s'}^* \frac{e^{-i (\mathbf k + \mathbf k') \cdot \mathbf r}}{V}
     \bigg] (\boldsymbol\epsilon_{\mathbf k s} \cdot \boldsymbol\epsilon_{\mathbf k' s'})
 \end{multline*}
+Recall Fourier transform of 3d Dirac delta
+\begin{equation*}
+  \int_{\mathbb{R}^3} d^3 \mathbf{r} \, e^{i(\mathbf{k}-\mathbf{k}') \cdot \mathbf{r}} = (2\pi)^3 \delta^3(\mathbf{k}-\mathbf{k}')
+\end{equation*}
+with continuous $\mathbf{k}$.
+Discrete $\mathbf{k}=2 \pi/L(n_x, n_y, n_z), n_i \in \mathbb{Z}$ takes place in system is enclosed in a finite box of volume $V=L^3$ turns the integral into
+\begin{equation*}
+  \int_V d^3 \mathbf{r} \;e^{i(\mathbf{k}-\mathbf{k}') \cdot r} = V \delta_{\mathbf{k},\mathbf{k}'}
+\end{equation*}
 Suppose earlier we pick positive value of $\mathbf{k}$.
 The term of exponent containing $\mathbf{k} + \mathbf{k}$ vanishes because by the Dirac delta
 \begin{equation*}
   \int_V d^3 \mathbf{r} \;e^{i(\mathbf{k}+\mathbf{k}') \cdot r} = V \delta_{\mathbf{k},-\mathbf{k}'}
 \end{equation*}
-only the term $\mathbf{k}=-\mathbf{k}'$ survive.
+only the terms $\mathbf{k}=-\mathbf{k}'$, which are outside our summation range, survive.
 As such, the integral evaluate into
 \begin{equation*}
   \int d^3 \mathbf{r} \left( \frac{\partial \mathbf{A}}{\partial t} \right)^2  = \sum_{\mathbf{k},s}  \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right)
 \end{equation*}
-Also, the polarization orthogonality gives $\boldsymbol{\epsilon}_{ks} \cdot \boldsymbol{\epsilon}_{\mathbf{k} s'} =\delta_{ss'}$.
+Also, the polarization orthogonality gives $\boldsymbol{\epsilon}_{\mathbf{k} s} \cdot \boldsymbol{\epsilon}_{\mathbf{k} s'} =\delta_{ss'}$.
 Vector potential obeys the wave equation whose solution is $A_{\mathbf{k}s}(t)=A_{\mathbf{k}s}(0)e^{i\omega_kt}$.
 Thus $\dot{A}_{\mathbf{k}s}=-i\omega_kA_{\mathbf{k}s}$ and
 \begin{equation*}
@@ -182,8 +182,8 @@ The cross term vanishes again I hope\dots
    & =  \sum_{\mathbf{k},s}  \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right) |\mathbf{k }\times \boldsymbol{\epsilon}_{\mathbf{k}s} |^2 \\
    & =  \sum_{\mathbf{k},s} k^2 \left( \dot{A}_{\mathbf{k} s}^{*} \dot{A}_{\mathbf{k} s} + \dot{A}_{\mathbf{k} s} \dot{A}_{\mathbf{k} s}^{*} \right)
 \end{align*}
-Yup it does.
-Do note that $\mathbf{f} \times \mathbf{v}=|\mathbf{f}| |\mathbf{v}| \sin \theta$ and that the polarization vector is perpendicular to the wave vector.
+Yup, under Dirac delta it does.
+Do note that $|\mathbf{f} \times \mathbf{v}|=|\mathbf{f}| |\mathbf{v}| \sin \theta$ and that the polarization vector is perpendicular to the wave vector.
 Using $\omega_k = ck$ and $c^2=1/\epsilon_0\mu_0$ to write $\epsilon_0\omega_k^2=k^2/\mu_0$, the integral turns
 \begin{equation*}
   \frac{1 }{2\mu_0} \int d^3 \mathbf{r}  \; (\nabla \times \mathbf A)^2
@@ -394,7 +394,8 @@ Only the third order derivative survive
 \subsubsection{Derivation: Casimir force.}
 The attractive force per unit area between the two plates is simply the separation derivative of the energy per unit area
 \begin{equation*}
-  \mathcal{F}=-\frac{dE}{da} = \frac{\pi^{2}}{720} \hbar c \cdot \frac{d}{da} \left( a^{-3} \right) = \frac{\pi^{2}}{720} \hbar c \cdot \left( -3 a^{-4} \right) = -\frac{\pi^{2}}{240} \hbar c \cdot a^{-4}
+  \mathcal{F}=-\frac{d \mathbb{E}}{da} = \frac{\pi^{2}}{720} \hbar c \cdot \frac{d}{da} \left( a^{-3} \right) = \frac{\pi^{2}}{720} \hbar c \cdot \left( -3 a^{-4} \right) = -\frac{\pi^{2}}{240} \hbar c \cdot a^{-4}
 \end{equation*}
+
 
 \end{document}
