@@ -311,13 +311,13 @@ Defining the energy difference as $E'_\text{vac} - E_\text{vac}$ ensures that th
 
 \subsubsection{Derivation: Casimir energy per unit area.}
 Consider a cubic box of volume \( V = L^3 \) with periodic boundary conditions. The allowed wavevectors are discretized as
-\[
+\begin{equation*}
   k_x = \frac{2\pi n_x}{L}, \quad k_y = \frac{2\pi n_y}{L}, \quad k_z = \frac{2\pi n_z}{L}, \quad n_x, n_y, n_z \in \mathbb{Z}.
-\]
+\end{equation*}
 Each allowed \( k \) occupies a ``cell'' in \( k \)-space of volume
-\[
+\begin{equation*}
   \Delta k_x \Delta k_y \Delta k_z = \left( \frac{2\pi}{L} \right)^3.
-\]
+\end{equation*}
 In the continoum limit, the sum over discrete modes can be written as
 \begin{equation*}
   \sum_{\mathbf{k},s} f(\mathbf{k},s) \rightarrow  \frac{V}{(2\pi)^{3}} 2\int d^{3}\mathbf{k} \; f(\mathbf{k})
@@ -412,6 +412,38 @@ Also the angular momentum
 \begin{equation*}
   \mathbf{J} = \int d^3 \mathbf{r} \; \epsilon_0 \mathbf{r} \wedge \left[ \mathbf{E}(\mathbf{r}, t) \wedge \mathbf{B}(\mathbf{r}, t) \right] 
 \end{equation*}
+After evaluating the expression, one obtains 
+\begin{equation*}
+    \mathbf{\hat{J}} = 
+    \int d^3 \mathbf{k} \sum_s \hat{a}^\dagger_{\mathbf{k }s}  \left[i \hbar \mathbf{k} \times \nabla_\mathbf{k} \right] \hat{a}^\dagger_{\mathbf{k }s} 
+    + \hbar \int d^3 \mathbf{k} \sum_{s,s'} \hat{a}^\dagger_{\mathbf{k }s}  \mathbf{S}_{ss'} \hat{a}_{\mathbf{k }s} 
+\end{equation*}
+with $\mathbf{S}_{ss'}$is the matrix representation of the spin-1 rotation generators restricted to the transverse polarization subspace.
+It contains two contributions: the orbital part
+\begin{equation*}
+    \hat{\mathbf{J}}_{\text{orb}} = 
+        \int d^3 \mathbf{k} \sum_s \hat{a}^\dagger_{\mathbf{k }s}  \left[ i \hbar \mathbf{k} \times \nabla_\mathbf{k} \right] \hat{a}^\dagger_{\mathbf{k }s} 
+\end{equation*}
+the spin (helicity) part
+\begin{equation*}
+    J_{\text{spin}} = 
+     \hbar \int d^3 \mathbf{k} \sum_{s,s'} \hat{a}^\dagger_{\mathbf{k }s}  \mathbf{S}_{ss'} \hat{a}_{\mathbf{k }s} 
+\end{equation*}
+
+The linearly polarized states \(|s\rangle\)  are eigenstates of \( \hat{H} \) and \( \hat{P} \), but they are not  \( \hat{J} \), \( \hat{J}^2 \), and nor of \( \hat{J}_z \). 
+\begin{align*}
+  \hat{H} \ket{\mathbf{k }s} &=  \hbar \omega_k \ket{\mathbf{k }s}\\
+  \mathbf{\hat{P}} \ket{\mathbf{k}s} &= \hbar \mathbf{k }\ket{\mathbf{k}s}
+\end{align*}
+The eigenstates of both \(\ket{kjm_js}\) do not have a fixed wavevector \( \mathbf{k} \), only  fixed wavenumber \( k = |k| \). 
+These states are associated to vector spherical harmonics \( Y_{j,m}(\theta, \phi) \).
+\(\ket{kjm_js}\) are not eigenstates of \( \hat{P} \) but they are eigenstates of \( \hat{H} \), \( \hat{J}^2 \), and \( \hat{J}_z \)
+\begin{align*}
+\hat{H}\ket{kjm_js} &=  c k \ket{kjm_js} \\
+\hat{J}^2 \ket{kjm_js}  &=  j(j + 1)\hbar^2 \ket{kjm_js}\\ 
+\hat{J}_z \ket{kjm_js} &=  m_j \hbar \ket{kjm_js} \\
+\end{align*}
+with $m_j=-j,\dots,j$ and $j=1,\dots$.
 
 \subsubsection{Derivation: momentum operator}
 The electromagnetic field term reads 
@@ -459,4 +491,14 @@ Putting it all together
   \sum_{\mathbf{k },s } \hbar \omega_k \mu_0 \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s}  \mathbf{\hat{k }}
   = \sum_{\mathbf{k },s}\hbar \mathbf{k } \hat{N }_{\mathbf{k }s} 
 \end{align*}
+
+\subsubsection{Linear and circular polarization}
+Vector polarization $\boldsymbol{\epsilon}_{\mathbf{k }s}$ satisfy 
+\begin{equation*}
+  \boldsymbol{\epsilon}_{\mathbf{k }s} \cdot \boldsymbol{\epsilon}_{\mathbf{k }s'}=\delta_{ss'}
+\end{equation*}
+With linear vector polarization $\boldsymbol{\epsilon}_{\mathbf{k }s}$ and $\boldsymbol{\epsilon}_{\mathbf{k }s'}$, we maybe define circular polarization as 
+\begin{equation*}
+  \boldsymbol{\varepsilon}_{\mathbf{k }s} = \frac{1 }{\sqrt{2 }}\left( \boldsymbol{\epsilon}_{\mathbf{k }s}\pm i \boldsymbol{\epsilon}_{\mathbf{k }s'} \right) 
+\end{equation*} 
 \end{document}
