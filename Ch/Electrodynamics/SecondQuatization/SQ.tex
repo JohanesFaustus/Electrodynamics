@@ -397,5 +397,66 @@ The attractive force per unit area between the two plates is simply the separati
   \mathcal{F}=-\frac{d \mathbb{E}}{da} = \frac{\pi^{2}}{720} \hbar c \cdot \frac{d}{da} \left( a^{-3} \right) = \frac{\pi^{2}}{720} \hbar c \cdot \left( -3 a^{-4} \right) = -\frac{\pi^{2}}{240} \hbar c \cdot a^{-4}
 \end{equation*}
 
+\subsection{Linear and Angular Momentum of the Radiation Field}
+In addition to the total energy there are other interesting conserved quantities which characterize the classical radiation ﬁeld. 
+They are the total linear momentum
+\begin{equation*}
+P = \int d^3 \mathbf{r} \; \epsilon_0 \mathbf{E}(\mathbf{r}, t) \wedge \mathbf{B}(\mathbf{r}, t)
+\end{equation*}
+or 
+\begin{equation*}
+\hat{P} = \sum_{\mathbf{k },s} \hbar \mathbf{k} \left( \hat{N}_{\mathbf{k} s} + \frac{1}{2} \right) 
+= \sum_{\mathbf{k },s} \hbar \mathbf{k} \hat{N}_{\mathbf{k} s}  
+\end{equation*}
+Also the angular momentum
+\begin{equation*}
+  \mathbf{J} = \int d^3 \mathbf{r} \; \epsilon_0 \mathbf{r} \wedge \left[ \mathbf{E}(\mathbf{r}, t) \wedge \mathbf{B}(\mathbf{r}, t) \right] 
+\end{equation*}
 
+\subsubsection{Derivation: momentum operator}
+The electromagnetic field term reads 
+\begin{multline*}
+  \mathbf{E }\times \mathbf{B}
+  = - \sum_{\mathbf{k },s} \sum_{\mathbf{k }',s'}  \frac{\hbar  }{2V} \sqrt{\frac{\mu_0 }{\epsilon_0 }\omega_k \omega_{k'}}
+    \bigg[ \hat{a}_{\mathbf{k }s} \hat{a}_{\mathbf{k }'s'}  e ^{i(\phi_{\mathbf{k }} +\phi_{\mathbf{k }'})} 
+  -\hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }'s'} e ^{i(\phi_{\mathbf{k }}-\phi_{\mathbf{k }'})} \\ 
+   -\hat{a}_{\mathbf{k }s} ^\dagger\hat{a}_{\mathbf{k }'s'} e ^{-i(\phi_{\mathbf{k }}-\phi_{\mathbf{k }'})}  
+   +\hat{a}^\dagger_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }'s'} e ^{-i(\phi_{\mathbf{k }}+\phi_{\mathbf{k }'})} \bigg]
+  \boldsymbol{\epsilon}_{\mathbf{k}s} \times \left[ \hat{\mathbf{k }'}\times \boldsymbol{\epsilon}_{\mathbf{k }'s'}  \right] 
+\end{multline*}
+With vector triple product $    \A \times (\B \times \C) = \B(\A \cdot \C) - \C(\A \cdot \B)$,  the expression reads
+\begin{multline*}
+  \mathbf{E }\times \mathbf{B}
+  = - \sum_{\mathbf{k },s} \sum_{\mathbf{k }',s'}  \frac{\hbar  }{2V} \sqrt{\frac{\mu_0 }{\epsilon_0 }\omega_k \omega_{k'}}
+    \bigg[ \hat{a}_{\mathbf{k }s} \hat{a}_{\mathbf{k }'s'}  e ^{i(\phi_{\mathbf{k }} +\phi_{\mathbf{k }'})} 
+  -\hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }'s'} e ^{i(\phi_{\mathbf{k }}-\phi_{\mathbf{k }'})} \\ 
+   -\hat{a}_{\mathbf{k }s} ^\dagger\hat{a}_{\mathbf{k }'s'} e ^{-i(\phi_{\mathbf{k }}-\phi_{\mathbf{k }'})}  
+   +\hat{a}^\dagger_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }'s'} e ^{-i(\phi_{\mathbf{k }}+\phi_{\mathbf{k }'})} \bigg]
+    \left[ \hat{\mathbf{k}}'\delta_{ss'}-\boldsymbol{\epsilon}_{\mathbf{k}'s'}\left( \boldsymbol{\epsilon}_{\mathbf{k }s}\cdot \hat{\mathbf{k}'} \right) \right] 
+\end{multline*}
+Under the spatial integration, the exponential with $\mathbf{k }+\mathbf{k}$ produce $\delta_{\mathbf{k },-\mathbf{k}}$ and $\mathbf{k }-\mathbf{k}$ produce $\delta_{\mathbf{k },\mathbf{k}}$.
+As  such there are two patterns of the cross product.
+\begin{equation*}
+  \mathbf{E }\times \mathbf{B}  \propto
+  \left[ \hat{a}_{\mathbf{k }s} \hat{a}_{-\mathbf{k }s}  \hat{a}^\dagger_{\mathbf{k }s}+ \hat{a}^\dagger_{-\mathbf{k }s} \right] \left[ -\mathbf{\hat{k}}' \right] 
+\end{equation*}
+This expression is odd, so summation over the same period cancel each other.
+The other type, however 
+\begin{equation*}
+  \mathbf{E }\times \mathbf{B}  \propto
+  \left[ -\hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} - \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s}  \right] \mathbf{\hat{k}}
+\end{equation*}
+do survive, since it is even.
+We can also use the commutator relation to simplify further
+\begin{equation*}
+  \left[ -\hat{a}_{\mathbf{k }s} \hat{a}^\dagger_{\mathbf{k }s} - \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s}    \hat{a}_{\mathbf{k }s}   \right] \hat{\mathbf{k}}
+   = \left[ - 2\hat{a}^\dagger_{\mathbf{k }s \hat{a}_{\mathbf{k }s}  } -1\right] \mathbf{\hat{k}}
+\end{equation*}
+Also, the lasy term is odd, so it vanish under the summation.
+Putting it all together
+\begin{align*}
+  \mathbf{P } = 
+  \sum_{\mathbf{k },s } \hbar \omega_k \mu_0 \hat{a}^\dagger_{\mathbf{k }s} \hat{a}_{\mathbf{k }s}  \mathbf{\hat{k }}
+  = \sum_{\mathbf{k },s}\hbar \mathbf{k } \hat{N }_{\mathbf{k }s} 
+\end{align*}
 \end{document}
